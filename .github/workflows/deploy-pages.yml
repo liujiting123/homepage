@@ -27,6 +27,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
       - run: pnpm --ignore-workspace install --frozen-lockfile
       - run: pnpm --ignore-workspace build
       - uses: actions/upload-pages-artifact@v3
