@@ -37,6 +37,8 @@ export const size = {
 };
 
 export const contentType = "image/png";
+export const dynamic = "force-static";
+export { generateStaticParams } from "./page";
 
 // Format date for display
 function formatDate(dateString: string, locale: string): string {

@@ -12,6 +12,7 @@ import { DATA, getEmail } from "@/data";
 export default function Footer() {
   const pathname = usePathname();
   const isChinese = pathname.startsWith("/zh");
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
   const currentYear = new Date().getFullYear();
   const isStaticFileHref = (href: string) =>
     href.endsWith(".pdf") ||
@@ -168,13 +169,13 @@ export default function Footer() {
             </h3>
             <nav className="space-y-2">
               <Link
-                href={isChinese ? "/zh/blog" : "/blog"}
+                href={isChinese ? "/zh/blog" : "/en/blog"}
                 className="text-muted-foreground hover:text-foreground block text-sm transition-colors"
               >
                 {t.resources.blog}
               </Link>
               <a
-                href="/resume.pdf"
+                href={`${basePath}/resume.pdf`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground block text-sm transition-colors"
