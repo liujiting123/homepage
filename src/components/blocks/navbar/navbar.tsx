@@ -20,7 +20,6 @@ import { cn } from "@/lib/utils";
 export default function Navbar() {
   const pathname = usePathname();
   const isChinesePage = pathname.startsWith("/zh");
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
   const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
@@ -52,9 +51,9 @@ export default function Navbar() {
           // Adjust href based on current language
           let href: string = item.href;
           if (item.href === "/blog") {
-            href = isChinesePage ? "/zh/blog" : "/en/blog";
+            href = isChinesePage ? "/zh/blog" : "/blog";
           } else if (item.href === "/") {
-            href = isChinesePage ? "/zh" : "/en";
+            href = isChinesePage ? "/zh" : "/";
           }
           const isStaticFile =
             href.endsWith(".pdf") ||
@@ -68,7 +67,7 @@ export default function Navbar() {
                 <TooltipTrigger asChild>
                   {isStaticFile ? (
                     <a
-                      href={`${basePath}${href}`}
+                      href={href}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={cn(

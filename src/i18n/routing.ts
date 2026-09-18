@@ -17,8 +17,7 @@ export const LOCALE_TO_HREFLANG: Record<Locale, string> = {
 export const routing = defineRouting({
   locales: LOCALES,
   defaultLocale: DEFAULT_LOCALE,
-  // Static hosting has no middleware to rewrite `/` to the default locale.
-  localePrefix: "always",
+  localePrefix: "as-needed",
 });
 
 export const { Link, redirect, usePathname, useRouter, getPathname } =
@@ -30,9 +29,6 @@ export type Locale = (typeof routing.locales)[number];
  * Helper function to generate locale-based URLs
  */
 export function getLocaleUrl(locale: Locale, path: string = ""): string {
-  const pathname = getPathname({ locale, href: path || "/" }).replace(
-    /^\//,
-    "",
-  );
-  return new URL(`${pathname}`, `${siteConfig.url}/`).toString();
+  const pathname = getPathname({ locale, href: path || "/" });
+  return new URL(pathname, siteConfig.url).toString();
 }

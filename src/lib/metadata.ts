@@ -11,7 +11,7 @@ import {
 } from "@/i18n/routing";
 
 function getAtomFeedUrl(locale: Locale): string {
-  const u = new URL("api/feed/atom.xml", `${siteConfig.url}/`);
+  const u = new URL("/api/feed/atom.xml", siteConfig.url);
   if (locale !== DEFAULT_LOCALE) {
     u.searchParams.set("locale", locale);
   }
@@ -76,7 +76,7 @@ export async function constructMetadata({
       type: "website",
       title: pageTitle,
       description: finalDescription,
-      url: canonicalUrl,
+      url: path,
       siteName: t("name.full"),
       locale: resolvedLocale,
     },
@@ -95,6 +95,7 @@ export async function constructMetadata({
         follow: !noIndex,
       },
     },
-    manifest: new URL("manifest.webmanifest", `${siteConfig.url}/`).toString(),
+    // Next.js metadata route `src/app/manifest.ts` is served at `/manifest.webmanifest`
+    manifest: "/manifest.webmanifest",
   };
 }

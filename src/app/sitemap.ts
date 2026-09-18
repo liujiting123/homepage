@@ -1,16 +1,14 @@
 import { MetadataRoute } from "next";
 
 import { siteConfig } from "@/data/site";
-import { LOCALES } from "@/i18n/routing";
+import { DEFAULT_LOCALE, LOCALES } from "@/i18n/routing";
 import { getBlogPosts } from "@/lib/blog";
-
-export const dynamic = "force-static";
 
 const siteUrl = siteConfig.url;
 const postsPerPage = siteConfig.blog.postsPerPage;
 
 function localePathPrefix(locale: string): string {
-  return `/${locale}`;
+  return locale === DEFAULT_LOCALE ? "" : `/${locale}`;
 }
 
 type ChangeFrequency =
@@ -29,7 +27,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const pages = LOCALES.flatMap((locale) => {
     return staticPages.map((page) => ({
-      url: `${siteUrl}${localePathPrefix(locale)}${page}`,
+      url: `${siteUrl}${locale === DEFAULT_LOCALE ? "" : `/${locale}`}${page}`,
       lastModified: new Date(),
       changeFrequency: (["", "/blog"].includes(page)
         ? "weekly"

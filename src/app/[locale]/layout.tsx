@@ -1,8 +1,6 @@
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
-import { notFound } from "next/navigation";
 import { hasLocale, Locale, NextIntlClientProvider } from "next-intl";
 import {
   getMessages,
@@ -10,6 +8,8 @@ import {
   setRequestLocale,
 } from "next-intl/server";
 import { ThemeProvider } from "next-themes";
+import { Inter as FontSans } from "next/font/google";
+import { notFound } from "next/navigation";
 
 import Footer from "@/components/blocks/footer";
 import Navbar from "@/components/blocks/navbar/navbar";
@@ -20,7 +20,7 @@ import {
   GoogleTagManager,
 } from "@/components/third-party";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { DEFAULT_LOCALE, LOCALES, routing } from "@/i18n/routing";
+import { DEFAULT_LOCALE, routing } from "@/i18n/routing";
 import { constructMetadata } from "@/lib/metadata";
 import { cn } from "@/lib/utils";
 
@@ -34,10 +34,6 @@ const fontSans = FontSans({
 type MetadataProps = {
   params: Promise<{ locale: string }>;
 };
-
-export function generateStaticParams() {
-  return LOCALES.map((locale) => ({ locale }));
-}
 
 export async function generateMetadata({
   params,
