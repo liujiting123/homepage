@@ -50,7 +50,7 @@ export default function Brief({
         </p>
       </div>
       <Avatar className="size-24 border sm:size-28 md:size-32 lg:size-36">
-        <AvatarImage alt={name} src={avatarUrl} />
+        <AvatarImage alt={name} src={avatarUrl} className="object-cover" />
         <AvatarFallback>{initials}</AvatarFallback>
       </Avatar>
     </div>
