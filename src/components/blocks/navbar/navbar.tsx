@@ -54,6 +54,8 @@ export default function Navbar() {
             href = isChinesePage ? "/zh/blog" : "/blog";
           } else if (item.href === "/") {
             href = isChinesePage ? "/zh" : "/";
+          } else if (item.href === "/resume.pdf") {
+            href = isChinesePage ? "/resume.pdf" : "/resume-en.pdf";
           }
           const isStaticFile =
             href.endsWith(".pdf") ||

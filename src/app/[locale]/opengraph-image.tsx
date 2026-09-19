@@ -68,8 +68,8 @@ export default async function Image({
     loadGoogleFont("Inter", 900, allText),
   ]);
 
-  // Load avatar image from public folder
-  const avatarPath = join(process.cwd(), "public", siteConfig.avatarUrl);
+  // Load avatar image from public folder (PNG; the OG renderer cannot decode WebP)
+  const avatarPath = join(process.cwd(), "public", siteConfig.ogAvatarUrl);
   const avatarData = await readFile(avatarPath);
   const avatarSrc = `data:image/png;base64,${avatarData.toString("base64")}`;
 

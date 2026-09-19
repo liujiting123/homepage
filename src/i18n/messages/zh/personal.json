@@ -8,8 +8,8 @@
   "subtitle": "Jiting Liu",
   "headline": "机器人学习与具身智能\n四川农业大学数学专业本科生",
   "welcome": "欢迎访问我的个人主页！",
-  "ogImageUrl": "",
-  "bioMarkdown": "我是**四川农业大学数学专业本科生**，预计于 **2028 年毕业**。研究方向为**机器人学习与具身智能**，重点关注通用机器人策略、空间表征学习与跨本体泛化。\n\n我在**香港大学 Taku Komura 课题组**开展跨本体动作重定向研究，面向灵巧机器人操作，并已完成香港大学计算与数据科学学院 **Summer Research Internship Programme 2026**。此前，我于 **2025 年 6 月至 2026 年 4 月**在**上海交通大学赵波老师课题组**开展视觉-语言-动作模型相关研究。\n\n代表性成果包括 **Evo-Depth**（共同第一作者，主要负责模型设计与实验）和 **Evo-1**（CVPR 2026）。更多信息见[个人简历](/resume.pdf)。",
+  "ogImageUrl": "jitingliu.com",
+  "bioMarkdown": "我是**四川农业大学数学专业本科生**，预计于 **2028 年毕业**。研究方向为**机器人学习与具身智能**，重点关注通用机器人策略、空间表征学习与跨本体泛化；Google Scholar 累计引用 **112** 次。\n\n我在**香港大学 [Taku Komura](https://www.cs.hku.hk/index.php/people/academic-staff/taku) 课题组**（[Miro Dynamics–HKU CGVU 联合实验室](https://hku-cg.github.io/)）开展跨本体动作重定向研究，面向灵巧机器人操作，并已完成香港大学计算与数据科学学院 **Summer Research Internship Programme 2026**。此前，我于 **2025 年 6 月至 2026 年 4 月**在**上海交通大学 [赵波](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo) 老师课题组**开展视觉-语言-动作模型相关研究。\n\n代表性成果包括 **Evo-Depth**（共同第一作者，主要负责模型设计与实验）和 **Evo-1**（CVPR 2026）。更多信息见[个人简历](/resume.pdf)。",
   "location": {
     "name": "",
     "mapUrl": ""

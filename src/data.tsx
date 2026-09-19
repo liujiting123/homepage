@@ -18,8 +18,6 @@ export const DATA = {
   location: "",
   locationLink: "",
   discover: [
-    { name: "", url: "" },
-    { name: "", url: "" },
     {
       name: "Template",
       url: "https://github.com/zhengzangw/nextjs-portfolio-blog-research",

@@ -10,6 +10,21 @@
         "date": "2026",
         "title": "Evo-1 · CVPR 2026",
         "content": "[Evo-1: Lightweight Vision-Language-Action Model with Preserved Semantic Alignment](https://arxiv.org/abs/2511.04555)."
+      },
+      {
+        "date": "2026",
+        "title": "Evo-Depth 预印本发布",
+        "content": "共同第一作者，主要负责模型设计与实验。[arXiv:2605.14950](https://arxiv.org/abs/2605.14950)。"
+      },
+      {
+        "date": "2025",
+        "title": "Evo-0 上线 arXiv",
+        "content": "[Evo-0: Vision-Language-Action Model with Implicit Spatial Understanding](https://arxiv.org/abs/2507.00416)。"
+      },
+      {
+        "date": "2025",
+        "title": "加入上海交通大学赵波老师课题组",
+        "content": "开展具身智能与视觉-语言-动作模型研究。"
       }
     ]
   },
@@ -28,9 +43,14 @@
         "authors": "",
         "links": [
           {
-            "type": "Paper",
+            "type": "论文",
             "href": "https://arxiv.org/abs/2605.14950",
             "icon": "paper"
+          },
+          {
+            "type": "代码",
+            "href": "https://github.com/liujiting123/Evo_depth",
+            "icon": "github"
           }
         ],
         "image": "",
@@ -48,9 +68,19 @@
         "authors": "",
         "links": [
           {
-            "type": "Paper",
+            "type": "论文",
             "href": "https://arxiv.org/abs/2511.04555",
             "icon": "paper"
+          },
+          {
+            "type": "代码",
+            "href": "https://github.com/liujiting123/Evo-1",
+            "icon": "github"
+          },
+          {
+            "type": "项目页",
+            "href": "https://mint-sjtu.github.io/Evo-1.io/",
+            "icon": "globe"
           }
         ],
         "image": "",
@@ -84,9 +114,19 @@
         "authors": "**作者：** Tao Lin, Yilei Zhong, Yuxin Du, Jingjing Zhang, **Jiting Liu**, et al.",
         "links": [
           {
-            "type": "Paper",
+            "type": "论文",
             "href": "https://arxiv.org/abs/2511.04555",
             "icon": "paper"
+          },
+          {
+            "type": "代码",
+            "href": "https://github.com/liujiting123/Evo-1",
+            "icon": "github"
+          },
+          {
+            "type": "项目页",
+            "href": "https://mint-sjtu.github.io/Evo-1.io/",
+            "icon": "globe"
           }
         ],
         "image": "",
@@ -105,9 +145,14 @@
         "authors": "**作者：** Tao Lin, Yuxin Du, **Jiting Liu**, et al.",
         "links": [
           {
-            "type": "Paper",
+            "type": "论文",
             "href": "https://arxiv.org/abs/2605.14950",
             "icon": "paper"
+          },
+          {
+            "type": "代码",
+            "href": "https://github.com/liujiting123/Evo_depth",
+            "icon": "github"
           }
         ],
         "image": "",
@@ -125,7 +170,7 @@
         "authors": "**作者：** Yuxin Du, Tao Lin, Zile Zhong, Runting Li, Xiyao Chen, **Jiting Liu**, et al.",
         "links": [
           {
-            "type": "Paper",
+            "type": "论文",
             "href": "https://arxiv.org/abs/2605.11756",
             "icon": "paper"
           }
@@ -145,7 +190,7 @@
         "authors": "**作者：** Tao Lin, Yuxin Du, Yiran Mao, Zewei Ye, Yilei Zhong, Bing Cheng, Yiming Wang, **Jiting Liu**, et al.",
         "links": [
           {
-            "type": "Paper",
+            "type": "论文",
             "href": "https://arxiv.org/abs/2606.27295",
             "icon": "paper"
           }
@@ -165,7 +210,7 @@
         "authors": "**作者：** Tao Lin, Gen Li, Yilei Zhong, Yanwen Zou, Yuxin Du, **Jiting Liu**, et al.",
         "links": [
           {
-            "type": "Paper",
+            "type": "论文",
             "href": "https://arxiv.org/abs/2507.00416",
             "icon": "paper"
           }
@@ -191,21 +236,21 @@
     "items": [
       {
         "company": "香港大学计算与数据科学学院",
-        "href": "",
-        "badges": [],
+        "href": "https://www.cds.hku.hk/",
+        "badges": ["Miro Dynamics–HKU CGVU 联合实验室"],
         "location": "",
-        "title": "科研助理 · Taku Komura 课题组",
+        "title": "科研助理 · [Taku Komura](https://www.cs.hku.hk/index.php/people/academic-staff/taku) 课题组",
         "logoUrl": "",
         "start": "2026",
         "end": "",
-        "description": "研究跨本体动作重定向，面向灵巧机器人操作；负责将标准化交互表征转换为可执行机器人行为。已完成 Summer Research Internship Programme 2026。"
+        "description": "研究跨本体动作重定向，面向灵巧机器人操作；负责将标准化交互表征转换为可执行机器人行为。已完成 Summer Research Internship Programme 2026，隶属 [Miro Dynamics–HKU CGVU 联合实验室](https://hku-cg.github.io/)。"
       },
       {
         "company": "上海交通大学",
-        "href": "",
+        "href": "https://soai.sjtu.edu.cn/",
         "badges": [],
         "location": "",
-        "title": "科研助理 · 赵波老师课题组",
+        "title": "科研助理 · [赵波](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo) 老师课题组",
         "logoUrl": "",
         "start": "2025.06",
         "end": "2026.04",

@@ -10,6 +10,21 @@
         "date": "2026",
         "title": "Evo-1 · CVPR 2026",
         "content": "[Evo-1: Lightweight Vision-Language-Action Model with Preserved Semantic Alignment](https://arxiv.org/abs/2511.04555)."
+      },
+      {
+        "date": "2026",
+        "title": "Evo-Depth preprint released",
+        "content": "Co-first author; primarily responsible for model design and experiments. [arXiv:2605.14950](https://arxiv.org/abs/2605.14950)."
+      },
+      {
+        "date": "2025",
+        "title": "Evo-0 on arXiv",
+        "content": "[Evo-0: Vision-Language-Action Model with Implicit Spatial Understanding](https://arxiv.org/abs/2507.00416)."
+      },
+      {
+        "date": "2025",
+        "title": "Joined Bo Zhao's group at Shanghai Jiao Tong University",
+        "content": "Research on embodied intelligence and vision-language-action models."
       }
     ]
   },
@@ -31,6 +46,11 @@
             "type": "Paper",
             "href": "https://arxiv.org/abs/2605.14950",
             "icon": "paper"
+          },
+          {
+            "type": "Code",
+            "href": "https://github.com/liujiting123/Evo_depth",
+            "icon": "github"
           }
         ],
         "image": "",
@@ -51,6 +71,16 @@
             "type": "Paper",
             "href": "https://arxiv.org/abs/2511.04555",
             "icon": "paper"
+          },
+          {
+            "type": "Code",
+            "href": "https://github.com/liujiting123/Evo-1",
+            "icon": "github"
+          },
+          {
+            "type": "Project",
+            "href": "https://mint-sjtu.github.io/Evo-1.io/",
+            "icon": "globe"
           }
         ],
         "image": "",
@@ -87,6 +117,16 @@
             "type": "Paper",
             "href": "https://arxiv.org/abs/2511.04555",
             "icon": "paper"
+          },
+          {
+            "type": "Code",
+            "href": "https://github.com/liujiting123/Evo-1",
+            "icon": "github"
+          },
+          {
+            "type": "Project",
+            "href": "https://mint-sjtu.github.io/Evo-1.io/",
+            "icon": "globe"
           }
         ],
         "image": "",
@@ -108,6 +148,11 @@
             "type": "Paper",
             "href": "https://arxiv.org/abs/2605.14950",
             "icon": "paper"
+          },
+          {
+            "type": "Code",
+            "href": "https://github.com/liujiting123/Evo_depth",
+            "icon": "github"
           }
         ],
         "image": "",
@@ -191,21 +236,21 @@
     "items": [
       {
         "company": "The University of Hong Kong · School of Computing and Data Science",
-        "href": "",
-        "badges": [],
+        "href": "https://www.cds.hku.hk/",
+        "badges": ["Miro Dynamics–HKU CGVU Joint Lab"],
         "location": "",
-        "title": "Research Assistant · Taku Komura’s group",
+        "title": "Research Assistant · [Taku Komura](https://www.cs.hku.hk/index.php/people/academic-staff/taku)’s group",
         "logoUrl": "",
         "start": "2026",
         "end": "",
-        "description": "Cross-embodiment action retargeting for dexterous robot manipulation. Responsible for converting standardized interaction representations into executable robot behavior. Completed the Summer Research Internship Programme 2026."
+        "description": "Cross-embodiment action retargeting for dexterous robot manipulation. Responsible for converting standardized interaction representations into executable robot behavior. Completed the Summer Research Internship Programme 2026 within the [Miro Dynamics–HKU CGVU Joint Lab](https://hku-cg.github.io/)."
       },
       {
         "company": "Shanghai Jiao Tong University",
-        "href": "",
+        "href": "https://soai.sjtu.edu.cn/",
         "badges": [],
         "location": "",
-        "title": "Research Assistant · Bo Zhao’s group",
+        "title": "Research Assistant · [Bo Zhao](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo)’s group",
         "logoUrl": "",
         "start": "2025.06",
         "end": "2026.04",

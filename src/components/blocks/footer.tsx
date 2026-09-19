@@ -174,7 +174,7 @@ export default function Footer() {
                 {t.resources.blog}
               </Link>
               <a
-                href="/resume.pdf"
+                href={isChinese ? "/resume.pdf" : "/resume-en.pdf"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground block text-sm transition-colors"

@@ -2,7 +2,6 @@ import { getTranslations } from "next-intl/server";
 import type {
   BlogPosting,
   BreadcrumbList,
-  Country,
   EducationalOrganization,
   Occupation,
   Organization,
@@ -98,13 +97,15 @@ async function getSocialMediaUrls(
 
 async function getAddress(
   locale: Locale = DEFAULT_LOCALE,
-): Promise<PostalAddress> {
+): Promise<PostalAddress | undefined> {
   const t = await getTranslations({ locale });
-  const addressCountry: Country = { "@type": "Country", name: "Singapore" };
+  const locality = t("location.name");
+  if (!locality) {
+    return undefined;
+  }
   const address: PostalAddress = {
     "@type": "PostalAddress",
-    addressLocality: t("location.name"),
-    addressCountry,
+    addressLocality: locality,
   };
   return address;
 }
@@ -236,10 +237,14 @@ export async function generatePersonJsonLd(
     /* Contact Info */
     email: socialData.email.url,
     sameAs: await getSocialMediaUrls(locale),
-    address: await getAddress(locale),
     /* Education Info */
     alumniOf: await getEducation(locale),
   };
+
+  const address = await getAddress(locale);
+  if (address) {
+    personJsonLd.address = address;
+  }
 
   // Only add knowsAbout if skills exist
   if (skills.length > 0) {
