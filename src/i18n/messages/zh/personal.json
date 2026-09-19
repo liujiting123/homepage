@@ -9,7 +9,7 @@
   "headline": "机器人学习与具身智能\n四川农业大学数学专业本科生",
   "welcome": "欢迎访问我的个人主页！",
   "ogImageUrl": "jitingliu.com",
-  "bioMarkdown": "我是**四川农业大学数学专业本科生**，预计于 **2028 年毕业**。研究方向为**机器人学习与具身智能**，重点关注通用机器人策略、空间表征学习与跨本体泛化；Google Scholar 累计引用 **112** 次。\n\n我在**香港大学 [Taku Komura](https://www.cs.hku.hk/index.php/people/academic-staff/taku) 课题组**（[Miro Dynamics–HKU CGVU 联合实验室](https://hku-cg.github.io/)）开展跨本体动作重定向研究，面向灵巧机器人操作，并已完成香港大学计算与数据科学学院 **Summer Research Internship Programme 2026**。此前，我于 **2025 年 6 月至 2026 年 4 月**在**上海交通大学 [赵波](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo) 老师课题组**开展视觉-语言-动作模型相关研究。\n\n代表性成果包括 **Evo-Depth**（共同第一作者，主要负责模型设计与实验）和 **Evo-1**（CVPR 2026）。更多信息见[个人简历](/resume.pdf)。",
+  "bioMarkdown": "我是**四川农业大学数学专业本科生**，预计于 **2028 年毕业**。\n\n目前，我在**香港大学** [Taku Komura 教授课题组](https://www.cs.hku.hk/index.php/people/academic-staff/taku)担任科研助理（Research Assistant），所在团队为 [Miro Dynamics–HKU CGVU 联合实验室](https://hku-cg.github.io/mirod-lab/)。**2025–2026 年**，我在**上海交通大学** [赵波老师](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo)的 [MINT 实验室](https://mint-sjtu.github.io/)担任科研助理（Research Assistant）。",
   "location": {
     "name": "",
     "mapUrl": ""
@@ -22,10 +22,7 @@
       "技能名称、熟练程度，以及可验证的项目或成果",
       "优先填写机器人、机器学习、编程和工具链能力"
     ],
-    "awards": [
-      "年份、奖项全称、授予机构",
-      "如有，补充证书、公告或项目链接"
-    ],
+    "awards": ["年份、奖项全称、授予机构", "如有，补充证书、公告或项目链接"],
     "academicServices": [
       "会议或期刊审稿：名称、年份与角色",
       "助教或课程服务：课程名、机构、时间与职责"
@@ -34,5 +31,14 @@
       "日期、主办方、报告标题",
       "报告链接、幻灯片或视频，以及可选 logo"
     ]
+  },
+  "acknowledgementsMarkdown": "感谢[赵波老师](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo)、[李根教授](https://www.genli.top/)、[林涛](https://dorayakilin.github.io/)和[杜雨新](https://yuxin-du-lab.github.io/)在交大期间的指导与支持，也感谢[廖周应成](https://zycliao.com/)和[王文佳](https://wenjiawang0312.github.io/)在港大的指导。我从这些交流与讨论中受益良多，也逐渐明确了自己的研究兴趣和思考问题的方式。",
+  "researchInterestsMarkdown": "我的研究兴趣是**机器人学习与具身智能**，关注机器人如何从视觉与空间信息中学习操作技能，并将这些技能迁移到不同任务和本体。具体方向包括**通用机器人策略**、**空间表征学习**与**跨本体泛化**。",
+  "phdSearch": {
+    "title": "寻找 2028 年秋季入学的博士机会",
+    "description": "申请方向为机器人学习与具身智能。欢迎相关方向的导师与研究团队联系交流。",
+    "contactLabel": "联系我",
+    "cvLabel": "查看简历",
+    "cvHref": "/resume.pdf"
   }
 }

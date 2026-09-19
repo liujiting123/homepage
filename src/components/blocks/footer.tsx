@@ -27,8 +27,8 @@ export default function Footer() {
         projects: "Projects",
         education: "Education",
         experience: "Experience",
-        skills: "Skills",
-        awards: "Awards",
+        publications: "Publications",
+        services: "Academic Services",
       },
       sections: {
         quickNavigation: "Quick Navigation",
@@ -61,8 +61,8 @@ export default function Footer() {
         projects: "项目",
         education: "教育",
         experience: "经历",
-        skills: "技能",
-        awards: "奖项",
+        publications: "论文",
+        services: "学术服务",
       },
       sections: {
         quickNavigation: "快速导航",
@@ -99,8 +99,8 @@ export default function Footer() {
     { name: t.navigation.projects, href: "#projects" },
     { name: t.navigation.education, href: "#education" },
     { name: t.navigation.experience, href: "#work" },
-    { name: t.navigation.skills, href: "#skills" },
-    { name: t.navigation.awards, href: "#awards" },
+    { name: t.navigation.publications, href: "#publications" },
+    { name: t.navigation.services, href: "#academic-services" },
   ];
 
   return (
@@ -116,7 +116,7 @@ export default function Footer() {
               {translatedNavigationSections.map((section) => (
                 <Link
                   key={section.name}
-                  href={section.href}
+                  href={`${isChinese ? "/zh" : "/"}${section.href}`}
                   className="text-muted-foreground hover:text-foreground block text-sm transition-colors"
                 >
                   {section.name}
@@ -244,14 +244,14 @@ export default function Footer() {
 
             <div className="text-muted-foreground flex items-center gap-2 text-sm">
               <Link
-                href={isChinese ? "/zh/privacy" : "/privacy"}
+                href={isChinese ? "/zh/privacy-policy" : "/privacy-policy"}
                 className="hover:text-foreground transition-colors"
               >
                 {t.legal.privacyPolicy}
               </Link>
               <span>•</span>
               <Link
-                href={isChinese ? "/zh/terms" : "/terms"}
+                href={isChinese ? "/zh/terms-of-service" : "/terms-of-service"}
                 className="hover:text-foreground transition-colors"
               >
                 {t.legal.termsDisclaimer}

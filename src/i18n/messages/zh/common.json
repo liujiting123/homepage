@@ -1,27 +1,27 @@
 {
     "sections": {
         "about": "关于我",
-        "selectedProjects": "精选项目",
+        "selectedProjects": "研究工作选介",
         "checkOutLatestWork": "查看我的最新作品",
         "research": "研究",
         "viewFullPublications": "查看我的完整出版物列表，请访问",
         "skills": "技能",
         "education": "教育背景",
-        "workExperience": "实习与工作经历",
+        "workExperience": "科研经历",
         "awards": "奖项与荣誉",
         "academicServices": "学术服务",
         "news": {
             "title": "最新动态"
         },
         "publications": {
-            "title": "发表论文"
+            "title": "论文与预印本"
         },
         "invitedTalks": {
             "title": "受邀报告"
         },
         "teaching": {
             "title": "教学",
-            "reviewerConferencesLabel": "会议审稿人：",
+            "reviewerConferencesLabel": "同行评审：",
             "reviewerJournalsLabel": "期刊审稿人：",
             "teachingLabel": "助教："
         },
@@ -32,7 +32,13 @@
         "askQuestions": "提问咨询",
         "exploreCollaboration": "探索合作机会",
         "coffeeChat": "15分钟咖啡聊天",
-        "schedule": "预约"
+        "schedule": "预约",
+        "acknowledgements": "致谢",
+        "materials": "补充材料",
+        "contribution": "我的工作",
+        "viewCertificate": "查看结题证明（PDF）",
+        "viewFigure": "查看完整图片",
+        "researchInterests": "研究兴趣"
     },
     "showAll": "显示全部",
     "navbar": {

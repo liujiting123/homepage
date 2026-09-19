@@ -1,4 +1,4 @@
-/** Site data only. The template layout and components are unchanged. */
+/** Shared site metadata. */
 export const BLUR_FADE_DELAY = 0.05;
 
 export const siteConfig = {

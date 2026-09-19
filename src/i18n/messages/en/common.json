@@ -1,27 +1,27 @@
 {
     "sections": {
         "about": "About",
-        "selectedProjects": "Selected Projects",
+        "selectedProjects": "Selected Work",
         "checkOutLatestWork": "Check out my latest work",
         "research": "Research",
         "viewFullPublications": "View the full list of my publications on",
         "skills": "Skills",
         "education": "Education",
-        "workExperience": "Internship & Work Experience",
+        "workExperience": "Research Experience",
         "awards": "Awards & Honors",
         "academicServices": "Academic Services",
         "news": {
             "title": "Latest News"
         },
         "publications": {
-            "title": "Publications"
+            "title": "Publications & Preprints"
         },
         "invitedTalks": {
             "title": "Invited Talks"
         },
         "teaching": {
             "title": "Teaching",
-            "reviewerConferencesLabel": "Conference Reviewer:",
+            "reviewerConferencesLabel": "Peer review:",
             "reviewerJournalsLabel": "Journal Reviewer:",
             "teachingLabel": "Teaching Assistant:"
         },
@@ -32,7 +32,13 @@
         "askQuestions": "Ask questions",
         "exploreCollaboration": "Explore collaboration opportunities",
         "coffeeChat": "15-minute coffee chat",
-        "schedule": "Schedule"
+        "schedule": "Schedule",
+        "acknowledgements": "Acknowledgements",
+        "materials": "Additional Materials",
+        "contribution": "My contribution",
+        "viewCertificate": "View certificate (PDF)",
+        "viewFigure": "View full figure",
+        "researchInterests": "Research Interests"
     },
     "showAll": "Show All",
     "navbar": {

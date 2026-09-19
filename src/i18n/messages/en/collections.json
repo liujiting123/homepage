@@ -2,9 +2,9 @@
   "news": {
     "items": [
       {
-        "date": "2026",
+        "date": "2026.09",
         "title": "Completed the HKU CDS Summer Research Internship Programme",
-        "content": "Project: Data-Driven Cross-Embodiment Action Retargeting for Dexterous Robot Manipulation."
+        "content": "[Certificate of completion](/certificates/hku-summer-research-2026.pdf). Project: Data-Driven Cross-Embodiment Action Retargeting for Dexterous Robot Manipulation."
       },
       {
         "date": "2026",
@@ -12,9 +12,9 @@
         "content": "[Evo-1: Lightweight Vision-Language-Action Model with Preserved Semantic Alignment](https://arxiv.org/abs/2511.04555)."
       },
       {
-        "date": "2026",
+        "date": "2026.05",
         "title": "Evo-Depth preprint released",
-        "content": "Co-first author; primarily responsible for model design and experiments. [arXiv:2605.14950](https://arxiv.org/abs/2605.14950)."
+        "content": "Co-first author; responsible for model design, code implementation, training, and evaluation. [Paper](https://arxiv.org/abs/2605.14950)."
       },
       {
         "date": "2025",
@@ -35,11 +35,8 @@
         "href": "https://arxiv.org/abs/2605.14950",
         "dates": "2026",
         "active": true,
-        "description": "A lightweight depth-enhanced vision-language-action model. Co-first author; model design and experiments.",
-        "technologies": [
-          "Co-first author",
-          "Preprint"
-        ],
+        "description": "A lightweight vision-language-action model that uses implicit depth cues from RGB observations to improve spatially grounded manipulation without additional depth sensors.",
+        "technologies": ["Co-first author", "Preprint"],
         "authors": "",
         "links": [
           {
@@ -49,54 +46,15 @@
           },
           {
             "type": "Code",
-            "href": "https://github.com/liujiting123/Evo_depth",
+            "href": "https://github.com/MINT-SJTU/Evo-Depth",
             "icon": "github"
           }
         ],
-        "image": "",
-        "video": ""
-      },
-      {
-        "title": "Evo-1",
-        "href": "https://arxiv.org/abs/2511.04555",
-        "dates": "CVPR 2026",
-        "active": true,
-        "description": "A lightweight vision-language-action model with preserved semantic alignment.",
-        "technologies": [
-          "CVPR 2026"
-        ],
-        "authors": "",
-        "links": [
-          {
-            "type": "Paper",
-            "href": "https://arxiv.org/abs/2511.04555",
-            "icon": "paper"
-          },
-          {
-            "type": "Code",
-            "href": "https://github.com/liujiting123/Evo-1",
-            "icon": "github"
-          },
-          {
-            "type": "Project",
-            "href": "https://mint-sjtu.github.io/Evo-1.io/",
-            "icon": "globe"
-          }
-        ],
-        "image": "",
-        "video": ""
-      },
-      {
-        "title": "Cross-Embodiment Action Retargeting",
-        "href": "",
-        "dates": "2026",
-        "active": true,
-        "description": "Data-driven cross-embodiment action retargeting for dexterous robot manipulation. Responsible for converting standardized interaction representations into executable robot behavior while preserving task intent, object motion, and contact structure.",
-        "technologies": [],
-        "authors": "",
-        "links": [],
-        "image": "",
-        "video": ""
+        "image": "/research/evo-depth-overview.webp",
+        "video": "",
+        "contribution": "Model design, code implementation, training, and evaluation.",
+        "imageAlt": "Evo-Depth architecture and progressive alignment training: implicit depth encoding, spatial enhancement, and action prediction.",
+        "imageCaption": "Architecture and training overview · Figure 2 from the paper"
       }
     ]
   },
@@ -108,9 +66,7 @@
         "dates": "CVPR 2026",
         "active": true,
         "description": "CVPR 2026, pp. 13397–13406.",
-        "technologies": [
-          "CVPR 2026"
-        ],
+        "technologies": ["CVPR 2026"],
         "authors": "**Authors:** Tao Lin, Yilei Zhong, Yuxin Du, Jingjing Zhang, **Jiting Liu**, et al.",
         "links": [
           {
@@ -120,7 +76,7 @@
           },
           {
             "type": "Code",
-            "href": "https://github.com/liujiting123/Evo-1",
+            "href": "https://github.com/MINT-SJTU/Evo-1",
             "icon": "github"
           },
           {
@@ -137,11 +93,8 @@
         "href": "https://arxiv.org/abs/2605.14950",
         "dates": "2026",
         "active": true,
-        "description": "Preprint, arXiv:2605.14950. Co-first author; primarily responsible for model design and experiments.",
-        "technologies": [
-          "Preprint",
-          "Co-first author"
-        ],
+        "description": "Preprint, arXiv:2605.14950. Co-first author.",
+        "technologies": ["Preprint", "Co-first author"],
         "authors": "**Authors:** Tao Lin, Yuxin Du, **Jiting Liu**, et al.",
         "links": [
           {
@@ -151,7 +104,7 @@
           },
           {
             "type": "Code",
-            "href": "https://github.com/liujiting123/Evo_depth",
+            "href": "https://github.com/MINT-SJTU/Evo-Depth",
             "icon": "github"
           }
         ],
@@ -164,9 +117,7 @@
         "dates": "2026",
         "active": true,
         "description": "Preprint, arXiv:2605.11756.",
-        "technologies": [
-          "Preprint"
-        ],
+        "technologies": ["Preprint"],
         "authors": "**Authors:** Yuxin Du, Tao Lin, Zile Zhong, Runting Li, Xiyao Chen, **Jiting Liu**, et al.",
         "links": [
           {
@@ -184,9 +135,7 @@
         "dates": "2026",
         "active": true,
         "description": "Preprint, arXiv:2606.27295.",
-        "technologies": [
-          "Preprint"
-        ],
+        "technologies": ["Preprint"],
         "authors": "**Authors:** Tao Lin, Yuxin Du, Yiran Mao, Zewei Ye, Yilei Zhong, Bing Cheng, Yiming Wang, **Jiting Liu**, et al.",
         "links": [
           {
@@ -204,9 +153,7 @@
         "dates": "2025",
         "active": true,
         "description": "Preprint, arXiv:2507.00416.",
-        "technologies": [
-          "Preprint"
-        ],
+        "technologies": ["Preprint"],
         "authors": "**Authors:** Tao Lin, Gen Li, Yilei Zhong, Yanwen Zou, Yuxin Du, **Jiting Liu**, et al.",
         "links": [
           {
@@ -223,7 +170,7 @@
   "education": {
     "items": [
       {
-        "school": "Sichuan Agricultural University",
+        "school": "SICAU",
         "href": "",
         "degree": "Undergraduate in Mathematics · Major rank: 7/180",
         "logoUrl": "",
@@ -236,25 +183,25 @@
     "items": [
       {
         "company": "The University of Hong Kong · School of Computing and Data Science",
-        "href": "https://www.cds.hku.hk/",
-        "badges": ["Miro Dynamics–HKU CGVU Joint Lab"],
-        "location": "",
-        "title": "Research Assistant · [Taku Komura](https://www.cs.hku.hk/index.php/people/academic-staff/taku)’s group",
-        "logoUrl": "",
-        "start": "2026",
-        "end": "",
-        "description": "Cross-embodiment action retargeting for dexterous robot manipulation. Responsible for converting standardized interaction representations into executable robot behavior. Completed the Summer Research Internship Programme 2026 within the [Miro Dynamics–HKU CGVU Joint Lab](https://hku-cg.github.io/)."
-      },
-      {
-        "company": "Shanghai Jiao Tong University",
-        "href": "https://soai.sjtu.edu.cn/",
+        "href": "https://hku-cg.github.io/mirod-lab/",
         "badges": [],
         "location": "",
-        "title": "Research Assistant · [Bo Zhao](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo)’s group",
+        "title": "Research Assistant",
         "logoUrl": "",
-        "start": "2025.06",
-        "end": "2026.04",
-        "description": "Embodied AI and vision-language-action models. Representative work: Evo-Depth (co-first author) and Evo-1 (CVPR 2026)."
+        "start": "2026",
+        "end": "Present",
+        "description": "**Group:** [Prof. Taku Komura](https://www.cs.hku.hk/index.php/people/academic-staff/taku) · [Miro Dynamics–HKU CGVU Joint Lab](https://hku-cg.github.io/mirod-lab/). **Mentors:** [Zhouyingcheng Liao](https://zycliao.com/) and [Wenjia Wang](https://wenjiawang0312.github.io/).\n\nWork on **MiroCap** and cross-embodiment action retargeting for dexterous manipulation, translating standardized interaction representations into executable robot behavior while preserving task intent, object motion, and contact structure."
+      },
+      {
+        "company": "Shanghai Jiao Tong University · MINT Lab",
+        "href": "https://mint-sjtu.github.io/",
+        "badges": [],
+        "location": "",
+        "title": "Research Assistant",
+        "logoUrl": "",
+        "start": "2025",
+        "end": "2026",
+        "description": "**Group:** [Prof. Bo Zhao](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo). **Mentors:** [Prof. Gen Li](https://www.genli.top/), [Tao Lin](https://dorayakilin.github.io/), and [Yuxin Du](https://yuxin-du-lab.github.io/).\n\nResearch on embodied AI and vision-language-action models. Co-first author of **Evo-Depth**, responsible for model design, code implementation, training, and evaluation; co-author of **Evo-1** (CVPR 2026)."
       }
     ]
   },
@@ -268,7 +215,7 @@
     "items": []
   },
   "skills": [],
-  "reviewerConferences": [],
+  "reviewerConferences": ["NeurIPS 2026 · Invited reviewer"],
   "reviewerJournals": [],
   "social": {
     "GitHub": {
@@ -463,5 +410,17 @@
       "content": false,
       "footer": false
     }
+  },
+  "materials": {
+    "items": [
+      {
+        "title": "HKU Summer Research Internship Programme 2026",
+        "date": "September 2026",
+        "description": "Certificate of completion issued by the School of Computing and Data Science, The University of Hong Kong, for Data-Driven Cross-Embodiment Action Retargeting for Dexterous Robot Manipulation.",
+        "href": "/certificates/hku-summer-research-2026.pdf",
+        "image": "/certificates/hku-summer-research-2026.webp",
+        "imageAlt": "HKU certificate of completion issued to Jiting Liu on September 1, 2026."
+      }
+    ]
   }
 }

@@ -9,7 +9,7 @@
   "headline": "Robot Learning & Embodied AI\nUndergraduate in Mathematics",
   "welcome": "Welcome to my homepage!",
   "ogImageUrl": "jitingliu.com",
-  "bioMarkdown": "I am an undergraduate in Mathematics at **Sichuan Agricultural University**, expecting to graduate in **2028**. My research focuses on **robot learning and embodied AI**, with an emphasis on general-purpose robot policies, spatial representation learning, and cross-embodiment generalization; my work has accumulated **112** Google Scholar citations.\n\nMy research experience includes work in **[Taku Komura’s group](https://www.cs.hku.hk/index.php/people/academic-staff/taku) at The University of Hong Kong** ([Miro Dynamics–HKU CGVU Joint Lab](https://hku-cg.github.io/)), where I focus on cross-embodiment action retargeting for dexterous robot manipulation. I have completed the School of Computing and Data Science’s **Summer Research Internship Programme 2026**. Previously, I worked in **[Bo Zhao’s group](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo) at Shanghai Jiao Tong University** from June 2025 to April 2026, studying vision-language-action models.\n\nMy work includes **Evo-Depth** (co-first author; model design and experiments) and **Evo-1** (CVPR 2026). More details are available in my [CV](/resume-en.pdf).",
+  "bioMarkdown": "I am an undergraduate in Mathematics at **SICAU**, with expected graduation in **2028**.\n\nI am currently a Research Assistant in [Prof. Taku Komura’s group](https://www.cs.hku.hk/index.php/people/academic-staff/taku) at **The University of Hong Kong** ([Miro Dynamics–HKU CGVU Joint Lab](https://hku-cg.github.io/mirod-lab/)). Previously, I was a Research Assistant in [Prof. Bo Zhao’s](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo) [MINT Lab](https://mint-sjtu.github.io/) at **Shanghai Jiao Tong University** (**2025–2026**).",
   "location": {
     "name": "",
     "mapUrl": ""
@@ -34,5 +34,14 @@
       "Date, host, and talk title",
       "Talk, slide, or video link, plus an optional logo"
     ]
+  },
+  "acknowledgementsMarkdown": "I am grateful to [Prof. Bo Zhao](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo), [Prof. Gen Li](https://www.genli.top/), [Tao Lin](https://dorayakilin.github.io/), and [Yuxin Du](https://yuxin-du-lab.github.io/) for their mentorship and support during my research at SJTU, and to [Zhouyingcheng Liao](https://zycliao.com/) and [Wenjia Wang](https://wenjiawang0312.github.io/) for their guidance at HKU. Their advice and our discussions have helped shape my research interests and how I approach research problems.",
+  "researchInterestsMarkdown": "My research interests lie in **robot learning and embodied AI**. I am interested in how robots can learn manipulation skills from visual and spatial information, and transfer those skills across tasks and embodiments. My current focus is on **general-purpose robot policies**, **spatial representation learning**, and **cross-embodiment generalization**.",
+  "phdSearch": {
+    "title": "PhD opportunities · Fall 2028",
+    "description": "I am looking for PhD opportunities starting in Fall 2028, with a focus on robot learning and embodied AI. I would be glad to hear from potential advisors working in these areas.",
+    "contactLabel": "Get in touch",
+    "cvLabel": "View CV",
+    "cvHref": "/resume-en.pdf"
   }
 }

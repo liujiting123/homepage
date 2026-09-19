@@ -2,9 +2,9 @@
   "news": {
     "items": [
       {
-        "date": "2026",
+        "date": "2026.09",
         "title": "已完成香港大学 CDS 暑期科研实习项目",
-        "content": "课题：Data-Driven Cross-Embodiment Action Retargeting for Dexterous Robot Manipulation。"
+        "content": "[结题证明](/certificates/hku-summer-research-2026.pdf)。课题：Data-Driven Cross-Embodiment Action Retargeting for Dexterous Robot Manipulation。"
       },
       {
         "date": "2026",
@@ -12,9 +12,9 @@
         "content": "[Evo-1: Lightweight Vision-Language-Action Model with Preserved Semantic Alignment](https://arxiv.org/abs/2511.04555)."
       },
       {
-        "date": "2026",
+        "date": "2026.05",
         "title": "Evo-Depth 预印本发布",
-        "content": "共同第一作者，主要负责模型设计与实验。[arXiv:2605.14950](https://arxiv.org/abs/2605.14950)。"
+        "content": "共同第一作者，负责模型设计、代码实现、训练与评测。[论文](https://arxiv.org/abs/2605.14950)。"
       },
       {
         "date": "2025",
@@ -35,11 +35,8 @@
         "href": "https://arxiv.org/abs/2605.14950",
         "dates": "2026",
         "active": true,
-        "description": "轻量级深度增强视觉-语言-动作模型。共同第一作者，主要负责模型设计与实验。",
-        "technologies": [
-          "共同第一作者",
-          "预印本"
-        ],
+        "description": "通过 RGB 观测中的隐式深度线索增强空间感知，无需额外深度传感器的轻量级视觉—语言—动作模型。",
+        "technologies": ["共同第一作者", "预印本"],
         "authors": "",
         "links": [
           {
@@ -49,54 +46,15 @@
           },
           {
             "type": "代码",
-            "href": "https://github.com/liujiting123/Evo_depth",
+            "href": "https://github.com/MINT-SJTU/Evo-Depth",
             "icon": "github"
           }
         ],
-        "image": "",
-        "video": ""
-      },
-      {
-        "title": "Evo-1",
-        "href": "https://arxiv.org/abs/2511.04555",
-        "dates": "CVPR 2026",
-        "active": true,
-        "description": "保留语义对齐的轻量级视觉-语言-动作模型。",
-        "technologies": [
-          "CVPR 2026"
-        ],
-        "authors": "",
-        "links": [
-          {
-            "type": "论文",
-            "href": "https://arxiv.org/abs/2511.04555",
-            "icon": "paper"
-          },
-          {
-            "type": "代码",
-            "href": "https://github.com/liujiting123/Evo-1",
-            "icon": "github"
-          },
-          {
-            "type": "项目页",
-            "href": "https://mint-sjtu.github.io/Evo-1.io/",
-            "icon": "globe"
-          }
-        ],
-        "image": "",
-        "video": ""
-      },
-      {
-        "title": "跨本体动作重定向",
-        "href": "",
-        "dates": "2026",
-        "active": true,
-        "description": "面向灵巧机器人操作的数据驱动跨本体动作重定向。负责重定向研究，将标准化交互表征转换为可执行机器人行为，保留任务意图、物体运动与接触结构，并适配具体的执行方式。",
-        "technologies": [],
-        "authors": "",
-        "links": [],
-        "image": "",
-        "video": ""
+        "image": "/research/evo-depth-overview.webp",
+        "video": "",
+        "contribution": "负责模型设计、代码实现、训练与评测。",
+        "imageAlt": "Evo-Depth 模型架构与渐进式对齐训练：隐式深度编码、空间增强与动作预测。",
+        "imageCaption": "模型架构与训练流程 · 原论文图 2"
       }
     ]
   },
@@ -108,9 +66,7 @@
         "dates": "CVPR 2026",
         "active": true,
         "description": "CVPR 2026，pp. 13397–13406。",
-        "technologies": [
-          "CVPR 2026"
-        ],
+        "technologies": ["CVPR 2026"],
         "authors": "**作者：** Tao Lin, Yilei Zhong, Yuxin Du, Jingjing Zhang, **Jiting Liu**, et al.",
         "links": [
           {
@@ -120,7 +76,7 @@
           },
           {
             "type": "代码",
-            "href": "https://github.com/liujiting123/Evo-1",
+            "href": "https://github.com/MINT-SJTU/Evo-1",
             "icon": "github"
           },
           {
@@ -137,11 +93,8 @@
         "href": "https://arxiv.org/abs/2605.14950",
         "dates": "2026",
         "active": true,
-        "description": "预印本，arXiv:2605.14950。共同第一作者，主要负责模型设计与实验。",
-        "technologies": [
-          "预印本",
-          "共同第一作者"
-        ],
+        "description": "预印本，arXiv:2605.14950。共同第一作者。",
+        "technologies": ["预印本", "共同第一作者"],
         "authors": "**作者：** Tao Lin, Yuxin Du, **Jiting Liu**, et al.",
         "links": [
           {
@@ -151,7 +104,7 @@
           },
           {
             "type": "代码",
-            "href": "https://github.com/liujiting123/Evo_depth",
+            "href": "https://github.com/MINT-SJTU/Evo-Depth",
             "icon": "github"
           }
         ],
@@ -164,9 +117,7 @@
         "dates": "2026",
         "active": true,
         "description": "预印本，arXiv:2605.11756。",
-        "technologies": [
-          "预印本"
-        ],
+        "technologies": ["预印本"],
         "authors": "**作者：** Yuxin Du, Tao Lin, Zile Zhong, Runting Li, Xiyao Chen, **Jiting Liu**, et al.",
         "links": [
           {
@@ -184,9 +135,7 @@
         "dates": "2026",
         "active": true,
         "description": "预印本，arXiv:2606.27295。",
-        "technologies": [
-          "预印本"
-        ],
+        "technologies": ["预印本"],
         "authors": "**作者：** Tao Lin, Yuxin Du, Yiran Mao, Zewei Ye, Yilei Zhong, Bing Cheng, Yiming Wang, **Jiting Liu**, et al.",
         "links": [
           {
@@ -204,9 +153,7 @@
         "dates": "2025",
         "active": true,
         "description": "预印本，arXiv:2507.00416。",
-        "technologies": [
-          "预印本"
-        ],
+        "technologies": ["预印本"],
         "authors": "**作者：** Tao Lin, Gen Li, Yilei Zhong, Yanwen Zou, Yuxin Du, **Jiting Liu**, et al.",
         "links": [
           {
@@ -236,25 +183,25 @@
     "items": [
       {
         "company": "香港大学计算与数据科学学院",
-        "href": "https://www.cds.hku.hk/",
-        "badges": ["Miro Dynamics–HKU CGVU 联合实验室"],
-        "location": "",
-        "title": "科研助理 · [Taku Komura](https://www.cs.hku.hk/index.php/people/academic-staff/taku) 课题组",
-        "logoUrl": "",
-        "start": "2026",
-        "end": "",
-        "description": "研究跨本体动作重定向，面向灵巧机器人操作；负责将标准化交互表征转换为可执行机器人行为。已完成 Summer Research Internship Programme 2026，隶属 [Miro Dynamics–HKU CGVU 联合实验室](https://hku-cg.github.io/)。"
-      },
-      {
-        "company": "上海交通大学",
-        "href": "https://soai.sjtu.edu.cn/",
+        "href": "https://hku-cg.github.io/mirod-lab/",
         "badges": [],
         "location": "",
-        "title": "科研助理 · [赵波](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo) 老师课题组",
+        "title": "科研助理（Research Assistant）",
         "logoUrl": "",
-        "start": "2025.06",
-        "end": "2026.04",
-        "description": "研究具身智能与视觉-语言-动作模型。代表性成果：Evo-Depth（共同第一作者）、Evo-1（CVPR 2026）。"
+        "start": "2026",
+        "end": "至今",
+        "description": "**课题组：** [Taku Komura 教授](https://www.cs.hku.hk/index.php/people/academic-staff/taku) · [Miro Dynamics–HKU CGVU 联合实验室](https://hku-cg.github.io/mirod-lab/)。**Mentors：** [廖周应成](https://zycliao.com/)、[王文佳](https://wenjiawang0312.github.io/)。\n\n参与 **MiroCap** 项目，开展面向灵巧操作的跨本体动作重定向研究，将标准化交互表征转换为可执行机器人行为，并保留任务意图、物体运动与接触结构。"
+      },
+      {
+        "company": "上海交通大学 · MINT 实验室",
+        "href": "https://mint-sjtu.github.io/",
+        "badges": [],
+        "location": "",
+        "title": "科研助理（Research Assistant）",
+        "logoUrl": "",
+        "start": "2025",
+        "end": "2026",
+        "description": "**课题组：** [赵波老师](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo)。**Mentors：** [李根教授](https://www.genli.top/)、[林涛](https://dorayakilin.github.io/)、[杜雨新](https://yuxin-du-lab.github.io/)。\n\n开展具身智能与视觉—语言—动作模型研究。作为 **Evo-Depth** 共同第一作者，负责模型设计、代码实现、训练与评测；参与 **Evo-1**（CVPR 2026）工作。"
       }
     ]
   },
@@ -268,7 +215,7 @@
     "items": []
   },
   "skills": [],
-  "reviewerConferences": [],
+  "reviewerConferences": ["NeurIPS 2026 · 受邀审稿人"],
   "reviewerJournals": [],
   "social": {
     "GitHub": {
@@ -463,5 +410,17 @@
       "content": false,
       "footer": false
     }
+  },
+  "materials": {
+    "items": [
+      {
+        "title": "香港大学 2026 暑期科研实习结题证明",
+        "date": "2026 年 9 月",
+        "description": "由香港大学计算与数据科学学院签发，证明完成 Data-Driven Cross-Embodiment Action Retargeting for Dexterous Robot Manipulation 课题的暑期科研实习及结题汇报。",
+        "href": "/certificates/hku-summer-research-2026.pdf",
+        "image": "/certificates/hku-summer-research-2026.webp",
+        "imageAlt": "香港大学于 2026 年 9 月 1 日签发给刘纪霆的暑期科研实习结题证明。"
+      }
+    ]
   }
 }

@@ -1,14 +1,16 @@
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
-import Link from "next/link";
-import type React from "react";
+import type { ComponentProps } from "react";
 
-import { Icons } from "@/components/icons";
 import AwardsSection from "@/components/portfolio/awards-section";
 import Brief from "@/components/portfolio/brief";
-import Contact from "@/components/portfolio/contact";
 import Education from "@/components/portfolio/education";
 import NewsSection from "@/components/portfolio/news";
-import ProjectsSection from "@/components/portfolio/projects-section/projects-section";
+import {
+  FeaturedResearch,
+  PublicationList,
+  type ResearchItem,
+} from "@/components/portfolio/research";
 import Services from "@/components/portfolio/services";
 import Skills from "@/components/portfolio/skills";
 import SocialLinks from "@/components/portfolio/socallinks";
@@ -16,175 +18,58 @@ import Talks from "@/components/portfolio/talks";
 import Work from "@/components/portfolio/work";
 import { CustomReactMarkdown } from "@/components/react-markdown";
 import { BlurFade } from "@/components/ui/blur-fade";
-import { BLUR_FADE_DELAY, siteConfig } from "@/data/site";
+import { siteConfig } from "@/data/site";
 import { routing } from "@/i18n/routing";
 import { generatePersonJsonLd } from "@/lib/jsonld";
 import { transformSocialData } from "@/lib/social-icons";
-import { getIconComponent, jsonldScript } from "@/lib/utils";
+import { jsonldScript } from "@/lib/utils";
 
-function DraftPlaceholder({
-  label,
-  description,
-  items,
-}: {
-  label: string;
+interface Material {
+  title: string;
+  date: string;
   description: string;
-  items: readonly string[];
-}) {
-  return (
-    <div className="border-border bg-muted/30 rounded-lg border border-dashed p-4 text-sm">
-      <p className="text-foreground font-medium">
-        <span className="bg-foreground text-background mr-2 rounded px-2 py-0.5 text-xs">
-          {label}
-        </span>
-        {description}
-      </p>
-      <ul className="text-muted-foreground mt-3 list-disc space-y-1 pl-5">
-        {items.map((item) => (
-          <li key={item}>{item}</li>
-        ))}
-      </ul>
-    </div>
-  );
+  href: string;
+  image: string;
+  imageAlt: string;
 }
 
-export default async function Page(props: {
+export default async function Page({
+  params,
+}: {
   params: Promise<{ locale: string }>;
 }) {
-  const params = await props.params;
-  const locale = params.locale || routing.defaultLocale;
+  const locale = (await params).locale || routing.defaultLocale;
   const t = await getTranslations({ locale });
-
-  // Get data from i18n
-  const socialData = transformSocialData(
-    t.raw("social") as Record<
-      string,
-      {
-        name: string;
-        url: string;
-        icon: string;
-        navbar?: boolean;
-        content?: boolean;
-        footer?: boolean;
-      }
-    >,
-  );
-  // Helper function to safely get array fields
-  const getArrayField = <T,>(key: string): T[] => {
-    try {
-      const value = t.raw(key);
-      if (Array.isArray(value)) {
-        return value as T[];
-      }
-      return [];
-    } catch {
-      // If the key doesn't exist or any error occurs, return empty array
-      return [];
-    }
-  };
-
-  const skills = getArrayField<string>("skills");
-  const reviewerConferences = getArrayField<string>("reviewerConferences");
-  const reviewerJournals = getArrayField<string>("reviewerJournals");
-  const draftLabel = t("draft.label");
-  const draftDescription = t("draft.description");
-
   const personJsonLd = await generatePersonJsonLd(locale);
-
-  // Helper function to safely get collections items
-  const getCollectionItems = <T,>(key: string): T[] => {
-    try {
-      const parentKey = key.split(".")[0];
-      const collection = t.raw(parentKey) as
-        | { items?: T[] | undefined }
-        | undefined
-        | null;
-      // Check if collection exists and has items property that is an array
-      if (
-        collection &&
-        typeof collection === "object" &&
-        "items" in collection &&
-        Array.isArray(collection.items)
-      ) {
-        return collection.items as T[];
-      }
-      return [];
-    } catch {
-      // If the key doesn't exist or any error occurs, return empty array
-      return [];
-    }
-  };
-
-  // Get collections data and check if items are empty
-  const newsItems = getCollectionItems<{
-    date: string;
-    title: string;
-    content: string;
-  }>("news.items");
-  const projectsItems = getCollectionItems<{
-    title: string;
-    href?: string;
-    dates: string;
-    active: boolean;
-    description: string;
-    technologies: string[];
-    authors: string;
-    links?: Array<{ type: string; href: string; icon: string }>;
-    image?: string;
-    video?: string;
-  }>("projects.items");
-  const publicationsItems = getCollectionItems<{
-    title: string;
-    href?: string;
-    dates: string;
-    active: boolean;
-    description: string;
-    technologies: string[];
-    authors: string;
-    links?: Array<{ type: string; href: string; icon: string }>;
-    image?: string;
-    video?: string;
-  }>("publications.items");
-  const educationItems = getCollectionItems<{
-    school: string;
-    href: string;
-    degree: string;
-    logoUrl: string;
-    start: string;
-    end: string;
-  }>("education.items");
-  const workItems = getCollectionItems<{
-    company: string;
-    href: string;
-    badges: readonly string[];
-    location: string;
-    title: string;
-    logoUrl: string;
-    start: string;
-    end: string;
-    description: string;
-  }>("work.items");
-  const awardsItems = getCollectionItems<{
-    year: number;
-    title: string;
-  }>("awards.items");
-  const teachingItems = getCollectionItems<{
-    date: string;
-    title: string;
-    location: string;
-  }>("teaching.items");
-  const invitedTalksItems = getCollectionItems<{
-    host: string;
-    url: string;
-    date: string;
-    title: string;
-    logoUrl?: string;
-  }>("invitedTalks.items");
+  const socialData = transformSocialData(t.raw("social"));
+  const projects = t.raw("projects.items") as ResearchItem[];
+  const publications = t.raw("publications.items") as ResearchItem[];
+  const work = t.raw("work.items") as ComponentProps<typeof Work>["work"];
+  const education = t.raw("education.items") as ComponentProps<
+    typeof Education
+  >["educations"];
+  const news = t.raw("news.items") as ComponentProps<
+    typeof NewsSection
+  >["news"];
+  const awards = t.raw("awards.items") as ComponentProps<
+    typeof AwardsSection
+  >["awards"];
+  const talks = t.raw("invitedTalks.items") as ComponentProps<
+    typeof Talks
+  >["talks"];
+  const skills = t.raw("skills") as string[];
+  const conferences = t.raw("reviewerConferences") as string[];
+  const journals = t.raw("reviewerJournals") as string[];
+  const teaching = t.raw("teaching.items") as ComponentProps<
+    typeof Services
+  >["teaching"];
+  const materials = t.raw("materials.items") as Material[];
+  const proseClass =
+    "prose prose-base dark:prose-invert max-w-none text-muted-foreground prose-p:leading-8 prose-a:decoration-border prose-a:underline-offset-4 hover:prose-a:decoration-current prose-strong:font-semibold";
 
   return (
-    <main className="mx-auto flex min-h-dvh max-w-7xl flex-col space-y-8 px-6 py-8 pb-24 sm:space-y-10 sm:px-16 md:px-20 md:py-16 md:pt-14 lg:px-24 lg:py-20 xl:px-32 xl:py-24">
-      {/* Hero Section */}
-      <section id="hero" className="mt-16 sm:mt-28">
+    <main className="mx-auto flex max-w-5xl flex-col gap-12 px-6 pt-28 pb-20 sm:gap-14 sm:px-10 sm:pt-32 lg:px-12">
+      <section id="hero">
         {jsonldScript(personJsonLd)}
         <BlurFade delay={0}>
           <Brief
@@ -195,233 +80,245 @@ export default async function Page(props: {
             subtitle={t("subtitle")}
             description={t("headline")}
             avatarUrl={siteConfig.avatarUrl}
-            className="mx-auto w-full max-w-2xl space-y-8"
             locale={locale}
+            className="w-full"
           />
         </BlurFade>
-      </section>
-
-      {/* Social Links Section */}
-      <section id="social">
-        <BlurFade delay={BLUR_FADE_DELAY * 2}>
-          <SocialLinks socials={socialData} />
-        </BlurFade>
-      </section>
-
-      {/* About Section */}
-      <section id="about">
-        <BlurFade delay={BLUR_FADE_DELAY * 3}>
-          <h2 className="text-xl font-bold">{t("sections.about")}</h2>
-        </BlurFade>
-        <BlurFade delay={BLUR_FADE_DELAY * 4}>
-          <div className="prose text-muted-foreground dark:prose-invert max-w-full font-sans text-sm text-pretty [&_img]:my-0 [&_img]:inline-block [&_img]:h-[1em] [&_img]:w-auto [&_img]:align-baseline">
-            <CustomReactMarkdown>{t("bioMarkdown")}</CustomReactMarkdown>
+        <aside
+          id="phd-search"
+          aria-labelledby="phd-search-title"
+          className="mt-7 rounded-xl border border-sky-200 bg-sky-50/70 p-5 text-sky-950 sm:p-6 dark:border-sky-900 dark:bg-sky-950/25 dark:text-sky-100"
+        >
+          <h2 id="phd-search-title" className="text-lg font-semibold">
+            {t("phdSearch.title")}
+          </h2>
+          <p className="mt-2 max-w-3xl text-sm leading-7 text-sky-900/85 dark:text-sky-200/90">
+            {t("phdSearch.description")}
+          </p>
+          <div className="mt-4 flex flex-wrap items-center gap-5 text-sm font-medium">
+            <a
+              href={socialData.email.url}
+              className="rounded-md bg-sky-900 px-4 py-2 text-white hover:bg-sky-800 dark:bg-sky-100 dark:text-sky-950 dark:hover:bg-white"
+            >
+              {t("phdSearch.contactLabel")}
+            </a>
+            <a
+              href={t("phdSearch.cvHref")}
+              target="_blank"
+              rel="noreferrer"
+              className="underline underline-offset-4"
+            >
+              {t("phdSearch.cvLabel")} <span aria-hidden="true">↗</span>
+            </a>
           </div>
-        </BlurFade>
+        </aside>
+        <div className="mt-6">
+          <SocialLinks socials={socialData} />
+        </div>
+        <nav
+          aria-label={t("sections.research")}
+          className="border-border text-muted-foreground mt-7 flex flex-wrap justify-center gap-x-6 gap-y-3 border-b pb-6 text-sm"
+        >
+          {[
+            ["research-interests", t("sections.researchInterests")],
+            ["publications", t("sections.publications.title")],
+            ["work", t("sections.workExperience")],
+            ["acknowledgements", t("sections.acknowledgements")],
+            ["academic-services", t("sections.academicServices")],
+          ].map(([id, label]) => (
+            <a key={id} href={`#${id}`} className="hover:text-foreground">
+              {label}
+            </a>
+          ))}
+        </nav>
       </section>
 
-      {/* News Section */}
-      {newsItems && newsItems.length > 0 && (
-        <section id="news">
+      <section id="about" className="scroll-mt-24 space-y-4">
+        <h2 className="text-xl font-semibold">{t("sections.about")}</h2>
+        <CustomReactMarkdown className={proseClass}>
+          {t("bioMarkdown")}
+        </CustomReactMarkdown>
+      </section>
+
+      <section id="research-interests" className="scroll-mt-24 space-y-4">
+        <h2 className="text-xl font-semibold">
+          {t("sections.researchInterests")}
+        </h2>
+        <CustomReactMarkdown className={proseClass}>
+          {t("researchInterestsMarkdown")}
+        </CustomReactMarkdown>
+      </section>
+
+      {projects.length > 0 && (
+        <section id="projects" className="scroll-mt-24 space-y-5">
+          <h2 className="text-xl font-semibold">
+            {t("sections.selectedProjects")}
+          </h2>
+          <FeaturedResearch
+            items={projects}
+            contributionLabel={t("sections.contribution")}
+            figureLabel={t("sections.viewFigure")}
+          />
+        </section>
+      )}
+
+      {publications.length > 0 && (
+        <section id="publications" className="scroll-mt-24 space-y-6">
+          <div className="space-y-2">
+            <h2 className="text-xl font-semibold">
+              {t("sections.publications.title")}
+            </h2>
+            <p className="text-muted-foreground text-sm">
+              {t("sections.viewFullPublications")}{" "}
+              <a
+                href={socialData.GoogleScholar.url}
+                target="_blank"
+                rel="noreferrer"
+                className="underline underline-offset-4"
+              >
+                Google Scholar
+              </a>
+            </p>
+          </div>
+          <PublicationList items={publications} />
+        </section>
+      )}
+
+      {work.length > 0 && (
+        <section id="work" className="scroll-mt-24 space-y-6">
+          <h2 className="text-xl font-semibold">
+            {t("sections.workExperience")}
+          </h2>
+          <Work work={work} />
+        </section>
+      )}
+
+      <section id="acknowledgements" className="scroll-mt-24 space-y-4">
+        <h2 className="text-xl font-semibold">
+          {t("sections.acknowledgements")}
+        </h2>
+        <CustomReactMarkdown className={proseClass}>
+          {t("acknowledgementsMarkdown")}
+        </CustomReactMarkdown>
+      </section>
+
+      {education.length > 0 && (
+        <section id="education" className="scroll-mt-24 space-y-4">
+          <h2 className="text-xl font-semibold">{t("sections.education")}</h2>
+          <Education educations={education} />
+        </section>
+      )}
+
+      {(conferences.length > 0 ||
+        journals.length > 0 ||
+        teaching.length > 0) && (
+        <section id="academic-services" className="scroll-mt-24 space-y-4">
+          <h2 className="text-xl font-semibold">
+            {t("sections.academicServices")}
+          </h2>
+          <Services
+            reviewerConferences={conferences}
+            reviewerJournals={journals}
+            teaching={teaching}
+            reviewerConferencesLabel={t(
+              "sections.teaching.reviewerConferencesLabel",
+            )}
+            reviewerJournalsLabel={t("sections.teaching.reviewerJournalsLabel")}
+            teachingLabel={t("sections.teaching.teachingLabel")}
+          />
+        </section>
+      )}
+
+      {materials.length > 0 && (
+        <section id="materials" className="scroll-mt-24 space-y-5">
+          <h2 className="text-xl font-semibold">{t("sections.materials")}</h2>
+          {materials.map((item) => (
+            <article
+              key={item.href}
+              className="border-border flex flex-col gap-5 rounded-xl border p-5 sm:flex-row sm:items-center sm:gap-7"
+            >
+              <a
+                href={item.href}
+                target="_blank"
+                rel="noreferrer"
+                className="shrink-0 self-start"
+                aria-label={`${item.title}: ${t("sections.viewCertificate")}`}
+              >
+                <Image
+                  src={item.image}
+                  alt={item.imageAlt}
+                  width={596}
+                  height={842}
+                  sizes="128px"
+                  className="border-border h-auto w-32 rounded border"
+                />
+              </a>
+              <div className="space-y-3">
+                <p className="text-muted-foreground text-xs">{item.date}</p>
+                <h3 className="font-semibold">{item.title}</h3>
+                <p className="text-muted-foreground text-sm leading-7">
+                  {item.description}
+                </p>
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-block text-sm font-medium underline underline-offset-4"
+                >
+                  {t("sections.viewCertificate")}{" "}
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+          ))}
+        </section>
+      )}
+
+      {news.length > 0 && (
+        <section id="news" className="scroll-mt-24">
           <NewsSection
-            news={newsItems}
-            delay={BLUR_FADE_DELAY * 5}
+            news={news}
             title={t("sections.news.title")}
             showAllText={t("showAll")}
           />
         </section>
       )}
-
-      {/* Projects Section */}
-      {projectsItems && projectsItems.length > 0 && (
-        <section id="projects">
-          <div className="w-full space-y-12 py-12">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <div className="bg-foreground text-background inline-block rounded-lg px-3 py-1 text-sm">
-                  {t("sections.selectedProjects")}
-                </div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  {t("sections.checkOutLatestWork")}
-                </h2>
-              </div>
-            </div>
-            <ProjectsSection
-              projects={projectsItems.map((project) => ({
-                ...project,
-                links: project.links?.map((link) => ({
-                  ...link,
-                  icon: getIconComponent(link.icon),
-                })),
-              }))}
-              delay={BLUR_FADE_DELAY * 3}
-              mobileDisplayCount={4}
-              desktopDisplayCount={3}
-            />
-          </div>
+      {skills.length > 0 && (
+        <section id="skills" className="space-y-4">
+          <h2 className="text-xl font-semibold">{t("sections.skills")}</h2>
+          <Skills skills={skills} />
         </section>
       )}
-
-      {/* Publications Section */}
-      {publicationsItems && publicationsItems.length > 0 && (
-        <section id="publications">
-          <div className="w-full space-y-12 py-12">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <div className="bg-foreground text-background inline-block rounded-lg px-3 py-1 text-sm">
-                  {t("sections.research")}
-                </div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  {t("sections.publications.title")}
-                </h2>
-                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  {t("sections.viewFullPublications")}{" "}
-                  <Link
-                    href={socialData.GoogleScholar.url}
-                    className="text-foreground underline hover:no-underline"
-                    target="_blank"
-                  >
-                    {socialData.GoogleScholar.name}
-                  </Link>
-                </p>
-              </div>
-            </div>
-            <ProjectsSection
-              projects={publicationsItems.map((project) => ({
-                ...project,
-                links: project.links?.map((link) => ({
-                  ...link,
-                  icon: getIconComponent(link.icon),
-                })),
-              }))}
-              delay={BLUR_FADE_DELAY * 3}
-              mobileDisplayCount={6}
-              desktopDisplayCount={6}
-              showAllText={t("showAll")}
-            />
-          </div>
+      {awards.length > 0 && (
+        <section id="awards" className="space-y-4">
+          <h2 className="text-xl font-semibold">{t("sections.awards")}</h2>
+          <AwardsSection awards={awards} showAllText={t("showAll")} />
         </section>
       )}
-
-      {/* Skills Section */}
-      <section id="skills">
-        <div className="flex min-h-0 flex-col gap-y-3">
-          <h2 className="text-xl font-bold">{t("sections.skills")}</h2>
-          {Array.isArray(skills) && skills.length > 0 ? (
-            <Skills skills={skills} />
-          ) : (
-            <DraftPlaceholder
-              label={draftLabel}
-              description={draftDescription}
-              items={getArrayField<string>("draft.skills")}
-            />
-          )}
-        </div>
-      </section>
-
-      {/* Education Section */}
-      {educationItems && educationItems.length > 0 && (
-        <section id="education">
-          <div className="flex min-h-0 flex-col gap-y-3">
-            <h2 className="text-xl font-bold">{t("sections.education")}</h2>
-            <Education educations={educationItems} />
-          </div>
-        </section>
-      )}
-
-      {/* Work Section */}
-      {Array.isArray(workItems) && workItems.length > 0 && (
-        <section id="work">
-          <div className="flex min-h-0 flex-col gap-y-3">
-            <h2 className="text-xl font-bold">
-              {t("sections.workExperience")}
-            </h2>
-            <Work work={workItems} />
-          </div>
-        </section>
-      )}
-
-      {/* Awards Section */}
-      <section id="awards">
-        <div className="flex min-h-0 flex-col gap-y-3">
-          <h2 className="text-xl font-bold">{t("sections.awards")}</h2>
-          {awardsItems && awardsItems.length > 0 ? (
-          <AwardsSection awards={awardsItems} showAllText={t("showAll")} />
-          ) : (
-            <DraftPlaceholder
-              label={draftLabel}
-              description={draftDescription}
-              items={getArrayField<string>("draft.awards")}
-            />
-          )}
-        </div>
-      </section>
-
-      {/* Academic Services Section */}
-      <section id="academic-services">
-        <div className="flex min-h-0 flex-col gap-y-3">
-          <h2 className="text-xl font-bold">
-            {t("sections.academicServices")}
-          </h2>
-          {(reviewerConferences.length > 0 ||
-            reviewerJournals.length > 0 ||
-            teachingItems.length > 0) ? (
-            <Services
-              reviewerConferences={reviewerConferences}
-              reviewerJournals={reviewerJournals}
-              teaching={teachingItems}
-              reviewerConferencesLabel={t(
-                "sections.teaching.reviewerConferencesLabel",
-              )}
-              reviewerJournalsLabel={t(
-                "sections.teaching.reviewerJournalsLabel",
-              )}
-              teachingLabel={t("sections.teaching.teachingLabel")}
-            />
-          ) : (
-            <DraftPlaceholder
-              label={draftLabel}
-              description={draftDescription}
-              items={getArrayField<string>("draft.academicServices")}
-            />
-          )}
-        </div>
-      </section>
-
-      {/* Invited Talks Section */}
-      <section id="invited-talks">
-        <div className="flex min-h-0 flex-col gap-y-3">
-          <h2 className="text-xl font-bold">
+      {talks.length > 0 && (
+        <section id="invited-talks" className="space-y-4">
+          <h2 className="text-xl font-semibold">
             {t("sections.invitedTalks.title")}
           </h2>
-          {invitedTalksItems && invitedTalksItems.length > 0 ? (
-            <Talks talks={invitedTalksItems} showAllText={t("showAll")} />
-          ) : (
-            <DraftPlaceholder
-              label={draftLabel}
-              description={draftDescription}
-              items={getArrayField<string>("draft.invitedTalks")}
-            />
-          )}
-        </div>
-      </section>
+          <Talks talks={talks} showAllText={t("showAll")} />
+        </section>
+      )}
 
-      {/* Contact Section */}
-      <section id="contact">
-        <div className="grid w-full items-center justify-center gap-4 px-4 py-12 text-center md:px-6">
-          <Contact
-            emailUrl={socialData.email.url}
-            calendlyUrl={socialData.calendly?.url}
-            contactLabel={t("sections.contact")}
-            getInTouch={t("sections.getInTouch")}
-            contactDescription={t("sections.contactDescription")}
-            viaEmail={t("sections.viaEmail")}
-            askQuestions={t("sections.askQuestions")}
-            exploreCollaboration={t("sections.exploreCollaboration")}
-            coffeeChat={t("sections.coffeeChat")}
-            schedule={t("sections.schedule")}
-          />
-        </div>
+      <section
+        id="contact"
+        className="border-border scroll-mt-24 space-y-3 border-t pt-8"
+      >
+        <h2 className="text-xl font-semibold">{t("sections.getInTouch")}</h2>
+        <p className="text-muted-foreground text-sm leading-7">
+          {t("sections.contactDescription")}{" "}
+          <a
+            href={socialData.email.url}
+            className="text-foreground underline underline-offset-4"
+          >
+            {t("sections.viaEmail")}
+          </a>
+          .
+        </p>
       </section>
     </main>
   );
