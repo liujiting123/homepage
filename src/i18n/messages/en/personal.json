@@ -14,5 +14,25 @@
     "name": "",
     "mapUrl": ""
   },
-  "blogTagline": ""
+  "blogTagline": "",
+  "draft": {
+    "label": "To complete",
+    "description": "This section is retained; add the following material to replace this prompt.",
+    "skills": [
+      "Skill name, proficiency, and a verifiable project or outcome",
+      "Prioritize robotics, machine learning, programming, and tooling"
+    ],
+    "awards": [
+      "Year, full award title, and awarding organization",
+      "Add a certificate, announcement, or project link when available"
+    ],
+    "academicServices": [
+      "Conference or journal reviewing: venue, year, and role",
+      "Teaching or course service: course, institution, dates, and responsibilities"
+    ],
+    "invitedTalks": [
+      "Date, host, and talk title",
+      "Talk, slide, or video link, plus an optional logo"
+    ]
+  }
 }

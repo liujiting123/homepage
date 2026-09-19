@@ -22,6 +22,32 @@ import { generatePersonJsonLd } from "@/lib/jsonld";
 import { transformSocialData } from "@/lib/social-icons";
 import { getIconComponent, jsonldScript } from "@/lib/utils";
 
+function DraftPlaceholder({
+  label,
+  description,
+  items,
+}: {
+  label: string;
+  description: string;
+  items: readonly string[];
+}) {
+  return (
+    <div className="border-border bg-muted/30 rounded-lg border border-dashed p-4 text-sm">
+      <p className="text-foreground font-medium">
+        <span className="bg-foreground text-background mr-2 rounded px-2 py-0.5 text-xs">
+          {label}
+        </span>
+        {description}
+      </p>
+      <ul className="text-muted-foreground mt-3 list-disc space-y-1 pl-5">
+        {items.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export default async function Page(props: {
   params: Promise<{ locale: string }>;
 }) {
@@ -60,6 +86,8 @@ export default async function Page(props: {
   const skills = getArrayField<string>("skills");
   const reviewerConferences = getArrayField<string>("reviewerConferences");
   const reviewerJournals = getArrayField<string>("reviewerJournals");
+  const draftLabel = t("draft.label");
+  const draftDescription = t("draft.description");
 
   const personJsonLd = await generatePersonJsonLd(locale);
 
@@ -276,14 +304,20 @@ export default async function Page(props: {
       )}
 
       {/* Skills Section */}
-      {Array.isArray(skills) && skills.length > 0 && (
-        <section id="skills">
-          <div className="flex min-h-0 flex-col gap-y-3">
-            <h2 className="text-xl font-bold">{t("sections.skills")}</h2>
+      <section id="skills">
+        <div className="flex min-h-0 flex-col gap-y-3">
+          <h2 className="text-xl font-bold">{t("sections.skills")}</h2>
+          {Array.isArray(skills) && skills.length > 0 ? (
             <Skills skills={skills} />
-          </div>
-        </section>
-      )}
+          ) : (
+            <DraftPlaceholder
+              label={draftLabel}
+              description={draftDescription}
+              items={getArrayField<string>("draft.skills")}
+            />
+          )}
+        </div>
+      </section>
 
       {/* Education Section */}
       {educationItems && educationItems.length > 0 && (
@@ -308,23 +342,30 @@ export default async function Page(props: {
       )}
 
       {/* Awards Section */}
-      {awardsItems && awardsItems.length > 0 && (
-        <section id="awards">
+      <section id="awards">
+        <div className="flex min-h-0 flex-col gap-y-3">
           <h2 className="text-xl font-bold">{t("sections.awards")}</h2>
+          {awardsItems && awardsItems.length > 0 ? (
           <AwardsSection awards={awardsItems} showAllText={t("showAll")} />
-        </section>
-      )}
+          ) : (
+            <DraftPlaceholder
+              label={draftLabel}
+              description={draftDescription}
+              items={getArrayField<string>("draft.awards")}
+            />
+          )}
+        </div>
+      </section>
 
       {/* Academic Services Section */}
-      {((Array.isArray(reviewerConferences) &&
-        reviewerConferences.length > 0) ||
-        (Array.isArray(reviewerJournals) && reviewerJournals.length > 0) ||
-        (Array.isArray(teachingItems) && teachingItems.length > 0)) && (
-        <section id="academic-services">
-          <div className="flex min-h-0 flex-col gap-y-3">
-            <h2 className="text-xl font-bold">
-              {t("sections.academicServices")}
-            </h2>
+      <section id="academic-services">
+        <div className="flex min-h-0 flex-col gap-y-3">
+          <h2 className="text-xl font-bold">
+            {t("sections.academicServices")}
+          </h2>
+          {(reviewerConferences.length > 0 ||
+            reviewerJournals.length > 0 ||
+            teachingItems.length > 0) ? (
             <Services
               reviewerConferences={reviewerConferences}
               reviewerJournals={reviewerJournals}
@@ -337,21 +378,33 @@ export default async function Page(props: {
               )}
               teachingLabel={t("sections.teaching.teachingLabel")}
             />
-          </div>
-        </section>
-      )}
+          ) : (
+            <DraftPlaceholder
+              label={draftLabel}
+              description={draftDescription}
+              items={getArrayField<string>("draft.academicServices")}
+            />
+          )}
+        </div>
+      </section>
 
       {/* Invited Talks Section */}
-      {invitedTalksItems && invitedTalksItems.length > 0 && (
-        <section id="invited-talks">
-          <div className="flex min-h-0 flex-col gap-y-3">
-            <h2 className="text-xl font-bold">
-              {t("sections.invitedTalks.title")}
-            </h2>
+      <section id="invited-talks">
+        <div className="flex min-h-0 flex-col gap-y-3">
+          <h2 className="text-xl font-bold">
+            {t("sections.invitedTalks.title")}
+          </h2>
+          {invitedTalksItems && invitedTalksItems.length > 0 ? (
             <Talks talks={invitedTalksItems} showAllText={t("showAll")} />
-          </div>
-        </section>
-      )}
+          ) : (
+            <DraftPlaceholder
+              label={draftLabel}
+              description={draftDescription}
+              items={getArrayField<string>("draft.invitedTalks")}
+            />
+          )}
+        </div>
+      </section>
 
       {/* Contact Section */}
       <section id="contact">
