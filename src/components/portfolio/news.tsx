@@ -49,9 +49,12 @@ function NewsItem({ item, delay }: { item: NewsItem; delay: number }) {
         onTouchEnd={handleTouchEnd}
       >
         <div className="flex items-start gap-3">
-          <span className="text-muted-foreground mt-0.5 text-xs font-medium whitespace-nowrap">
+          <time
+            dateTime={item.date.replace(".", "-")}
+            className="text-muted-foreground mt-0.5 w-16 shrink-0 text-xs font-medium whitespace-nowrap tabular-nums"
+          >
             {item.date}
-          </span>
+          </time>
           <div className="min-w-0 flex-1">
             <h3 className="mb-0.5 text-sm leading-tight font-semibold">
               <span className="[&_img]:mr-1 [&_img]:ml-1 [&_img]:inline [&_img]:align-middle [&>p]:m-0 [&>p]:inline">
@@ -70,11 +73,11 @@ function NewsItem({ item, delay }: { item: NewsItem; delay: number }) {
   );
 }
 
-export default function NewsSection({ 
-  news, 
-  delay = 0, 
+export default function NewsSection({
+  news,
+  delay = 0,
   title = "Latest News",
-  showAllText = "Show All"
+  showAllText = "Show All",
 }: NewsSectionProps) {
   const [showAll, setShowAll] = useState(false);
   const [mounted, setMounted] = useState(false);
