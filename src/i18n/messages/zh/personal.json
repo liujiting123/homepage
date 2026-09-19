@@ -32,7 +32,7 @@
       "报告链接、幻灯片或视频，以及可选 logo"
     ]
   },
-  "acknowledgementsMarkdown": "感谢[赵波老师](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo)、[李根教授](https://www.genli.top/)、[林涛](https://dorayakilin.github.io/)和[杜雨新](https://yuxin-du-lab.github.io/)在交大期间的指导与支持，也感谢[廖周应成](https://zycliao.com/)和[王文佳](https://wenjiawang0312.github.io/)在港大的指导。我从这些交流与讨论中受益良多，也逐渐明确了自己的研究兴趣和思考问题的方式。",
+  "acknowledgementsMarkdown": "感谢[赵波老师](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo)、[李根教授](https://www.genli.top/)、[林涛](https://dorayakilin.github.io/)和[杜雨新](https://yuxin-du-lab.github.io/)在交大期间的指导与支持，也感谢[廖周应成](https://zycliao.com/)和[王文佳博士](https://wenjiawang0312.github.io/)在港大的指导。我从这些交流与讨论中受益良多，也逐渐明确了自己的研究兴趣和思考问题的方式。",
   "researchInterestsMarkdown": "我的研究兴趣是**机器人学习与具身智能**，关注机器人如何从视觉与空间信息中学习操作技能，并将这些技能迁移到不同任务和本体。具体方向包括**通用机器人策略**、**空间表征学习**与**跨本体泛化**。",
   "phdSearch": {
     "title": "寻找 2028 年秋季入学的博士机会",
