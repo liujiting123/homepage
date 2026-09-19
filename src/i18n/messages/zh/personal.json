@@ -1,18 +1,18 @@
 {
-    "name": {
-        "full": "郑奘巍",
-        "given": "奘巍",
-        "family": "郑",
-        "initials": "ZZ"
-    },
-    "subtitle": "博士",
-    "headline": "全栈开发者 & AI 研究员\nHPC-AI Tech 技术负责人",
-    "welcome": "欢迎来到我的主页!",
-    "ogImageUrl": "zangwei.dev/zh",
-    "bioMarkdown": "你好，我是郑奘巍👋，[Open-Sora](https://github.com/hpcaitech/Open-Sora) 和 [Video-Ocean](https://video-ocean.com/) 的创始人，专注于 AI 视频生成和 AI 产品。\n\n我博士毕业于 ![NUS Logo](/icon/nus.png) [新加坡国立大学](https://nus.edu.sg/)，师从 [尤洋教授](https://scholar.google.com/citations?user=jF4dPZwAAAAJ&hl=zh-CN)。曾于 ![Bytedance Logo](/icon/bytedance.png) [字节跳动](https://bytedance.com/) 担任科研实习生。本科毕业于 ![NJU Logo](/icon/nju.png) [南京大学](https://www.nju.edu.cn/en/) 计算机科学与技术专业（拔尖计划）。我还曾在 ![UC Berkeley Logo](/icon/ucb.png) [加州大学伯克利分校](https://www.berkeley.edu/) 远程科研实习一年，合作导师包括 [岳翔宇博士](https://scholar.google.com/citations?user=-xQ-C1sAAAAJ&hl=zh-CN&authuser=1) 和 [Alberto Sangiovanni-Vincentelli 教授](https://www2.eecs.berkeley.edu/Faculty/Homepages/sangiovanni-vicentelli.html)。更多背景信息欢迎查阅我的 [简历](./resume.pdf)。\n\n🔬 **研究方向：** 视频生成、高效机器学习与深度学习优化。",
-    "location": {
-        "name": "新加坡",
-        "mapUrl": "https://www.google.com/maps/place/singapore"
-    },
-    "blogTagline": "关于AI、软件、生活等的思考。短篇笔记和长篇写作。"
+  "name": {
+    "full": "刘纪霆",
+    "given": "纪霆",
+    "family": "刘",
+    "initials": "JL"
+  },
+  "subtitle": "Jiting Liu",
+  "headline": "机器人学习与具身智能\n四川农业大学数学专业本科生",
+  "welcome": "欢迎访问我的个人主页！",
+  "ogImageUrl": "",
+  "bioMarkdown": "我是**四川农业大学数学专业本科生**，预计于 **2028 年毕业**。研究方向为**机器人学习与具身智能**，重点关注通用机器人策略、空间表征学习与跨本体泛化。\n\n我在**香港大学 Taku Komura 课题组**开展跨本体动作重定向研究，面向灵巧机器人操作，并已完成香港大学计算与数据科学学院 **Summer Research Internship Programme 2026**。此前，我于 **2025 年 6 月至 2026 年 4 月**在**上海交通大学赵波老师课题组**开展视觉-语言-动作模型相关研究。\n\n代表性成果包括 **Evo-Depth**（共同第一作者，主要负责模型设计与实验）和 **Evo-1**（CVPR 2026）。更多信息见[个人简历](/resume.pdf)。",
+  "location": {
+    "name": "",
+    "mapUrl": ""
+  },
+  "blogTagline": ""
 }

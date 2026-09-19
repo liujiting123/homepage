@@ -4,21 +4,22 @@ import { siteConfig } from "@/data/site";
 export const DATA = {
   url: siteConfig.url,
   lastUpdated: siteConfig.lastUpdated,
-  name: "Zangwei Zheng",
-  description: "AI Researcher & Full Stack Developer",
+  name: "Jiting Liu",
+  description: "Robot Learning & Embodied AI",
   chinese: {
-    name: "郑奘巍",
+    name: "刘纪霆",
   },
   navbar: [
     { href: "/", icon: Icons.home, label: "Home" },
     { href: "/blog", icon: Icons.notebook, label: "Blog" },
     { href: "/resume.pdf", icon: Icons.fileuser, label: "CV" },
   ],
-  location: "Singapore",
-  locationLink: "https://www.google.com/maps/place/singapore",
+  // Location is not inferred from temporary research visits.
+  location: "",
+  locationLink: "",
   discover: [
-    { name: "HPC-AI Lab", url: "https://ai.comp.nus.edu.sg/" },
-    { name: "iCyPhy", url: "https://www.icyphy.org/people.html" },
+    { name: "", url: "" },
+    { name: "", url: "" },
     {
       name: "Template",
       url: "https://github.com/zhengzangw/nextjs-portfolio-blog-research",
@@ -28,25 +29,25 @@ export const DATA = {
     social: {
       GitHub: {
         name: "GitHub",
-        url: "https://github.com/zhengzangw",
+        url: "https://github.com/liujiting123",
         icon: Icons.github,
         footer: true,
       },
       X: {
         name: "X",
-        url: "https://x.com/zangweizheng",
+        url: "",
         icon: Icons.x,
-        footer: true,
+        footer: false,
       },
       LinkedIn: {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/zangweizheng/",
+        url: "",
         icon: Icons.linkedin,
-        footer: true,
+        footer: false,
       },
       email: {
         name: "Email",
-        url: "mailto:zhengzangwei@gmail.com",
+        url: "mailto:liujiting616@gmail.com",
         icon: Icons.email,
         footer: false,
       },

@@ -106,30 +106,30 @@
                 "url": "/resume.pdf"
             },
             {
-                "name": "站点二维码",
-                "url": "/qrcode.png"
+                "name": "",
+                "url": ""
             },
             {
-                "name": "名片",
-                "url": "/business-card-zh.jpg"
+                "name": "",
+                "url": ""
             }
         ],
         "discover": [
             {
-                "name": "HPC-AI Lab",
-                "url": "https://ai.comp.nus.edu.sg/"
+                "name": "",
+                "url": ""
             },
             {
-                "name": "iCyPhy",
-                "url": "https://www.icyphy.org/people.html"
+                "name": "",
+                "url": ""
             },
             {
-                "name": "NJU-CSE-Flyers",
-                "url": "https://nju-cse-flyers.github.io/"
+                "name": "",
+                "url": ""
             },
             {
-                "name": "HPC-AI Tech",
-                "url": "https://www.hpcaitech.com/"
+                "name": "",
+                "url": ""
             }
         ],
         "contact": {

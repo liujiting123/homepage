@@ -1,18 +1,18 @@
 {
-    "name": {
-        "full": "Zangwei Zheng",
-        "given": "Zangwei",
-        "family": "Zheng",
-        "initials": "ZZ"
-    },
-    "subtitle": "郑奘巍, Ph.D.",
-    "headline": "AI Researcher & Full Stack Developer\nTech Lead at HPC-AI Tech",
-    "welcome": "Welcome to my homepage!",
-    "ogImageUrl": "zangwei.dev",
-    "bioMarkdown": "Hi, I'm Zangwei👋, founder of [Open-Sora](https://github.com/hpcaitech/Open-Sora) and [Video-Ocean](https://video-ocean.com/). I'm working on AI-powered video generation and SaaS products that bridge research and real-world creativity.\n\nI earned my Ph.D. from ![NUS Logo](/icon/nus.png) [National University of Singapore](https://nus.edu.sg/) (NUS), advised by Prof. [Yang You](https://scholar.google.com/citations?user=jF4dPZwAAAAJ&hl=en). I had my research intern in ![Bytedance Logo](/icon/bytedance.png) [Bytedance](https://bytedance.com/), mentored by [Xuan Zhou](https://scholar.google.com/citations?user=gSqwyvsAAAAJ&hl=en) and [Youlong Cheng](https://scholar.google.com/citations?user=CSTk_LMAAAAJ&hl=en). I received my B.Sc. in Computer Science from ![NJU Logo](/icon/nju.png) [Nanjing University](https://www.nju.edu.cn/en/) (NJU). I worked remotely as a research intern at ![UC Berkeley Logo](/icon/ucb.png) [UC Berkeley](https://www.berkeley.edu/) for a year, mentored by Dr. [Xiangyu Yue](https://scholar.google.com/citations?user=-xQ-C1sAAAAJ&hl=en&authuser=1) and Prof. [Alberto L. Sangiovanni-Vincentelli](https://www2.eecs.berkeley.edu/Faculty/Homepages/sangiovanni-vicentelli.html). You can find more about my background in my [CV](./resume.pdf).\n\n🔬 **Research Interests:** Video Generation, Efficient ML and DL (Deep Learning) Optimization.",
-    "location": {
-        "name": "Singapore",
-        "mapUrl": "https://www.google.com/maps/place/singapore"
-    },
-    "blogTagline": "Thoughts on AI, software, life and more. Short notes and longer write-ups."
+  "name": {
+    "full": "Jiting Liu",
+    "given": "Jiting",
+    "family": "Liu",
+    "initials": "JL"
+  },
+  "subtitle": "刘纪霆",
+  "headline": "Robot Learning & Embodied AI\nUndergraduate in Mathematics",
+  "welcome": "Welcome to my homepage!",
+  "ogImageUrl": "",
+  "bioMarkdown": "I am an undergraduate in Mathematics at **Sichuan Agricultural University**, expecting to graduate in **2028**. My research focuses on **robot learning and embodied AI**, with an emphasis on general-purpose robot policies, spatial representation learning, and cross-embodiment generalization.\n\nMy research experience includes work in **Taku Komura’s group at The University of Hong Kong**, where I focus on cross-embodiment action retargeting for dexterous robot manipulation. I have completed the School of Computing and Data Science’s **Summer Research Internship Programme 2026**. Previously, I worked in **Bo Zhao’s group at Shanghai Jiao Tong University** from June 2025 to April 2026, studying vision-language-action models.\n\nMy work includes **Evo-Depth** (co-first author; model design and experiments) and **Evo-1** (CVPR 2026). More details are available in my [CV](/resume.pdf).",
+  "location": {
+    "name": "",
+    "mapUrl": ""
+  },
+  "blogTagline": ""
 }
