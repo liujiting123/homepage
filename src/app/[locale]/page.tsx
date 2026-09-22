@@ -314,9 +314,9 @@ export default async function Page({
           {t("sections.contactDescription")}{" "}
           <a
             href={socialData.email.url}
-            className="text-foreground underline underline-offset-4"
+            className="text-foreground break-all underline underline-offset-4 select-text"
           >
-            {t("sections.viaEmail")}
+            {socialData.email.url.replace(/^mailto:/, "")}
           </a>
           {locale === "zh" ? "。" : "."}
         </p>

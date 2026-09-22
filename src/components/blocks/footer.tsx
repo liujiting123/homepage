@@ -219,9 +219,9 @@ export default function Footer() {
               )}
               <Link
                 href={getEmail()}
-                className="hover:text-foreground block transition-colors"
+                className="hover:text-foreground block break-all transition-colors select-text"
               >
-                {t.contact.support}
+                {getEmail().replace(/^mailto:/, "")}
               </Link>
             </div>
           </div>
