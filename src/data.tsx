@@ -11,7 +11,6 @@ export const DATA = {
   },
   navbar: [
     { href: "/", icon: Icons.home, label: "Home" },
-    { href: "/blog", icon: Icons.notebook, label: "Blog" },
     { href: "/resume.pdf", icon: Icons.fileuser, label: "CV" },
   ],
   // Location is not inferred from temporary research visits.

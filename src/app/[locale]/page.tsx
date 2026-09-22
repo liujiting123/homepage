@@ -123,6 +123,7 @@ export default async function Page({
             ["research-interests", t("sections.researchInterests")],
             ["publications", t("sections.publications.title")],
             ["work", t("sections.workExperience")],
+            ["news", t("sections.news.title")],
             ["acknowledgements", t("sections.acknowledgements")],
             ["academic-services", t("sections.academicServices")],
           ].map(([id, label]) => (
@@ -317,7 +318,7 @@ export default async function Page({
           >
             {t("sections.viaEmail")}
           </a>
-          .
+          {locale === "zh" ? "。" : "."}
         </p>
       </section>
     </main>

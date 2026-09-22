@@ -50,9 +50,7 @@ export default function Navbar() {
         {DATA.navbar.map((item) => {
           // Adjust href based on current language
           let href: string = item.href;
-          if (item.href === "/blog") {
-            href = isChinesePage ? "/zh/blog" : "/blog";
-          } else if (item.href === "/") {
+          if (item.href === "/") {
             href = isChinesePage ? "/zh" : "/";
           } else if (item.href === "/resume.pdf") {
             href = isChinesePage ? "/resume.pdf" : "/resume-en.pdf";

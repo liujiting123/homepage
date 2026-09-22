@@ -29,12 +29,13 @@ export default function Footer() {
         experience: "Experience",
         publications: "Publications",
         services: "Academic Services",
+        news: "News",
       },
       sections: {
         quickNavigation: "Quick Navigation",
         connect: "Connect",
         resources: "Resources",
-        discover: "Discover",
+        discover: "Site credits",
         contact: "Contact",
       },
       resources: {
@@ -42,7 +43,7 @@ export default function Footer() {
         downloadCV: "Download CV",
       },
       contact: {
-        support: "Support",
+        support: "Email",
       },
       legal: {
         allRightsReserved: "All rights reserved",
@@ -52,7 +53,7 @@ export default function Footer() {
       bottom: {
         lastUpdated: "Last updated",
         madeWith: "Made with",
-        modifiedFrom: "Build with",
+        modifiedFrom: "Built with",
       },
     },
     zh: {
@@ -63,12 +64,13 @@ export default function Footer() {
         experience: "经历",
         publications: "论文",
         services: "学术服务",
+        news: "最新动态",
       },
       sections: {
         quickNavigation: "快速导航",
         connect: "联系",
         resources: "资源",
-        discover: "发现",
+        discover: "网站致谢",
         contact: "联系",
       },
       resources: {
@@ -76,7 +78,7 @@ export default function Footer() {
         downloadCV: "下载简历",
       },
       contact: {
-        support: "支持",
+        support: "邮箱",
       },
       legal: {
         allRightsReserved: "版权所有",
@@ -85,7 +87,7 @@ export default function Footer() {
       },
       bottom: {
         lastUpdated: "最后更新",
-        madeWith: "追随",
+        madeWith: "用心构建",
         modifiedFrom: "修改自",
       },
     },
@@ -101,6 +103,7 @@ export default function Footer() {
     { name: t.navigation.experience, href: "#work" },
     { name: t.navigation.publications, href: "#publications" },
     { name: t.navigation.services, href: "#academic-services" },
+    { name: t.navigation.news, href: "#news" },
   ];
 
   return (
@@ -161,18 +164,12 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Blog & CV */}
+          {/* CV */}
           <div className="space-y-4">
             <h3 className="text-foreground text-sm font-semibold tracking-wider">
               {t.sections.resources}
             </h3>
             <nav className="space-y-2">
-              <Link
-                href={isChinese ? "/zh/blog" : "/blog"}
-                className="text-muted-foreground hover:text-foreground block text-sm transition-colors"
-              >
-                {t.resources.blog}
-              </Link>
               <a
                 href={isChinese ? "/resume.pdf" : "/resume-en.pdf"}
                 target="_blank"
@@ -210,14 +207,16 @@ export default function Footer() {
               {t.sections.contact}
             </h3>
             <div className="text-muted-foreground space-y-2 text-sm">
-              <Link
-                href={DATA.locationLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-foreground block transition-colors"
-              >
-                {DATA.location}
-              </Link>
+              {DATA.location && DATA.locationLink && (
+                <Link
+                  href={DATA.locationLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-foreground block transition-colors"
+                >
+                  {DATA.location}
+                </Link>
+              )}
               <Link
                 href={getEmail()}
                 className="hover:text-foreground block transition-colors"
