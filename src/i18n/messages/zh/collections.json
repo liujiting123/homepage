@@ -3,6 +3,11 @@
     "items": [
       {
         "date": "2026.09",
+        "title": "两篇论文获 NeurIPS 2026 录用",
+        "content": "[Evo-Depth](https://arxiv.org/abs/2605.14950)（共同第一作者）和 [Focusable Monocular Depth Estimation](https://arxiv.org/abs/2605.11756)。"
+      },
+      {
+        "date": "2026.09",
         "title": "已完成香港大学 CDS 暑期科研实习项目",
         "content": "[结题证明](/certificates/hku-summer-research-2026.pdf)。课题：Data-Driven Cross-Embodiment Action Retargeting for Dexterous Robot Manipulation。"
       },
@@ -36,7 +41,7 @@
         "dates": "2026",
         "active": true,
         "description": "通过 RGB 观测中的隐式深度线索增强空间感知，无需额外深度传感器的轻量级视觉—语言—动作模型。",
-        "technologies": ["共同第一作者", "预印本"],
+        "technologies": ["NeurIPS 2026", "共同第一作者"],
         "authors": "",
         "links": [
           {
@@ -61,6 +66,47 @@
   "publications": {
     "items": [
       {
+        "title": "Evo-Depth: A Lightweight Depth-Enhanced Vision-Language-Action Model",
+        "href": "https://arxiv.org/abs/2605.14950",
+        "dates": "NeurIPS 2026",
+        "active": true,
+        "description": "NeurIPS 2026 已录用，arXiv:2605.14950。共同第一作者。",
+        "technologies": ["NeurIPS 2026", "共同第一作者"],
+        "authors": "**作者：** Tao Lin, Yuxin Du, **Jiting Liu**, et al.",
+        "links": [
+          {
+            "type": "论文",
+            "href": "https://arxiv.org/abs/2605.14950",
+            "icon": "paper"
+          },
+          {
+            "type": "代码",
+            "href": "https://github.com/MINT-SJTU/Evo-Depth",
+            "icon": "github"
+          }
+        ],
+        "image": "",
+        "video": ""
+      },
+      {
+        "title": "Focusable Monocular Depth Estimation",
+        "href": "https://arxiv.org/abs/2605.11756",
+        "dates": "NeurIPS 2026",
+        "active": true,
+        "description": "NeurIPS 2026 已录用，arXiv:2605.11756。",
+        "technologies": ["NeurIPS 2026"],
+        "authors": "**作者：** Yuxin Du, Tao Lin, Zile Zhong, Runting Li, Xiyao Chen, **Jiting Liu**, et al.",
+        "links": [
+          {
+            "type": "论文",
+            "href": "https://arxiv.org/abs/2605.11756",
+            "icon": "paper"
+          }
+        ],
+        "image": "",
+        "video": ""
+      },
+      {
         "title": "Evo-1: Lightweight Vision-Language-Action Model with Preserved Semantic Alignment",
         "href": "https://arxiv.org/abs/2511.04555",
         "dates": "CVPR 2026",
@@ -83,47 +129,6 @@
             "type": "项目页",
             "href": "https://mint-sjtu.github.io/Evo-1.io/",
             "icon": "globe"
-          }
-        ],
-        "image": "",
-        "video": ""
-      },
-      {
-        "title": "Evo-Depth: A Lightweight Depth-Enhanced Vision-Language-Action Model",
-        "href": "https://arxiv.org/abs/2605.14950",
-        "dates": "2026",
-        "active": true,
-        "description": "预印本，arXiv:2605.14950。共同第一作者。",
-        "technologies": ["预印本", "共同第一作者"],
-        "authors": "**作者：** Tao Lin, Yuxin Du, **Jiting Liu**, et al.",
-        "links": [
-          {
-            "type": "论文",
-            "href": "https://arxiv.org/abs/2605.14950",
-            "icon": "paper"
-          },
-          {
-            "type": "代码",
-            "href": "https://github.com/MINT-SJTU/Evo-Depth",
-            "icon": "github"
-          }
-        ],
-        "image": "",
-        "video": ""
-      },
-      {
-        "title": "Focusable Monocular Depth Estimation",
-        "href": "https://arxiv.org/abs/2605.11756",
-        "dates": "2026",
-        "active": true,
-        "description": "预印本，arXiv:2605.11756。",
-        "technologies": ["预印本"],
-        "authors": "**作者：** Yuxin Du, Tao Lin, Zile Zhong, Runting Li, Xiyao Chen, **Jiting Liu**, et al.",
-        "links": [
-          {
-            "type": "论文",
-            "href": "https://arxiv.org/abs/2605.11756",
-            "icon": "paper"
           }
         ],
         "image": "",
@@ -201,7 +206,7 @@
         "logoUrl": "",
         "start": "2025",
         "end": "2026",
-        "description": "**课题组：** [赵波老师](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo)。**Mentors：** [李根教授](https://www.genli.top/)、[林涛](https://dorayakilin.github.io/)、[杜雨新](https://yuxin-du-lab.github.io/)。\n\n开展具身智能与视觉—语言—动作模型研究。作为 **Evo-Depth** 共同第一作者，负责模型设计、代码实现、训练与评测；参与 **Evo-1**（CVPR 2026）工作。"
+        "description": "**课题组：** [赵波老师](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo)。**Mentors：** [李根教授](https://www.genli.top/)、[林涛](https://dorayakilin.github.io/)、[杜雨新](https://yuxin-du-lab.github.io/)。\n\n开展具身智能与视觉—语言—动作模型研究。作为 **Evo-Depth**（NeurIPS 2026）共同第一作者，负责模型设计、代码实现、训练与评测；参与 **Focusable Monocular Depth Estimation**（NeurIPS 2026）和 **Evo-1**（CVPR 2026）工作。"
       }
     ]
   },
