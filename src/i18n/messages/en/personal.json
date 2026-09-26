@@ -9,7 +9,11 @@
   "headline": "Robot Learning & Embodied AI\nUndergraduate in Mathematics",
   "welcome": "Welcome to my homepage!",
   "ogImageUrl": "jitingliu.com",
-  "bioMarkdown": "I am an undergraduate in Mathematics at **SICAU**, with expected graduation in **2028**.\n\nI am currently a Research Assistant in [Prof. Taku Komura’s group](https://www.cs.hku.hk/index.php/people/academic-staff/taku) at **The University of Hong Kong** ([Miro Dynamics–HKU CGVU Joint Lab](https://hku-cg.github.io/mirod-lab/)). Previously, I was a Research Assistant in [Prof. Bo Zhao’s](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo) [MINT Lab](https://mint-sjtu.github.io/) at **Shanghai Jiao Tong University** (**2025–2026**).\n\nTwo of my papers were accepted to **NeurIPS 2026**: [Evo-Depth](https://arxiv.org/abs/2605.14950), on which I am a co-first author, and [Focusable Monocular Depth Estimation](https://arxiv.org/abs/2605.11756).",
+  "bioMarkdown": "I am an undergraduate in Mathematics at **SICAU**, with expected graduation in **2028**.\n\nI am currently a Research Assistant in [Prof. Taku Komura’s group](https://www.cs.hku.hk/index.php/people/academic-staff/taku) at **The University of Hong Kong** ([Miro Dynamics–HKU CGVU Joint Lab](https://hku-cg.github.io/mirod-lab/)). Previously, I was a Research Assistant in [Prof. Bo Zhao’s](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo) [MINT Lab](https://mint-sjtu.github.io/) at **Shanghai Jiao Tong University** (**2025–2026**).",
+  "researchHighlight": {
+    "label": "Evo-Depth · NeurIPS 2026 · <authorship>Co-first author</authorship>",
+    "href": "https://arxiv.org/abs/2605.14950"
+  },
   "location": {
     "name": "",
     "mapUrl": ""

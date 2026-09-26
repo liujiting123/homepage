@@ -3,8 +3,8 @@
     "items": [
       {
         "date": "2026.09",
-        "title": "两篇论文获 NeurIPS 2026 录用",
-        "content": "[Evo-Depth](https://arxiv.org/abs/2605.14950)（共同第一作者）和 [Focusable Monocular Depth Estimation](https://arxiv.org/abs/2605.11756)。"
+        "title": "Evo-Depth 获 NeurIPS 2026 录用 · 共同第一作者",
+        "content": "[Evo-Depth](https://arxiv.org/abs/2605.14950)。参与的另一篇论文 [Focusable Monocular Depth Estimation](https://arxiv.org/abs/2605.11756) 也获录用。"
       },
       {
         "date": "2026.09",
@@ -13,23 +13,8 @@
       },
       {
         "date": "2026.06",
-        "title": "Evo-1 · CVPR 2026",
+        "title": "Evo-1 获 CVPR 2026 录用",
         "content": "[Evo-1: Lightweight Vision-Language-Action Model with Preserved Semantic Alignment](https://arxiv.org/abs/2511.04555)."
-      },
-      {
-        "date": "2026.05",
-        "title": "Evo-Depth 预印本发布",
-        "content": "共同第一作者，负责模型设计、代码实现、训练与评测。[论文](https://arxiv.org/abs/2605.14950)。"
-      },
-      {
-        "date": "2025.07",
-        "title": "Evo-0 上线 arXiv",
-        "content": "[Evo-0: Vision-Language-Action Model with Implicit Spatial Understanding](https://arxiv.org/abs/2507.00416)。"
-      },
-      {
-        "date": "2025.06",
-        "title": "加入上海交通大学赵波老师课题组",
-        "content": "开展具身智能与视觉-语言-动作模型研究。"
       }
     ]
   },

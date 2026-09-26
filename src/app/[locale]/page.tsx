@@ -84,21 +84,32 @@ export default async function Page({
             className="w-full"
           />
         </BlurFade>
+        <p className="mt-6 rounded-lg border border-sky-200 bg-sky-50/70 px-4 py-3 text-sm leading-7 font-semibold text-sky-950 dark:border-sky-900 dark:bg-sky-950/25 dark:text-sky-100">
+          <a
+            href={t("researchHighlight.href")}
+            target="_blank"
+            rel="noreferrer"
+            className="underline-offset-4 hover:underline"
+          >
+            {t.rich("researchHighlight.label", {
+              authorship: (chunks) => (
+                <span className="whitespace-nowrap">{chunks}</span>
+              ),
+            })}
+          </a>
+        </p>
         <aside
           id="phd-search"
           aria-labelledby="phd-search-title"
-          className="mt-7 rounded-xl border border-sky-200 bg-sky-50/70 p-5 text-sky-950 sm:p-6 dark:border-sky-900 dark:bg-sky-950/25 dark:text-sky-100"
+          className="text-muted-foreground mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm leading-6"
         >
-          <h2 id="phd-search-title" className="text-lg font-semibold">
+          <h2 id="phd-search-title" className="font-medium">
             {t("phdSearch.title")}
           </h2>
-          <p className="mt-2 max-w-3xl text-sm leading-7 text-sky-900/85 dark:text-sky-200/90">
-            {t("phdSearch.description")}
-          </p>
-          <div className="mt-4 flex flex-wrap items-center gap-5 text-sm font-medium">
+          <div className="flex items-center gap-5 font-medium">
             <a
               href={socialData.email.url}
-              className="rounded-md bg-sky-900 px-4 py-2 text-white hover:bg-sky-800 dark:bg-sky-100 dark:text-sky-950 dark:hover:bg-white"
+              className="hover:text-foreground underline underline-offset-4"
             >
               {t("phdSearch.contactLabel")}
             </a>
@@ -106,7 +117,7 @@ export default async function Page({
               href={t("phdSearch.cvHref")}
               target="_blank"
               rel="noreferrer"
-              className="underline underline-offset-4"
+              className="hover:text-foreground underline underline-offset-4"
             >
               {t("phdSearch.cvLabel")} <span aria-hidden="true">↗</span>
             </a>
@@ -120,10 +131,10 @@ export default async function Page({
           className="border-border text-muted-foreground mt-7 flex flex-wrap justify-center gap-x-6 gap-y-3 border-b pb-6 text-sm"
         >
           {[
+            ["news", t("sections.news.title")],
             ["research-interests", t("sections.researchInterests")],
             ["publications", t("sections.publications.title")],
             ["work", t("sections.workExperience")],
-            ["news", t("sections.news.title")],
             ["acknowledgements", t("sections.acknowledgements")],
             ["academic-services", t("sections.academicServices")],
           ].map(([id, label]) => (
@@ -140,6 +151,12 @@ export default async function Page({
           {t("bioMarkdown")}
         </CustomReactMarkdown>
       </section>
+
+      {news.length > 0 && (
+        <section id="news" className="scroll-mt-24">
+          <NewsSection news={news} title={t("sections.news.title")} />
+        </section>
+      )}
 
       <section id="research-interests" className="scroll-mt-24 space-y-4">
         <h2 className="text-xl font-semibold">
@@ -275,15 +292,6 @@ export default async function Page({
         </section>
       )}
 
-      {news.length > 0 && (
-        <section id="news" className="scroll-mt-24">
-          <NewsSection
-            news={news}
-            title={t("sections.news.title")}
-            showAllText={t("showAll")}
-          />
-        </section>
-      )}
       {skills.length > 0 && (
         <section id="skills" className="space-y-4">
           <h2 className="text-xl font-semibold">{t("sections.skills")}</h2>

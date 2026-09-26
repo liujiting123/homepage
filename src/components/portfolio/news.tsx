@@ -1,11 +1,9 @@
 "use client";
 
-import { ChevronDown } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { CustomReactMarkdown } from "@/components/react-markdown";
 import { BlurFade } from "@/components/ui/blur-fade";
-import { Button } from "@/components/ui/button";
 
 interface NewsItem {
   readonly date: string;
@@ -17,10 +15,7 @@ interface NewsSectionProps {
   news: readonly NewsItem[];
   delay?: number;
   title?: string;
-  showAllText?: string;
 }
-
-const DEFAULT_DISPLAY_COUNT = 5;
 
 function NewsItem({ item, delay }: { item: NewsItem; delay: number }) {
   const [isTapped, setIsTapped] = useState(false);
@@ -77,46 +72,14 @@ export default function NewsSection({
   news,
   delay = 0,
   title = "Latest News",
-  showAllText = "Show All",
 }: NewsSectionProps) {
-  const [showAll, setShowAll] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  // Show latest items by default, or all if showAll is true
-  const displayedNews = showAll ? news : news.slice(0, DEFAULT_DISPLAY_COUNT);
-  const hasMoreNews = news.length > DEFAULT_DISPLAY_COUNT;
-
-  // Prevent hydration mismatch by not rendering until mounted
-  if (!mounted) {
-    return (
-      <div className="flex min-h-0 flex-col gap-y-1">
-        <BlurFade delay={delay}>
-          <h2 className="text-xl font-bold">{title}</h2>
-        </BlurFade>
-        <div className="space-y-0">
-          {news.slice(0, DEFAULT_DISPLAY_COUNT).map((item, id) => (
-            <NewsItem
-              key={`${item.date}-${item.title}`}
-              item={item}
-              delay={delay + 0.05 + id * 0.05}
-            />
-          ))}
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="flex min-h-0 flex-col gap-y-3">
       <BlurFade delay={delay}>
         <h2 className="text-xl font-bold">{title}</h2>
       </BlurFade>
       <div className="space-y-0.5">
-        {displayedNews.map((item, id) => (
+        {news.map((item, id) => (
           <NewsItem
             key={`${item.date}-${item.title}`}
             item={item}
@@ -124,21 +87,6 @@ export default function NewsSection({
           />
         ))}
       </div>
-      {hasMoreNews && !showAll && (
-        <BlurFade delay={delay + 0.3}>
-          <div className="flex justify-center pt-1">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => setShowAll(true)}
-              className="flex items-center gap-2"
-            >
-              <ChevronDown className="h-4 w-4" />
-              {showAllText}
-            </Button>
-          </div>
-        </BlurFade>
-      )}
     </div>
   );
 }
