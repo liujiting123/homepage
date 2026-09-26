@@ -84,32 +84,35 @@ export default async function Page({
             className="w-full"
           />
         </BlurFade>
-        <p className="mt-6 rounded-lg border border-sky-200 bg-sky-50/70 px-4 py-3 text-sm leading-7 font-semibold text-sky-950 dark:border-sky-900 dark:bg-sky-950/25 dark:text-sky-100">
-          <a
-            href={t("researchHighlight.href")}
-            target="_blank"
-            rel="noreferrer"
-            className="underline-offset-4 hover:underline"
-          >
-            {t.rich("researchHighlight.label", {
-              authorship: (chunks) => (
-                <span className="whitespace-nowrap">{chunks}</span>
-              ),
-            })}
-          </a>
-        </p>
         <aside
           id="phd-search"
           aria-labelledby="phd-search-title"
-          className="text-muted-foreground mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm leading-6"
+          className="mt-6 rounded-xl border border-sky-200 bg-sky-50/70 p-5 text-sky-950 sm:p-6 dark:border-sky-900 dark:bg-sky-950/25 dark:text-sky-100"
         >
-          <h2 id="phd-search-title" className="font-medium">
+          <h2
+            id="phd-search-title"
+            className="text-lg leading-7 font-semibold text-balance sm:text-xl"
+          >
             {t("phdSearch.title")}
           </h2>
-          <div className="flex items-center gap-5 font-medium">
+          <p className="mt-2 text-sm leading-7 font-medium text-sky-900/85 dark:text-sky-200/90">
+            <a
+              href={t("researchHighlight.href")}
+              target="_blank"
+              rel="noreferrer"
+              className="underline-offset-4 hover:underline"
+            >
+              {t.rich("researchHighlight.label", {
+                authorship: (chunks) => (
+                  <span className="whitespace-nowrap">{chunks}</span>
+                ),
+              })}
+            </a>
+          </p>
+          <div className="mt-4 flex flex-wrap items-center gap-5 text-sm font-medium">
             <a
               href={socialData.email.url}
-              className="hover:text-foreground underline underline-offset-4"
+              className="inline-flex min-h-10 items-center rounded-md bg-sky-900 px-4 py-2 text-white hover:bg-sky-800 dark:bg-sky-100 dark:text-sky-950 dark:hover:bg-white"
             >
               {t("phdSearch.contactLabel")}
             </a>
