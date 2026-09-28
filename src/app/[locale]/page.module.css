@@ -259,6 +259,12 @@
   margin-top: 4px;
   line-height: 1.5;
 }
+.metricsDate {
+  color: var(--ref-muted);
+  font-size: 10px;
+  text-align: right;
+  margin-top: 8px;
+}
 .sectionHeading {
   display: flex;
   align-items: center;
@@ -511,9 +517,18 @@
   gap: 8px;
   color: var(--ref-text);
 }
-.openSourceGrid a > span svg:last-child {
+.openSourceGrid a > span > svg:last-child {
   margin-left: auto;
   color: var(--ref-muted);
+}
+.starCount {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--ref-gold);
+  font-size: 13px;
+  font-weight: 700;
+  margin-left: 4px;
 }
 .openSourceGrid strong {
   font-weight: 750;

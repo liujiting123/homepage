@@ -231,6 +231,16 @@
 .codeLink svg {
   color: var(--ref-text);
 }
+.starCount {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--ref-gold);
+  font-weight: 700;
+}
+.codeLink .starCount svg {
+  color: var(--ref-gold);
+}
 
 .projectLink svg {
   color: var(--ref-accent);

@@ -56,10 +56,6 @@
     "achievementDetail": "共同第一作者 · 负责模型设计、代码实现、训练与评测。",
     "highlightsLabel": "研究亮点",
     "neuripsDetail": "其中 1 篇为共同第一作者",
-    "ra": "科研助理",
-    "raDate": "2026–至今",
-    "graduation": "预计毕业年份",
-    "major": "数学 · 四川农业大学",
     "selectedTitle": "代表性工作",
     "openSource": "开源项目",
     "navigation": {
@@ -75,6 +71,9 @@
       "skip": "跳转至正文",
       "menu": "展开导航",
       "colors": "强调色"
-    }
+    },
+    "projectStars": "项目累计 Stars",
+    "citations": "学术引用",
+    "metricsAsOf": "Stars 与引用量截至 {date}"
   }
 }

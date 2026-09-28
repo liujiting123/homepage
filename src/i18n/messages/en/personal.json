@@ -63,10 +63,6 @@
     "achievementDetail": "Co-first author · Model design, implementation, training, and evaluation.",
     "highlightsLabel": "Research highlights",
     "neuripsDetail": "Including 1 co-first-author paper",
-    "ra": "Research Assistant",
-    "raDate": "2026–present",
-    "graduation": "Expected graduation",
-    "major": "Mathematics · SICAU",
     "selectedTitle": "Selected Work",
     "openSource": "Open Source",
     "navigation": {
@@ -82,6 +78,9 @@
       "skip": "Skip to content",
       "menu": "Toggle navigation",
       "colors": "Accent color"
-    }
+    },
+    "projectStars": "Project GitHub Stars",
+    "citations": "Citations",
+    "metricsAsOf": "Stars & citations as of {date}"
   }
 }

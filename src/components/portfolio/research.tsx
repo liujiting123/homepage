@@ -1,7 +1,8 @@
-import { ArrowUpRight, FileText, Github, Globe2 } from "lucide-react";
+import { ArrowUpRight, FileText, Github, Globe2, Star } from "lucide-react";
 import Image from "next/image";
 
 import { CustomReactMarkdown } from "@/components/react-markdown";
+import { getRepositoryStars, researchImpact } from "@/data/research-impact";
 
 import styles from "./research.module.css";
 
@@ -35,26 +36,39 @@ function ResourceIcon({ icon }: { icon?: string }) {
 function ResearchLinks({ links }: { links: ResearchItem["links"] }) {
   return (
     <div className={styles.resourceLinks}>
-      {links.map((link) => (
-        <a
-          key={`${link.type}-${link.href}`}
-          href={link.href}
-          className={`${styles.resourceLink} ${
-            link.icon === "paper"
-              ? styles.paperLink
-              : link.icon === "github"
-                ? styles.codeLink
-                : link.icon === "globe"
-                  ? styles.projectLink
-                  : ""
-          }`}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <ResourceIcon icon={link.icon} />
-          <span>{link.type}</span>
-        </a>
-      ))}
+      {links.map((link) => {
+        const stars = getRepositoryStars(link.href);
+        return (
+          <a
+            key={`${link.type}-${link.href}`}
+            href={link.href}
+            className={`${styles.resourceLink} ${
+              link.icon === "paper"
+                ? styles.paperLink
+                : link.icon === "github"
+                  ? styles.codeLink
+                  : link.icon === "globe"
+                    ? styles.projectLink
+                    : ""
+            }`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <ResourceIcon icon={link.icon} />
+            <span>{link.type}</span>
+            {stars !== undefined && (
+              <span
+                className={styles.starCount}
+                aria-label={`${stars} GitHub Stars`}
+                title={`${stars} GitHub Stars · ${researchImpact.verifiedAt}`}
+              >
+                <Star aria-hidden="true" size={12} />
+                {stars}
+              </span>
+            )}
+          </a>
+        );
+      })}
     </div>
   );
 }

@@ -6,6 +6,7 @@ import {
   GraduationCap,
   Lightbulb,
   Mail,
+  Star,
   University,
 } from "lucide-react";
 import Image from "next/image";
@@ -23,6 +24,11 @@ import Skills from "@/components/portfolio/skills";
 import Talks from "@/components/portfolio/talks";
 import Work from "@/components/portfolio/work";
 import { CustomReactMarkdown } from "@/components/react-markdown";
+import {
+  getRepositoryStars,
+  researchImpact,
+  totalProjectStars,
+} from "@/data/research-impact";
 import { siteConfig } from "@/data/site";
 import { routing } from "@/i18n/routing";
 import { generatePersonJsonLd } from "@/lib/jsonld";
@@ -93,6 +99,7 @@ export default async function Page({
         title: p.title.split(":")[0],
         description: p.title,
         href: link.href,
+        stars: getRepositoryStars(link.href),
       })),
   );
 
@@ -220,17 +227,24 @@ export default async function Page({
               <span>CVPR 2026</span>
               <small>Evo-1</small>
             </a>
-            <a href="#work">
-              <strong>HKU</strong>
-              <span>{t("homepage.ra")}</span>
-              <small>{t("homepage.raDate")}</small>
+            <a href="#opensource">
+              <strong>{totalProjectStars}</strong>
+              <span>{t("homepage.projectStars")}</span>
+              <small>Evo-Depth + Evo-1</small>
             </a>
-            <a href="#education">
-              <strong>2028</strong>
-              <span>{t("homepage.graduation")}</span>
-              <small>{t("homepage.major")}</small>
+            <a
+              href={researchImpact.citations.source}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <strong>{researchImpact.citations.count}</strong>
+              <span>{t("homepage.citations")}</span>
+              <small>Google Scholar</small>
             </a>
           </div>
+          <p className={styles.metricsDate}>
+            {t("homepage.metricsAsOf", { date: researchImpact.verifiedAt })}
+          </p>
         </div>
       </section>
       {news.length > 0 && (
@@ -292,6 +306,16 @@ export default async function Page({
                 <span>
                   <Github size={18} aria-hidden="true" />
                   <strong>{item.title}</strong>
+                  {item.stars !== undefined && (
+                    <span
+                      className={styles.starCount}
+                      aria-label={`${item.stars} GitHub Stars`}
+                      title={`${item.stars} GitHub Stars · ${researchImpact.verifiedAt}`}
+                    >
+                      <Star size={13} aria-hidden="true" />
+                      {item.stars}
+                    </span>
+                  )}
                   <ArrowUpRight size={15} aria-hidden="true" />
                 </span>
                 <p>{item.description}</p>
