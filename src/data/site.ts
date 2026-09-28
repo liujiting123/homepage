@@ -5,10 +5,9 @@ export const siteConfig = {
   // Vercel overrides this in production when a custom deployment URL is needed.
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://jitingliu.com",
   lastUpdated: "2026.09",
-  // Public profile portrait (optimized WebP).
-  avatarUrl: "/me.webp",
-  // Square PNG variant for the OG card, whose renderer cannot decode WebP.
-  ogAvatarUrl: "/me-og.png",
+  // Use the same PNG avatar on the homepage and in link previews.
+  avatarUrl: "/avatar.png",
+  ogAvatarUrl: "/avatar.png",
   blog: {
     postsPerPage: 6,
   },
