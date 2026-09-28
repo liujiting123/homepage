@@ -1,0 +1,129 @@
+/* Theme adapted from https://linb203.github.io/assets/css/custom.css.
+   MIT license and original attribution: LICENSES/linb203-homepage.txt. */
+:root {
+  --ref-bg: #fafbfc;
+  --ref-surface: #fff;
+  --ref-surface-2: #f3f4f8;
+  --ref-text: #131722;
+  --ref-text-soft: #4d5663;
+  --ref-muted: #8b94a1;
+  --ref-border: #e9ebf0;
+  --ref-border-strong: #d7dbe3;
+  --ref-accent: #4f46e5;
+  --ref-accent-2: #7c3aed;
+  --ref-accent-rgb: 79, 70, 229;
+  --ref-accent-2-rgb: 124, 58, 237;
+  --ref-glow-opacity: 0.1;
+  --ref-accent-soft: rgba(var(--ref-accent-rgb), 0.1);
+  --ref-accent-ring: rgba(var(--ref-accent-rgb), 0.22);
+  --ref-gold: #b88a05;
+  --ref-gold-soft: rgba(217, 164, 10, 0.12);
+  --ref-gold-ring: rgba(217, 164, 10, 0.3);
+  --ref-shadow-sm:
+    0 1px 2px rgba(19, 23, 34, 0.05), 0 2px 6px rgba(19, 23, 34, 0.05);
+  --ref-shadow-md:
+    0 8px 24px -8px rgba(19, 23, 34, 0.14), 0 2px 8px rgba(19, 23, 34, 0.05);
+  --ref-shadow-lg: 0 22px 48px -16px rgba(19, 23, 34, 0.26);
+  --ref-nav-bg: rgba(250, 251, 252, 0.8);
+}
+.dark {
+  --ref-bg: #0c0e13;
+  --ref-surface: #161922;
+  --ref-surface-2: #1d212c;
+  --ref-text: #e9ebf0;
+  --ref-text-soft: #aab3c0;
+  --ref-muted: #7c8595;
+  --ref-border: #262b36;
+  --ref-border-strong: #333a48;
+  --ref-accent: #818cf8;
+  --ref-accent-2: #c084fc;
+  --ref-accent-rgb: 129, 140, 248;
+  --ref-accent-2-rgb: 192, 132, 252;
+  --ref-glow-opacity: 0.18;
+  --ref-accent-soft: rgba(var(--ref-accent-rgb), 0.14);
+  --ref-accent-ring: rgba(var(--ref-accent-rgb), 0.3);
+  --ref-gold: #f3c14a;
+  --ref-gold-soft: rgba(243, 193, 74, 0.13);
+  --ref-gold-ring: rgba(243, 193, 74, 0.32);
+  --ref-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.45);
+  --ref-shadow-md: 0 8px 26px -10px rgba(0, 0, 0, 0.62);
+  --ref-shadow-lg: 0 24px 50px -18px rgba(0, 0, 0, 0.72);
+  --ref-nav-bg: rgba(12, 14, 19, 0.82);
+}
+body {
+  background-color: var(--ref-bg);
+  background-image:
+    radial-gradient(
+      1100px 520px at 75% -10%,
+      rgba(var(--ref-accent-2-rgb), var(--ref-glow-opacity)),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 480px at 0% 0%,
+      rgba(var(--ref-accent-rgb), var(--ref-glow-opacity)),
+      transparent 55%
+    );
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: var(--ref-text);
+}
+:root[data-accent="ruby"] {
+  --ref-accent: #dc2626;
+  --ref-accent-2: #e11d48;
+  --ref-accent-rgb: 220, 38, 38;
+  --ref-accent-2-rgb: 225, 29, 72;
+}
+:root[data-accent="ocean"] {
+  --ref-accent: #0284c7;
+  --ref-accent-2: #0891b2;
+  --ref-accent-rgb: 2, 132, 199;
+  --ref-accent-2-rgb: 8, 145, 178;
+}
+:root[data-accent="emerald"] {
+  --ref-accent: #059669;
+  --ref-accent-2: #0d9488;
+  --ref-accent-rgb: 5, 150, 105;
+  --ref-accent-2-rgb: 13, 148, 136;
+}
+:root[data-accent="rose"] {
+  --ref-accent: #e11d48;
+  --ref-accent-2: #db2777;
+  --ref-accent-rgb: 225, 29, 72;
+  --ref-accent-2-rgb: 219, 39, 119;
+}
+:root[data-accent="amber"] {
+  --ref-accent: #ea580c;
+  --ref-accent-2: #d97706;
+  --ref-accent-rgb: 234, 88, 12;
+  --ref-accent-2-rgb: 217, 119, 6;
+}
+.dark[data-accent="ruby"] {
+  --ref-accent: #f87171;
+  --ref-accent-2: #fb7185;
+  --ref-accent-rgb: 248, 113, 113;
+  --ref-accent-2-rgb: 251, 113, 133;
+}
+.dark[data-accent="ocean"] {
+  --ref-accent: #38bdf8;
+  --ref-accent-2: #22d3ee;
+  --ref-accent-rgb: 56, 189, 248;
+  --ref-accent-2-rgb: 34, 211, 238;
+}
+.dark[data-accent="emerald"] {
+  --ref-accent: #34d399;
+  --ref-accent-2: #2dd4bf;
+  --ref-accent-rgb: 52, 211, 153;
+  --ref-accent-2-rgb: 45, 212, 191;
+}
+.dark[data-accent="rose"] {
+  --ref-accent: #fb7185;
+  --ref-accent-2: #f472b6;
+  --ref-accent-rgb: 251, 113, 133;
+  --ref-accent-2-rgb: 244, 114, 182;
+}
+.dark[data-accent="amber"] {
+  --ref-accent: #fb923c;
+  --ref-accent-2: #fbbf24;
+  --ref-accent-rgb: 251, 146, 60;
+  --ref-accent-2-rgb: 251, 191, 36;
+}

@@ -1,6 +1,9 @@
+import { ArrowUpRight, FileText, Github, Globe2 } from "lucide-react";
 import Image from "next/image";
 
 import { CustomReactMarkdown } from "@/components/react-markdown";
+
+import styles from "./research.module.css";
 
 export interface ResearchItem {
   title: string;
@@ -9,25 +12,47 @@ export interface ResearchItem {
   description: string;
   authors: string;
   technologies: string[];
-  links: { type: string; href: string }[];
+  links: { type: string; href: string; icon?: string }[];
   contribution?: string;
   image?: string;
   imageAlt?: string;
   imageCaption?: string;
 }
 
+function ResourceIcon({ icon }: { icon?: string }) {
+  switch (icon) {
+    case "paper":
+      return <FileText aria-hidden="true" size={15} strokeWidth={1.8} />;
+    case "github":
+      return <Github aria-hidden="true" size={15} strokeWidth={1.8} />;
+    case "globe":
+      return <Globe2 aria-hidden="true" size={15} strokeWidth={1.8} />;
+    default:
+      return <ArrowUpRight aria-hidden="true" size={15} strokeWidth={1.8} />;
+  }
+}
+
 function ResearchLinks({ links }: { links: ResearchItem["links"] }) {
   return (
-    <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+    <div className={styles.resourceLinks}>
       {links.map((link) => (
         <a
-          key={link.href}
+          key={`${link.type}-${link.href}`}
           href={link.href}
-          className="decoration-border font-medium underline underline-offset-4 hover:decoration-current"
+          className={`${styles.resourceLink} ${
+            link.icon === "paper"
+              ? styles.paperLink
+              : link.icon === "github"
+                ? styles.codeLink
+                : link.icon === "globe"
+                  ? styles.projectLink
+                  : ""
+          }`}
           target="_blank"
           rel="noreferrer"
         >
-          {link.type} <span aria-hidden="true">↗</span>
+          <ResourceIcon icon={link.icon} />
+          <span>{link.type}</span>
         </a>
       ))}
     </div>
@@ -44,17 +69,19 @@ export function FeaturedResearch({
   figureLabel: string;
 }) {
   return (
-    <div className="space-y-6">
+    <div className={styles.researchRoot}>
       {items.map((item) => (
-        <article
-          key={item.title}
-          className="border-border rounded-xl border p-5 sm:p-6"
-        >
-          <div className="grid items-center gap-6 md:grid-cols-[1.2fr_1fr]">
+        <article key={item.title} className={styles.featuredCard}>
+          <div
+            className={
+              item.image ? styles.featuredGrid : styles.featuredGridNoImage
+            }
+          >
             {item.image && (
-              <figure className="min-w-0">
+              <figure className={styles.figure}>
                 <a
                   href={item.image}
+                  className={styles.figureLink}
                   target="_blank"
                   rel="noreferrer"
                   aria-label={`${item.title}: ${figureLabel}`}
@@ -63,49 +90,59 @@ export function FeaturedResearch({
                     src={item.image}
                     alt={item.imageAlt || item.title}
                     width={1920}
-                    height={1015}
-                    sizes="(min-width: 768px) 480px, 100vw"
-                    className="h-auto w-full rounded-md bg-white p-2"
+                    height={1014}
+                    sizes="(min-width: 800px) 48vw, (min-width: 640px) 80vw, 100vw"
+                    className={styles.figureImage}
                   />
                 </a>
-                <figcaption className="text-muted-foreground mt-3 text-xs leading-relaxed">
-                  <a
-                    href={item.href}
-                    className="underline underline-offset-2"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {item.imageCaption}
-                  </a>
-                </figcaption>
+                {item.imageCaption && (
+                  <figcaption className={styles.figureCaption}>
+                    <a href={item.href} target="_blank" rel="noreferrer">
+                      {item.imageCaption}
+                    </a>
+                  </figcaption>
+                )}
               </figure>
             )}
-            <div className="space-y-4">
-              <div>
-                <div className="text-muted-foreground mb-2 flex flex-wrap gap-2 text-xs">
-                  <span>{item.dates}</span>
-                  {item.technologies.map((tag) => (
-                    <span key={tag}>· {tag}</span>
+            <div className={styles.featuredContent}>
+              <div className={styles.featuredHeader}>
+                <div className={styles.badges}>
+                  {item.technologies.map((tag, index) => (
+                    <span
+                      key={tag}
+                      className={
+                        index === 0 ? styles.venueBadge : styles.roleBadge
+                      }
+                    >
+                      {tag}
+                    </span>
                   ))}
+                  {!item.technologies.some((tag) =>
+                    tag.includes(item.dates),
+                  ) && (
+                    <span className={styles.featuredDate}>{item.dates}</span>
+                  )}
                 </div>
-                <h3 className="text-2xl font-semibold tracking-tight">
-                  <a
-                    href={item.href}
-                    className="hover:underline"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
+                <h3 className={styles.featuredTitle}>
+                  <a href={item.href} target="_blank" rel="noreferrer">
                     {item.title}
                   </a>
                 </h3>
+                {item.authors && (
+                  <CustomReactMarkdown className={styles.authors}>
+                    {item.authors}
+                  </CustomReactMarkdown>
+                )}
               </div>
-              <p className="text-muted-foreground text-sm leading-7">
-                {item.description}
-              </p>
-              <div className="border-foreground/20 border-l-2 pl-3 text-sm leading-6">
-                <p className="font-medium">{contributionLabel}</p>
-                <p className="text-muted-foreground">{item.contribution}</p>
-              </div>
+              <p className={styles.featuredDescription}>{item.description}</p>
+              {item.contribution && (
+                <p className={styles.contribution}>
+                  <strong className={styles.contributionLabel}>
+                    {contributionLabel}:{" "}
+                  </strong>
+                  {item.contribution}
+                </p>
+              )}
               <ResearchLinks links={item.links} />
             </div>
           </div>
@@ -117,36 +154,41 @@ export function FeaturedResearch({
 
 export function PublicationList({ items }: { items: ResearchItem[] }) {
   return (
-    <div className="divide-border divide-y">
-      {items.map((item) => (
-        <article
-          key={item.title}
-          className="grid gap-2 py-5 first:pt-0 last:pb-0 sm:grid-cols-[6rem_1fr] sm:gap-5"
-        >
-          <p className="text-muted-foreground pt-0.5 text-sm font-medium">
-            {item.dates}
-          </p>
-          <div className="min-w-0 space-y-2">
-            <h3 className="text-base leading-7 font-semibold">
-              <a
-                href={item.href}
-                className="hover:underline"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {item.title}
-              </a>
-            </h3>
-            <CustomReactMarkdown className="text-muted-foreground [&_strong]:text-foreground text-sm leading-6 [&_strong]:font-semibold">
-              {item.authors}
-            </CustomReactMarkdown>
-            <p className="text-muted-foreground text-sm leading-6">
-              {item.description}
-            </p>
-            <ResearchLinks links={item.links} />
-          </div>
-        </article>
-      ))}
+    <div className={`${styles.researchRoot} ${styles.publicationList}`}>
+      {items.map((item) => {
+        const venue =
+          /^\d{4}$/.test(item.dates) && item.technologies[0]
+            ? `${item.technologies[0]} ${item.dates}`
+            : item.dates;
+        const roles = item.technologies.slice(1);
+
+        return (
+          <article key={item.title} className={styles.publication}>
+            <div className={styles.publicationBody}>
+              <h3 className={styles.publicationTitle}>
+                <span className={styles.publicationVenue}>{venue}</span>
+                {roles.map((tag) => (
+                  <span key={tag} className={styles.roleBadge}>
+                    {tag}
+                  </span>
+                ))}
+                <a href={item.href} target="_blank" rel="noreferrer">
+                  {item.title}
+                </a>
+              </h3>
+              {item.authors && (
+                <CustomReactMarkdown className={styles.authors}>
+                  {item.authors}
+                </CustomReactMarkdown>
+              )}
+              <p className={styles.publicationDescription}>
+                {item.description}
+              </p>
+              <ResearchLinks links={item.links} />
+            </div>
+          </article>
+        );
+      })}
     </div>
   );
 }

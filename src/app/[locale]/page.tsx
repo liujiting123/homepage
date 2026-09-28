@@ -1,11 +1,18 @@
+import {
+  ArrowUpRight,
+  Award,
+  FileText,
+  Github,
+  GraduationCap,
+  Lightbulb,
+  Mail,
+  University,
+} from "lucide-react";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
-import type { ComponentProps } from "react";
+import type { ComponentProps, ReactNode } from "react";
 
 import AwardsSection from "@/components/portfolio/awards-section";
-import Brief from "@/components/portfolio/brief";
-import Education from "@/components/portfolio/education";
-import NewsSection from "@/components/portfolio/news";
 import {
   FeaturedResearch,
   PublicationList,
@@ -13,24 +20,39 @@ import {
 } from "@/components/portfolio/research";
 import Services from "@/components/portfolio/services";
 import Skills from "@/components/portfolio/skills";
-import SocialLinks from "@/components/portfolio/socallinks";
 import Talks from "@/components/portfolio/talks";
 import Work from "@/components/portfolio/work";
 import { CustomReactMarkdown } from "@/components/react-markdown";
-import { BlurFade } from "@/components/ui/blur-fade";
 import { siteConfig } from "@/data/site";
 import { routing } from "@/i18n/routing";
 import { generatePersonJsonLd } from "@/lib/jsonld";
 import { transformSocialData } from "@/lib/social-icons";
 import { jsonldScript } from "@/lib/utils";
 
-interface Material {
-  title: string;
-  date: string;
-  description: string;
-  href: string;
-  image: string;
-  imageAlt: string;
+import styles from "./page.module.css";
+
+type NewsItem = { date: string; title: string; content: string };
+type EducationItem = {
+  school: string;
+  degree: string;
+  start: string;
+  end: string;
+};
+type Material = { title: string; description: string; href: string };
+
+function SectionHeading({
+  icon,
+  children,
+}: {
+  icon: string;
+  children: ReactNode;
+}) {
+  return (
+    <div className={styles.sectionHeading}>
+      <span aria-hidden="true">{icon}</span>
+      <h2>{children}</h2>
+    </div>
+  );
 }
 
 export default async function Page({
@@ -40,17 +62,13 @@ export default async function Page({
 }) {
   const locale = (await params).locale || routing.defaultLocale;
   const t = await getTranslations({ locale });
-  const personJsonLd = await generatePersonJsonLd(locale);
-  const socialData = transformSocialData(t.raw("social"));
+  const social = transformSocialData(t.raw("social"));
   const projects = t.raw("projects.items") as ResearchItem[];
   const publications = t.raw("publications.items") as ResearchItem[];
   const work = t.raw("work.items") as ComponentProps<typeof Work>["work"];
-  const education = t.raw("education.items") as ComponentProps<
-    typeof Education
-  >["educations"];
-  const news = t.raw("news.items") as ComponentProps<
-    typeof NewsSection
-  >["news"];
+  const education = t.raw("education.items") as EducationItem[];
+  const news = t.raw("news.items") as NewsItem[];
+  const topics = t.raw("homepage.topics") as string[];
   const awards = t.raw("awards.items") as ComponentProps<
     typeof AwardsSection
   >["awards"];
@@ -64,117 +82,181 @@ export default async function Page({
     typeof Services
   >["teaching"];
   const materials = t.raw("materials.items") as Material[];
-  const proseClass =
-    "prose prose-base dark:prose-invert max-w-none text-muted-foreground prose-p:leading-8 prose-a:decoration-border prose-a:underline-offset-4 hover:prose-a:decoration-current prose-strong:font-semibold";
+  const neuripsCount = publications.filter(
+    (p) => p.dates === "NeurIPS 2026",
+  ).length;
+  const cvprCount = publications.filter((p) => p.dates === "CVPR 2026").length;
+  const openSource = publications.flatMap((p) =>
+    p.links
+      .filter((link) => link.icon === "github")
+      .map((link) => ({
+        title: p.title.split(":")[0],
+        description: p.title,
+        href: link.href,
+      })),
+  );
 
   return (
-    <main className="mx-auto flex max-w-5xl flex-col gap-12 px-6 pt-28 pb-20 sm:gap-14 sm:px-10 sm:pt-32 lg:px-12">
-      <section id="hero">
-        {jsonldScript(personJsonLd)}
-        <BlurFade delay={0}>
-          <Brief
-            name={t("name.full")}
-            firstName={t("name.given")}
-            surname={t("name.family")}
-            initials={t("name.initials")}
-            subtitle={t("subtitle")}
-            description={t("headline")}
-            avatarUrl={siteConfig.avatarUrl}
-            locale={locale}
-            className="w-full"
+    <main id="main-content" className={styles.main}>
+      {jsonldScript(await generatePersonJsonLd(locale))}
+      <section
+        id="about"
+        className={styles.hero}
+        aria-labelledby="profile-name"
+      >
+        <aside className={styles.heroAside}>
+          <Image
+            src={siteConfig.avatarUrl}
+            alt={t("name.full")}
+            width={190}
+            height={190}
+            sizes="190px"
+            className={styles.avatar}
+            priority
           />
-        </BlurFade>
-        <aside
-          id="phd-search"
-          aria-labelledby="phd-search-title"
-          className="mt-6 rounded-xl border border-sky-200 bg-sky-50/70 p-5 text-sky-950 sm:p-6 dark:border-sky-900 dark:bg-sky-950/25 dark:text-sky-100"
-        >
-          <h2
-            id="phd-search-title"
-            className="text-lg leading-7 font-semibold text-balance sm:text-xl"
-          >
-            {t("phdSearch.title")}
-          </h2>
-          <p className="mt-2 text-sm leading-7 font-medium text-sky-900/85 dark:text-sky-200/90">
+          <div className={styles.socials}>
             <a
-              href={t("researchHighlight.href")}
+              href={social.GoogleScholar.url}
+              aria-label="Google Scholar"
+              title="Google Scholar"
               target="_blank"
               rel="noreferrer"
-              className="underline-offset-4 hover:underline"
             >
-              {t.rich("researchHighlight.label", {
-                authorship: (chunks) => (
-                  <span className="whitespace-nowrap">{chunks}</span>
-                ),
-              })}
+              <GraduationCap size={20} />
             </a>
-          </p>
-          <div className="mt-4 flex flex-wrap items-center gap-5 text-sm font-medium">
             <a
-              href={socialData.email.url}
-              className="inline-flex min-h-10 items-center rounded-md bg-sky-900 px-4 py-2 text-white hover:bg-sky-800 dark:bg-sky-100 dark:text-sky-950 dark:hover:bg-white"
+              href={social.GitHub.url}
+              aria-label="GitHub"
+              title="GitHub"
+              target="_blank"
+              rel="noreferrer"
             >
-              {t("phdSearch.contactLabel")}
+              <Github size={19} />
+            </a>
+            <a
+              href={social.email.url}
+              aria-label={t("phdSearch.contactLabel")}
+              title={social.email.url.replace(/^mailto:/, "")}
+            >
+              <Mail size={18} />
             </a>
             <a
               href={t("phdSearch.cvHref")}
+              aria-label={t("phdSearch.cvLabel")}
+              title={t("phdSearch.cvLabel")}
               target="_blank"
               rel="noreferrer"
-              className="hover:text-foreground underline underline-offset-4"
             >
-              {t("phdSearch.cvLabel")} <span aria-hidden="true">↗</span>
+              <FileText size={18} />
             </a>
           </div>
         </aside>
-        <div className="mt-6">
-          <SocialLinks socials={socialData} />
-        </div>
-        <nav
-          aria-label={t("sections.research")}
-          className="border-border text-muted-foreground mt-7 flex flex-wrap justify-center gap-x-6 gap-y-3 border-b pb-6 text-sm"
-        >
-          {[
-            ["news", t("sections.news.title")],
-            ["research-interests", t("sections.researchInterests")],
-            ["publications", t("sections.publications.title")],
-            ["work", t("sections.workExperience")],
-            ["acknowledgements", t("sections.acknowledgements")],
-            ["academic-services", t("sections.academicServices")],
-          ].map(([id, label]) => (
-            <a key={id} href={`#${id}`} className="hover:text-foreground">
-              {label}
+        <div className={styles.heroMain}>
+          <h1 id="profile-name" className={styles.name}>
+            {t("name.full")}
+            <span>{t("subtitle")}</span>
+          </h1>
+          <p className={styles.role}>{t("homepage.role")}</p>
+          <p className={styles.affiliation}>
+            <University size={14} aria-hidden="true" />
+            {t("homepage.affiliation")}
+          </p>
+          <p className={styles.affiliation}>
+            <Mail size={14} aria-hidden="true" />
+            <a href={social.email.url}>
+              {social.email.url.replace(/^mailto:/, "")}
             </a>
-          ))}
-        </nav>
+          </p>
+          <CustomReactMarkdown className={styles.bio}>
+            {t("homepage.researchBio")}
+          </CustomReactMarkdown>
+          <CustomReactMarkdown className={styles.bio}>
+            {t("homepage.appointments")}
+          </CustomReactMarkdown>
+          <a href="#contact" className={styles.focusBanner}>
+            <span className={styles.focusIcon}>
+              <Lightbulb size={18} aria-hidden="true" />
+            </span>
+            <span>
+              <span className={styles.focusLabel}>
+                {t("homepage.opportunities")}
+              </span>
+              <strong>{t("phdSearch.title")}</strong>
+              <span className={styles.focusDescription}>
+                {t("homepage.phdFocus")}
+              </span>
+            </span>
+          </a>
+          <div className={styles.tags}>
+            {topics.map((topic) => (
+              <span key={topic}>{topic}</span>
+            ))}
+          </div>
+          <a
+            className={styles.achievement}
+            href={t("researchHighlight.href")}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span className={styles.medal}>
+              <Award size={22} aria-hidden="true" />
+            </span>
+            <span>
+              <strong>Evo-Depth · NeurIPS 2026</strong>
+              <span>{t("homepage.achievementDetail")}</span>
+            </span>
+          </a>
+          <div
+            className={styles.stats}
+            aria-label={t("homepage.highlightsLabel")}
+          >
+            <a href="#publications">
+              <strong>{neuripsCount}</strong>
+              <span>NeurIPS 2026</span>
+              <small>{t("homepage.neuripsDetail")}</small>
+            </a>
+            <a href="#publications">
+              <strong>{cvprCount}</strong>
+              <span>CVPR 2026</span>
+              <small>Evo-1</small>
+            </a>
+            <a href="#work">
+              <strong>HKU</strong>
+              <span>{t("homepage.ra")}</span>
+              <small>{t("homepage.raDate")}</small>
+            </a>
+            <a href="#education">
+              <strong>2028</strong>
+              <span>{t("homepage.graduation")}</span>
+              <small>{t("homepage.major")}</small>
+            </a>
+          </div>
+        </div>
       </section>
-
-      <section id="about" className="scroll-mt-24 space-y-4">
-        <h2 className="text-xl font-semibold">{t("sections.about")}</h2>
-        <CustomReactMarkdown className={proseClass}>
-          {t("bioMarkdown")}
-        </CustomReactMarkdown>
-      </section>
-
       {news.length > 0 && (
-        <section id="news" className="scroll-mt-24">
-          <NewsSection news={news} title={t("sections.news.title")} />
+        <section id="news">
+          <SectionHeading icon="🔥">{t("sections.news.title")}</SectionHeading>
+          <ul className={styles.newsFeed}>
+            {news.map((item, index) => (
+              <li
+                key={item.title}
+                className={index === 0 ? styles.newsHighlight : undefined}
+              >
+                <time dateTime={item.date.replace(".", "-")}>{item.date}</time>
+                <strong>{item.title}</strong>
+                <CustomReactMarkdown className={styles.newsDetails}>
+                  {item.content}
+                </CustomReactMarkdown>
+              </li>
+            ))}
+          </ul>
         </section>
       )}
-
-      <section id="research-interests" className="scroll-mt-24 space-y-4">
-        <h2 className="text-xl font-semibold">
-          {t("sections.researchInterests")}
-        </h2>
-        <CustomReactMarkdown className={proseClass}>
-          {t("researchInterestsMarkdown")}
-        </CustomReactMarkdown>
-      </section>
-
       {projects.length > 0 && (
-        <section id="projects" className="scroll-mt-24 space-y-5">
-          <h2 className="text-xl font-semibold">
-            {t("sections.selectedProjects")}
-          </h2>
+        <section id="projects">
+          <SectionHeading icon="🚀">
+            {t("homepage.selectedTitle")}
+          </SectionHeading>
           <FeaturedResearch
             items={projects}
             contributionLabel={t("sections.contribution")}
@@ -182,154 +264,146 @@ export default async function Page({
           />
         </section>
       )}
-
       {publications.length > 0 && (
-        <section id="publications" className="scroll-mt-24 space-y-6">
-          <div className="space-y-2">
-            <h2 className="text-xl font-semibold">
-              {t("sections.publications.title")}
-            </h2>
-            <p className="text-muted-foreground text-sm">
-              {t("sections.viewFullPublications")}{" "}
-              <a
-                href={socialData.GoogleScholar.url}
-                target="_blank"
-                rel="noreferrer"
-                className="underline underline-offset-4"
-              >
-                Google Scholar
-              </a>
-            </p>
-          </div>
+        <section id="publications">
+          <SectionHeading icon="📚">
+            {t("sections.publications.title")}
+          </SectionHeading>
+          <p className={styles.publicationIntro}>
+            {t("sections.viewFullPublications")}{" "}
+            <a href={social.GoogleScholar.url} target="_blank" rel="noreferrer">
+              Google Scholar <ArrowUpRight size={13} aria-hidden="true" />
+            </a>
+          </p>
           <PublicationList items={publications} />
         </section>
       )}
-
-      {work.length > 0 && (
-        <section id="work" className="scroll-mt-24 space-y-6">
-          <h2 className="text-xl font-semibold">
-            {t("sections.workExperience")}
-          </h2>
-          <Work work={work} />
-        </section>
-      )}
-
-      <section id="acknowledgements" className="scroll-mt-24 space-y-4">
-        <h2 className="text-xl font-semibold">
-          {t("sections.acknowledgements")}
-        </h2>
-        <CustomReactMarkdown className={proseClass}>
-          {t("acknowledgementsMarkdown")}
-        </CustomReactMarkdown>
-      </section>
-
-      {education.length > 0 && (
-        <section id="education" className="scroll-mt-24 space-y-4">
-          <h2 className="text-xl font-semibold">{t("sections.education")}</h2>
-          <Education educations={education} />
-        </section>
-      )}
-
-      {(conferences.length > 0 ||
-        journals.length > 0 ||
-        teaching.length > 0) && (
-        <section id="academic-services" className="scroll-mt-24 space-y-4">
-          <h2 className="text-xl font-semibold">
-            {t("sections.academicServices")}
-          </h2>
-          <Services
-            reviewerConferences={conferences}
-            reviewerJournals={journals}
-            teaching={teaching}
-            reviewerConferencesLabel={t(
-              "sections.teaching.reviewerConferencesLabel",
-            )}
-            reviewerJournalsLabel={t("sections.teaching.reviewerJournalsLabel")}
-            teachingLabel={t("sections.teaching.teachingLabel")}
-          />
-        </section>
-      )}
-
-      {materials.length > 0 && (
-        <section id="materials" className="scroll-mt-24 space-y-5">
-          <h2 className="text-xl font-semibold">{t("sections.materials")}</h2>
-          {materials.map((item) => (
-            <article
-              key={item.href}
-              className="border-border flex flex-col gap-5 rounded-xl border p-5 sm:flex-row sm:items-center sm:gap-7"
-            >
+      {openSource.length > 0 && (
+        <section id="opensource">
+          <SectionHeading icon="⭐">{t("homepage.openSource")}</SectionHeading>
+          <div className={styles.openSourceGrid}>
+            {openSource.map((item) => (
               <a
                 href={item.href}
+                key={item.href}
                 target="_blank"
                 rel="noreferrer"
-                className="shrink-0 self-start"
-                aria-label={`${item.title}: ${t("sections.viewCertificate")}`}
               >
-                <Image
-                  src={item.image}
-                  alt={item.imageAlt}
-                  width={596}
-                  height={842}
-                  sizes="128px"
-                  className="border-border h-auto w-32 rounded border"
-                />
+                <span>
+                  <Github size={18} aria-hidden="true" />
+                  <strong>{item.title}</strong>
+                  <ArrowUpRight size={15} aria-hidden="true" />
+                </span>
+                <p>{item.description}</p>
               </a>
-              <div className="space-y-3">
-                <p className="text-muted-foreground text-xs">{item.date}</p>
-                <h3 className="font-semibold">{item.title}</h3>
-                <p className="text-muted-foreground text-sm leading-7">
-                  {item.description}
-                </p>
-                <a
-                  href={item.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-block text-sm font-medium underline underline-offset-4"
-                >
-                  {t("sections.viewCertificate")}{" "}
-                  <span aria-hidden="true">↗</span>
-                </a>
+            ))}
+          </div>
+        </section>
+      )}
+      <section id="work">
+        <SectionHeading icon="🔬">
+          {t("sections.workExperience")}
+        </SectionHeading>
+        <div className={styles.experience}>
+          <Work work={work} />
+        </div>
+        {materials.map((item) => (
+          <a
+            key={item.href}
+            className={styles.material}
+            href={item.href}
+            title={item.description}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FileText size={16} aria-hidden="true" />
+            {item.title}
+            <ArrowUpRight size={14} aria-hidden="true" />
+          </a>
+        ))}
+      </section>
+      <section id="research-interests">
+        <SectionHeading icon="💡">
+          {t("sections.researchInterests")}
+        </SectionHeading>
+        <CustomReactMarkdown className={styles.interests}>
+          {t("researchInterestsMarkdown")}
+        </CustomReactMarkdown>
+      </section>
+      {education.length > 0 && (
+        <section id="education">
+          <SectionHeading icon="🎓">{t("sections.education")}</SectionHeading>
+          {education.map((item) => (
+            <article className={styles.education} key={item.school}>
+              <span>
+                {item.start} – {item.end}
+              </span>
+              <div>
+                <h3>{item.degree}</h3>
+                <p>{item.school}</p>
               </div>
             </article>
           ))}
         </section>
       )}
-
+      {(conferences.length > 0 ||
+        journals.length > 0 ||
+        teaching.length > 0) && (
+        <section id="academic-services">
+          <SectionHeading icon="🛠️">
+            {t("sections.academicServices")}
+          </SectionHeading>
+          <div className={styles.services}>
+            <Services
+              reviewerConferences={conferences}
+              reviewerJournals={journals}
+              teaching={teaching}
+              reviewerConferencesLabel={t(
+                "sections.teaching.reviewerConferencesLabel",
+              )}
+              reviewerJournalsLabel={t(
+                "sections.teaching.reviewerJournalsLabel",
+              )}
+              teachingLabel={t("sections.teaching.teachingLabel")}
+            />
+          </div>
+        </section>
+      )}
       {skills.length > 0 && (
-        <section id="skills" className="space-y-4">
-          <h2 className="text-xl font-semibold">{t("sections.skills")}</h2>
+        <section id="skills">
+          <SectionHeading icon="💻">{t("sections.skills")}</SectionHeading>
           <Skills skills={skills} />
         </section>
       )}
       {awards.length > 0 && (
-        <section id="awards" className="space-y-4">
-          <h2 className="text-xl font-semibold">{t("sections.awards")}</h2>
+        <section id="awards">
+          <SectionHeading icon="🏆">{t("sections.awards")}</SectionHeading>
           <AwardsSection awards={awards} showAllText={t("showAll")} />
         </section>
       )}
       {talks.length > 0 && (
-        <section id="invited-talks" className="space-y-4">
-          <h2 className="text-xl font-semibold">
+        <section id="invited-talks">
+          <SectionHeading icon="🎤">
             {t("sections.invitedTalks.title")}
-          </h2>
+          </SectionHeading>
           <Talks talks={talks} showAllText={t("showAll")} />
         </section>
       )}
-
-      <section
-        id="contact"
-        className="border-border scroll-mt-24 space-y-3 border-t pt-8"
-      >
-        <h2 className="text-xl font-semibold">{t("sections.getInTouch")}</h2>
-        <p className="text-muted-foreground text-sm leading-7">
-          {t("sections.contactDescription")}{" "}
-          <a
-            href={socialData.email.url}
-            className="text-foreground break-all underline underline-offset-4 select-text"
-          >
-            {socialData.email.url.replace(/^mailto:/, "")}
+      <section id="acknowledgements">
+        <SectionHeading icon="🤝">
+          {t("sections.acknowledgements")}
+        </SectionHeading>
+        <CustomReactMarkdown className={styles.acknowledgements}>
+          {t("acknowledgementsMarkdown")}
+        </CustomReactMarkdown>
+      </section>
+      <section id="contact">
+        <SectionHeading icon="✉️">{t("sections.getInTouch")}</SectionHeading>
+        <p className={styles.contact}>
+          {t("phdSearch.description")}{" "}
+          <a href={social.email.url}>
+            {social.email.url.replace(/^mailto:/, "")}
           </a>
-          {locale === "zh" ? "。" : "."}
         </p>
       </section>
     </main>

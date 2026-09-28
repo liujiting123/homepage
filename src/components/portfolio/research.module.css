@@ -1,0 +1,324 @@
+.researchRoot {
+  color: var(--ref-text);
+}
+
+.featuredCard {
+  overflow: hidden;
+  margin-bottom: 21px;
+  border: 1px solid var(--ref-border);
+  border-radius: 18px;
+  background: var(--ref-surface);
+  box-shadow: var(--ref-shadow-sm);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.featuredCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--ref-border-strong);
+  box-shadow: var(--ref-shadow-lg);
+}
+
+.featuredGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 24px;
+  padding: 16.5px;
+}
+
+.featuredCard:nth-child(even) .figure {
+  order: 2;
+}
+
+.featuredGridNoImage {
+  padding: 16.5px;
+}
+
+.figure,
+.featuredContent,
+.publicationBody {
+  min-width: 0;
+}
+
+.figure {
+  margin: 0;
+}
+
+.figureLink {
+  display: block;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #000;
+  box-shadow: var(--ref-shadow-sm);
+  line-height: 0;
+}
+
+.figureImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.figureCaption {
+  margin-top: 7px;
+  color: var(--ref-muted);
+  font-size: 10.5px;
+  line-height: 1.5;
+}
+
+.figureCaption a:hover {
+  color: var(--ref-accent);
+}
+
+.featuredContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 8.25px;
+}
+
+.venueBadge,
+.roleBadge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.venueBadge {
+  padding: 3px 10px;
+  background: linear-gradient(90deg, var(--ref-accent), var(--ref-accent-2));
+  color: #fff;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+}
+
+.roleBadge {
+  padding: 3px 9px;
+  border: 1px solid var(--ref-accent-ring);
+  background: var(--ref-accent-soft);
+  color: var(--ref-accent-2);
+  font-size: 10.2px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+}
+
+.featuredDate {
+  color: var(--ref-muted);
+  font-size: 10.5px;
+}
+
+.featuredTitle {
+  margin: 0 0 7px;
+  font-size: 17.7px;
+  font-weight: 780;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.featuredTitle a,
+.publicationTitle a {
+  color: var(--ref-text);
+  text-decoration: none;
+}
+
+.featuredTitle a:hover,
+.publicationTitle a:hover {
+  color: var(--ref-accent);
+}
+
+.authors {
+  margin: 0 0 7.5px;
+  color: var(--ref-text-soft);
+  font-size: 13.2px;
+  line-height: 1.5;
+}
+
+.authors :global(p) {
+  margin: 0;
+}
+
+.authors :global(strong) {
+  color: var(--ref-text);
+  font-weight: 700;
+}
+
+.featuredDescription {
+  margin: 0 0 9.7px;
+  color: var(--ref-text-soft);
+  font-size: 13.8px;
+  line-height: 1.55;
+}
+
+.contribution {
+  margin: 0 0 9.7px;
+  color: var(--ref-text-soft);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.contributionLabel {
+  color: var(--ref-text);
+  font-weight: 700;
+}
+
+.resourceLinks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 4.5px;
+}
+
+.resourceLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 11px;
+  border: 1px solid var(--ref-border);
+  border-radius: 999px;
+  background: var(--ref-surface-2);
+  color: var(--ref-text-soft);
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.4;
+  text-decoration: none;
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease,
+    background 0.15s ease;
+}
+
+.resourceLink:hover {
+  transform: translateY(-2px);
+  border-color: var(--ref-accent-ring);
+  background: var(--ref-accent-soft);
+  color: var(--ref-accent);
+}
+
+.resourceLink svg {
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+.paperLink svg {
+  color: #b31b1b;
+}
+
+.paperLink:hover {
+  border-color: rgba(179, 27, 27, 0.35);
+  background: rgba(179, 27, 27, 0.07);
+  color: #b31b1b;
+}
+
+.codeLink svg {
+  color: var(--ref-text);
+}
+
+.projectLink svg {
+  color: var(--ref-accent);
+}
+
+.publication {
+  padding: 13.5px 0;
+  border-bottom: 1px solid var(--ref-border);
+  color: var(--ref-text-soft);
+  font-size: 14.25px;
+  line-height: 1.6;
+}
+
+.publication:last-child {
+  border-bottom: 0;
+}
+
+.publicationTitle {
+  margin: 0;
+  font-size: 14.25px;
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.publicationTitle a {
+  font-weight: 650;
+}
+
+.publicationVenue {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 1px 8px;
+  border: 1px solid var(--ref-accent-ring);
+  border-radius: 6px;
+  background: var(--ref-accent-soft);
+  color: var(--ref-accent);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+  vertical-align: middle;
+}
+
+.publicationTitle .roleBadge {
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.publication .authors {
+  margin: 3.5px 0 0;
+}
+
+.publicationDescription {
+  margin: 3.5px 0 0;
+  color: var(--ref-muted);
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+.publication .resourceLinks {
+  margin-top: 8.5px;
+  padding-top: 0;
+}
+
+.researchRoot a:focus-visible {
+  outline: 2px solid var(--ref-accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 860px) {
+  .featuredGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .featuredCard:nth-child(even) .figure {
+    order: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .featuredCard,
+  .resourceLink {
+    transition: none;
+  }
+
+  .featuredCard:hover,
+  .resourceLink:hover {
+    transform: none;
+  }
+}

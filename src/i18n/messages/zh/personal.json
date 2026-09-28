@@ -44,5 +44,37 @@
     "contactLabel": "联系我",
     "cvLabel": "查看简历",
     "cvHref": "/resume.pdf"
+  },
+  "homepage": {
+    "role": "数学专业本科生",
+    "affiliation": "四川农业大学 · 预计 2028 年毕业",
+    "researchBio": "我的研究方向是**机器人学习与具身智能**，重点关注视觉—语言—动作模型、空间表征学习与跨本体泛化。",
+    "appointments": "目前在**香港大学** [Taku Komura 教授课题组](https://www.cs.hku.hk/index.php/people/academic-staff/taku)担任科研助理，所在团队为 [Miro Dynamics–HKU CGVU 联合实验室](https://hku-cg.github.io/mirod-lab/)。2025–2026 年在**上海交通大学** [MINT 实验室](https://mint-sjtu.github.io/)担任科研助理。",
+    "topics": ["视觉—语言—动作模型", "空间表征学习", "跨本体泛化"],
+    "opportunities": "博士申请",
+    "phdFocus": "机器人学习与具身智能方向 · 欢迎联系交流。",
+    "achievementDetail": "共同第一作者 · 负责模型设计、代码实现、训练与评测。",
+    "highlightsLabel": "研究亮点",
+    "neuripsDetail": "其中 1 篇为共同第一作者",
+    "ra": "科研助理",
+    "raDate": "2026–至今",
+    "graduation": "预计毕业年份",
+    "major": "数学 · 四川农业大学",
+    "selectedTitle": "代表性工作",
+    "openSource": "开源项目",
+    "navigation": {
+      "home": "主页",
+      "about": "关于",
+      "news": "动态",
+      "research": "工作",
+      "publications": "论文",
+      "openSource": "开源",
+      "experience": "经历",
+      "education": "教育",
+      "service": "服务",
+      "skip": "跳转至正文",
+      "menu": "展开导航",
+      "colors": "强调色"
+    }
   }
 }

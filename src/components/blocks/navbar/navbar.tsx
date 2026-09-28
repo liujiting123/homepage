@@ -1,151 +1,115 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Menu, X } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 
 import { LanguageToggle } from "@/components/blocks/navbar/language-toggle";
 import { ModeToggle } from "@/components/blocks/navbar/mode-toggle";
-import { buttonVariants } from "@/components/ui/button";
-import { Dock, DockIcon } from "@/components/ui/dock";
-import { Separator } from "@/components/ui/separator";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { DATA } from "@/data";
-import { cn } from "@/lib/utils";
+
+import styles from "./navbar.module.css";
+
+const accents = [
+  "ruby",
+  "indigo",
+  "ocean",
+  "emerald",
+  "rose",
+  "amber",
+] as const;
 
 export default function Navbar() {
-  const pathname = usePathname();
-  const isChinesePage = pathname.startsWith("/zh");
-  const [isDesktop, setIsDesktop] = useState(false);
-
+  const locale = useLocale();
+  const t = useTranslations();
+  const home = locale === "zh" ? "/zh" : "/";
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [accent, setAccent] = useState("indigo");
   useEffect(() => {
-    const checkScreenSize = () => {
-      setIsDesktop(window.innerWidth >= 768); // md breakpoint
-    };
-
-    checkScreenSize();
-    window.addEventListener("resize", checkScreenSize);
-
-    return () => {
-      window.removeEventListener("resize", checkScreenSize);
-    };
+    try {
+      const saved = localStorage.getItem("homepage-accent");
+      if (saved && accents.some((value) => value === saved)) {
+        setAccent(saved);
+        document.documentElement.dataset.accent = saved;
+      }
+    } catch {
+      /* Storage may be unavailable in private browsing. */
+    }
   }, []);
-
+  function selectAccent(value: string) {
+    setAccent(value);
+    document.documentElement.dataset.accent = value;
+    try {
+      localStorage.setItem("homepage-accent", value);
+    } catch {
+      /* The selected color still applies for this visit. */
+    }
+  }
+  const sections = [
+    ["about", "about"],
+    ["news", "news"],
+    ["projects", "research"],
+    ["publications", "publications"],
+    ["opensource", "openSource"],
+    ["work", "experience"],
+    ["education", "education"],
+    ["academic-services", "service"],
+  ];
   return (
-    <div
-      className={cn(
-        "pointer-events-none fixed inset-x-0 bottom-0 z-40 mx-auto mb-9 flex h-full max-h-14 origin-bottom md:top-0 md:mb-0",
-      )}
-    >
-      <div
-        className={cn(
-          "bg-background dark:bg-background fixed inset-x-0 bottom-0 h-16 w-full to-transparent backdrop-blur-lg [-webkit-mask-image:linear-gradient(to_top,black,transparent)] md:top-0",
-        )}
-      ></div>
-      <Dock className="bg-background pointer-events-auto relative z-50 mx-auto flex h-full min-h-full transform-gpu items-center px-1 [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] md:mt-1 dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] dark:[border:1px_solid_rgba(255,255,255,.1)]">
-        {DATA.navbar.map((item) => {
-          // Adjust href based on current language
-          let href: string = item.href;
-          if (item.href === "/") {
-            href = isChinesePage ? "/zh" : "/";
-          } else if (item.href === "/resume.pdf") {
-            href = isChinesePage ? "/resume.pdf" : "/resume-en.pdf";
-          }
-          const isStaticFile =
-            href.endsWith(".pdf") ||
-            href.endsWith(".png") ||
-            href.endsWith(".jpg") ||
-            href.endsWith(".jpeg");
-
-          return (
-            <DockIcon key={item.href}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  {isStaticFile ? (
-                    <a
-                      href={href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={cn(
-                        buttonVariants({ variant: "ghost", size: "icon" }),
-                        "size-12",
-                      )}
-                      aria-label={item.label}
-                    >
-                      <item.icon className="size-4" />
-                    </a>
-                  ) : (
-                    <Link
-                      href={href}
-                      className={cn(
-                        buttonVariants({ variant: "ghost", size: "icon" }),
-                        "size-12",
-                      )}
-                      aria-label={item.label}
-                    >
-                      <item.icon className="size-4" />
-                    </Link>
-                  )}
-                </TooltipTrigger>
-                <TooltipContent
-                  side={isDesktop ? "bottom" : "top"}
-                  sideOffset={8}
-                >
-                  <p>{item.label}</p>
-                </TooltipContent>
-              </Tooltip>
-            </DockIcon>
-          );
-        })}
-        <Separator orientation="vertical" className="h-full" />
-        {/* {Object.entries(DATA.contact.social)
-          .filter(([, social]) => social.navbar)
-          .map(([name, social]) => (
-            <DockIcon key={name}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Link
-                    href={social.url}
-                    className={cn(
-                      buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12",
-                    )}
-                  >
-                    <social.icon className="size-4" />
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>{name}</p>
-                </TooltipContent>
-              </Tooltip>
-            </DockIcon>
+    <header className={styles.header}>
+      <a className={styles.skipLink} href="#main-content">
+        {t("homepage.navigation.skip")}
+      </a>
+      <div className={styles.inner}>
+        <a href={home + "#about"} className={styles.brand}>
+          {t("homepage.navigation.home")}
+        </a>
+        <nav
+          id="main-navigation"
+          className={`${styles.navigation} ${menuOpen ? styles.open : ""}`}
+          aria-label={t("sections.research")}
+        >
+          {sections.map(([id, label]) => (
+            <a
+              key={id}
+              href={home + "#" + id}
+              onClick={() => setMenuOpen(false)}
+            >
+              {t("homepage.navigation." + label)}
+            </a>
           ))}
-        <Separator orientation="vertical" className="h-full py-2" /> */}
-        <DockIcon>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <ModeToggle />
-            </TooltipTrigger>
-            <TooltipContent side={isDesktop ? "bottom" : "top"} sideOffset={8}>
-              <p>Theme</p>
-            </TooltipContent>
-          </Tooltip>
-        </DockIcon>
-        <DockIcon>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <LanguageToggle />
-            </TooltipTrigger>
-            <TooltipContent side={isDesktop ? "bottom" : "top"} sideOffset={8}>
-              <p>Language</p>
-            </TooltipContent>
-          </Tooltip>
-        </DockIcon>
-      </Dock>
-    </div>
+        </nav>
+        <div className={styles.controls}>
+          <div
+            className={styles.palette}
+            role="group"
+            aria-label={t("homepage.navigation.colors")}
+          >
+            {accents.map((value) => (
+              <button
+                key={value}
+                type="button"
+                aria-label={value}
+                aria-pressed={accent === value}
+                className={styles.colorDot}
+                data-color={value}
+                onClick={() => selectAccent(value)}
+              />
+            ))}
+          </div>
+          <LanguageToggle />
+          <ModeToggle />
+        </div>
+        <button
+          className={styles.menuButton}
+          type="button"
+          aria-label={t("homepage.navigation.menu")}
+          aria-expanded={menuOpen}
+          aria-controls="main-navigation"
+          onClick={() => setMenuOpen((value) => !value)}
+        >
+          {menuOpen ? <X size={20} /> : <Menu size={20} />}
+        </button>
+      </div>
+    </header>
   );
 }

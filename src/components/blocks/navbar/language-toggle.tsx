@@ -37,9 +37,7 @@ export function LanguageToggle({ disabled = false }: LanguageToggleProps) {
     router.replace(pathname, { locale: targetLocale });
   };
 
-  // Determine display text based on current locale
-  // When disabled, always show "EN"
-  const displayText = disabled ? "EN" : isChinese ? "中" : "EN";
+  const displayText = disabled ? "EN" : isChinese ? "EN" : "中文";
 
   return (
     <Button
@@ -48,7 +46,7 @@ export function LanguageToggle({ disabled = false }: LanguageToggleProps) {
       size="icon"
       className={cn("px-2", disabled && "cursor-not-allowed opacity-50")}
       onClick={handleLanguageToggle}
-      aria-label="Toggle language"
+      aria-label={isChinese ? "Switch to English" : "切换到中文"}
       disabled={disabled}
     >
       <span className="text-sm font-medium">{displayText}</span>
