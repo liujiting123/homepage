@@ -37,7 +37,7 @@
     ]
   },
   "acknowledgementsMarkdown": "感谢[赵波老师](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo)、[李根教授](https://www.genli.top/)、[林涛](https://dorayakilin.github.io/)和[杜雨新](https://yuxin-du-lab.github.io/)在交大期间的指导与支持，也感谢[廖周应成](https://zycliao.com/)和[王文佳博士](https://wenjiawang0312.github.io/)在港大的指导。我从这些交流与讨论中受益良多，也逐渐明确了自己的研究兴趣和思考问题的方式。",
-  "researchInterestsMarkdown": "我的研究兴趣是**机器人学习与通用具身智能**，具体关注：\n\n- **通用机器人学习：** VLA、WAM，以及通用机器人策略的规模化学习。\n- **以人类为中心的机器人学习：** 从人类示范与反馈中学习、适应人类偏好，以及人机协作。\n- **具身智能体（探索中）：** 我觉得这是一个很有意思的方向，目前还在学习和探索。",
+  "researchInterestsMarkdown": "我的长期研究目标是推动**通用具身智能**的发展，探索如何让智能体在开放、变化的环境中理解世界、学习经验，并可靠地完成多样化任务。目前，我从**机器人学习**出发，主要关注人类经验迁移、空间表征与模型适应能力。",
   "phdSearch": {
     "title": "寻找 2028 年秋季入学的博士机会",
     "description": "申请方向为机器人学习与具身智能。欢迎相关方向的导师与研究团队联系交流。",

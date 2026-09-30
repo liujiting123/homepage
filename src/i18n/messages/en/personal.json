@@ -40,7 +40,7 @@
     ]
   },
   "acknowledgementsMarkdown": "I am grateful to [Prof. Bo Zhao](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo), [Prof. Gen Li](https://www.genli.top/), [Tao Lin](https://dorayakilin.github.io/), and [Yuxin Du](https://yuxin-du-lab.github.io/) for their mentorship and support during my research at SJTU, and to [Zhouyingcheng Liao](https://zycliao.com/) and [Dr. Wenjia Wang](https://wenjiawang0312.github.io/) for their guidance at HKU. Their advice and our discussions have helped shape my research interests and how I approach research problems.",
-  "researchInterestsMarkdown": "My research interests lie in **robot learning and general-purpose embodied intelligence**. I am particularly interested in:\n\n- **Generalist Robot Learning:** VLA, WAM, and scalable learning of general-purpose robot policies.\n- **Human-Centered Robot Learning:** Learning from human demonstrations and feedback, adapting to human preferences, and human–robot collaboration.\n- **Embodied Agents (Exploring):** I find this area fascinating and am still learning about it.",
+  "researchInterestsMarkdown": "My long-term research goal is to advance **general-purpose embodied intelligence** by exploring how agents can understand the world, learn from experience, and reliably accomplish diverse tasks in open-ended, changing environments. My current work focuses on **robot learning**, particularly the transfer of human experience, spatial representations, and model adaptation.",
   "phdSearch": {
     "title": "Seeking a PhD position · Fall 2028",
     "description": "I am looking for PhD opportunities starting in Fall 2028, with a focus on robot learning and embodied AI. I would be glad to hear from potential advisors working in these areas.",
