@@ -48,9 +48,9 @@
   "homepage": {
     "role": "数学专业本科生",
     "affiliation": "四川农业大学 · 预计 2028 年毕业",
-    "researchBio": "我的研究方向是**机器人学习与具身智能**，重点关注视觉—语言—动作模型、空间表征学习与跨本体泛化。",
+    "researchBio": "我的长期研究目标是推动**通用具身智能**的发展。目前主要研究**机器人学习**中的人类经验迁移、空间表征与模型适应能力。",
     "appointments": "目前在**香港大学** [Taku Komura 教授课题组](https://www.cs.hku.hk/index.php/people/academic-staff/taku)担任科研助理，所在团队为 [Miro Dynamics–HKU CGVU 联合实验室](https://hku-cg.github.io/mirod-lab/)。2025–2026 年在**上海交通大学** [MINT 实验室](https://mint-sjtu.github.io/)担任科研助理。",
-    "topics": ["视觉—语言—动作模型", "空间表征学习", "跨本体泛化"],
+    "topics": ["人类经验迁移", "空间表征", "模型适应"],
     "opportunities": "博士申请",
     "phdFocus": "机器人学习与具身智能方向 · 欢迎联系交流。",
     "achievementDetail": "共同第一作者 · 负责模型设计、代码实现、训练与评测。",

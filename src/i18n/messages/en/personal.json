@@ -51,12 +51,12 @@
   "homepage": {
     "role": "Undergraduate in Mathematics",
     "affiliation": "Sichuan Agricultural University · Class of 2028",
-    "researchBio": "I work on **robot learning and embodied intelligence**, with a focus on vision–language–action models, spatial representations, and cross-embodiment generalization.",
+    "researchBio": "My long-term goal is to advance **general-purpose embodied intelligence**. My current work focuses on **robot learning**, particularly the transfer of human experience, spatial representations, and model adaptation.",
     "appointments": "I am currently a Research Assistant in [Prof. Taku Komura’s group](https://www.cs.hku.hk/index.php/people/academic-staff/taku) at **The University of Hong Kong** ([Miro Dynamics–HKU CGVU Joint Lab](https://hku-cg.github.io/mirod-lab/)). Previously, I was a Research Assistant at **Shanghai Jiao Tong University’s** [MINT Lab](https://mint-sjtu.github.io/) (2025–2026).",
     "topics": [
-      "Vision–language–action",
+      "Human-to-robot transfer",
       "Spatial representations",
-      "Cross-embodiment learning"
+      "Model adaptation"
     ],
     "opportunities": "PhD opportunities",
     "phdFocus": "Robot learning & embodied AI · Happy to connect.",
