@@ -28,9 +28,11 @@ export default function Work({ work }: { work: Work[] }) {
                 {item.company}
               </a>
             </h3>
-            <span className="text-muted-foreground shrink-0 text-sm">
-              {item.start}–{item.end}
-            </span>
+            {(item.start || item.end) && (
+              <span className="text-muted-foreground shrink-0 text-sm">
+                {[item.start, item.end].filter(Boolean).join("–")}
+              </span>
+            )}
           </div>
           <p className="mt-1 text-sm font-medium">{item.title}</p>
           <CustomReactMarkdown className="prose prose-sm dark:prose-invert text-muted-foreground prose-p:my-2 prose-p:leading-7 prose-a:font-normal prose-a:decoration-border prose-a:underline-offset-4 hover:prose-a:decoration-current mt-3 max-w-none">

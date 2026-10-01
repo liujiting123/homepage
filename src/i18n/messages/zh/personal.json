@@ -9,7 +9,7 @@
   "headline": "机器人学习与具身智能\n四川农业大学数学专业本科生",
   "welcome": "欢迎访问我的个人主页！",
   "ogImageUrl": "jitingliu.com",
-  "bioMarkdown": "我是**四川农业大学数学专业本科生**，预计于 **2028 年毕业**。\n\n目前，我在**香港大学** [Taku Komura 教授课题组](https://www.cs.hku.hk/index.php/people/academic-staff/taku)担任科研助理（Research Assistant），所在团队为 [Miro Dynamics–HKU CGVU 联合实验室](https://hku-cg.github.io/mirod-lab/)。**2025–2026 年**，我在**上海交通大学** [赵波老师](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo)的 [MINT 实验室](https://mint-sjtu.github.io/)担任科研助理（Research Assistant）。",
+  "bioMarkdown": "我是**四川农业大学数学专业本科生**，预计于 **2028 年毕业**。\n\n目前，我在 **[Miro Dynamics](https://mirod.ai/)** 担任研究员（Researcher），同时在**香港大学** [Taku Komura 教授课题组](https://www.cs.hku.hk/index.php/people/academic-staff/taku)的 [Miro Dynamics–HKU CGVU 联合实验室](https://hku-cg.github.io/mirod-lab/)担任科研助理（Research Assistant）。**2025–2026 年**，我在**上海交通大学** [赵波老师](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo)的 [MINT 实验室](https://mint-sjtu.github.io/)担任科研助理（Research Assistant）。",
   "researchHighlight": {
     "label": "Evo-Depth · NeurIPS 2026 录用 · <authorship>共同第一作者</authorship>",
     "href": "https://arxiv.org/abs/2605.14950"
@@ -49,7 +49,7 @@
     "role": "数学专业本科生",
     "affiliation": "四川农业大学 · 预计 2028 年毕业",
     "researchBio": "我的长期研究目标是推动**通用具身智能**的发展。目前主要研究**机器人学习**中的人类经验迁移、空间表征与模型适应能力。",
-    "appointments": "目前在**香港大学** [Taku Komura 教授课题组](https://www.cs.hku.hk/index.php/people/academic-staff/taku)担任科研助理，所在团队为 [Miro Dynamics–HKU CGVU 联合实验室](https://hku-cg.github.io/mirod-lab/)。2025–2026 年在**上海交通大学** [MINT 实验室](https://mint-sjtu.github.io/)担任科研助理。",
+    "appointments": "目前，我在 **[Miro Dynamics](https://mirod.ai/)** 担任研究员（Researcher），同时在**香港大学** [Taku Komura 教授课题组](https://www.cs.hku.hk/index.php/people/academic-staff/taku)的 [Miro Dynamics–HKU CGVU 联合实验室](https://hku-cg.github.io/mirod-lab/)担任科研助理（Research Assistant）。2025–2026 年在**上海交通大学** [MINT 实验室](https://mint-sjtu.github.io/)担任科研助理。",
     "topics": ["人类经验迁移", "空间表征", "模型适应"],
     "opportunities": "博士申请",
     "phdFocus": "机器人学习与具身智能方向 · 欢迎联系交流。",
