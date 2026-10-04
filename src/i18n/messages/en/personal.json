@@ -9,7 +9,7 @@
   "headline": "Robot Learning & Embodied AI\nUndergraduate in Mathematics",
   "welcome": "Welcome to my homepage!",
   "ogImageUrl": "jitingliu.com",
-  "bioMarkdown": "I am an undergraduate in Mathematics at **SICAU**, with expected graduation in **2028**.\n\nI am currently a Researcher at **[Miro Dynamics](https://mirod.ai/)** and a Research Assistant in the [Miro Dynamics–HKU CGVU Joint Lab](https://hku-cg.github.io/mirod-lab/), working with [Prof. Taku Komura](https://www.cs.hku.hk/index.php/people/academic-staff/taku) at **The University of Hong Kong**. Previously, I was a Research Assistant in [Prof. Bo Zhao’s](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo) [MINT Lab](https://mint-sjtu.github.io/) at **Shanghai Jiao Tong University** (**2025–2026**).",
+  "bioMarkdown": "I am an undergraduate in Mathematics at **SICAU**, with expected graduation in **2028**.\n\nI am currently a Researcher at **[Miro Dynamics](https://mirod.ai/)** and a Research Assistant in the [Miro Dynamics–HKU CGVU Joint Lab](https://hku-cg.github.io/mirod-lab/). Previously, I was a Research Assistant in [Prof. Bo Zhao’s](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo) [MINT Lab](https://mint-sjtu.github.io/) at **Shanghai Jiao Tong University** (**2025–2026**).",
   "researchHighlight": {
     "label": "Evo-Depth · NeurIPS 2026 · <authorship>Co-first author</authorship>",
     "href": "https://arxiv.org/abs/2605.14950"
@@ -52,7 +52,7 @@
     "role": "Undergraduate in Mathematics",
     "affiliation": "Sichuan Agricultural University · Class of 2028",
     "researchBio": "My long-term goal is to advance **general-purpose embodied intelligence**. My current work focuses on **robot learning**, particularly the transfer of human experience, spatial representations, and model adaptation.",
-    "appointments": "I am currently a Researcher at **[Miro Dynamics](https://mirod.ai/)** and a Research Assistant in the [Miro Dynamics–HKU CGVU Joint Lab](https://hku-cg.github.io/mirod-lab/), working with [Prof. Taku Komura](https://www.cs.hku.hk/index.php/people/academic-staff/taku) at **The University of Hong Kong**. Previously, I was a Research Assistant at **Shanghai Jiao Tong University’s** [MINT Lab](https://mint-sjtu.github.io/) (2025–2026).",
+    "appointments": "I am currently a Researcher at **[Miro Dynamics](https://mirod.ai/)** and a Research Assistant in the [Miro Dynamics–HKU CGVU Joint Lab](https://hku-cg.github.io/mirod-lab/). Previously, I was a Research Assistant at **Shanghai Jiao Tong University’s** [MINT Lab](https://mint-sjtu.github.io/) (2025–2026).",
     "topics": [
       "Human-to-robot transfer",
       "Spatial representations",
