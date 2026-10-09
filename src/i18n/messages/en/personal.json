@@ -9,7 +9,7 @@
   "headline": "Multimodal Foundation Models & Embodied AI\nUndergraduate in Mathematics",
   "welcome": "Welcome to my homepage!",
   "ogImageUrl": "jitingliu.com",
-  "bioMarkdown": "I am an undergraduate in **Mathematics**, with expected graduation in **2028**.\n\nMy current research focuses on **multimodal foundation models and embodied AI**, exploring how models understand, reason about, and generalize to the real world, and how these capabilities support agent decision-making and action. My long-term goal is to advance general-purpose embodied intelligence.\n\nI previously served as a Research Assistant at **HKU’s** [CGVU Joint Lab](https://hku-cg.github.io/mirod-lab/) and **Shanghai Jiao Tong University’s** [MINT Lab](https://mint-sjtu.github.io/).",
+  "bioMarkdown": "I am an undergraduate in **Mathematics**, with expected graduation in **2028**.\n\nMy current research focuses on **multimodal foundation models and embodied AI**, exploring how models understand, reason about, and generalize to the real world, and how these capabilities support agent decision-making and action. My long-term goal is to advance general-purpose embodied intelligence.\n\nI previously served as a Research Assistant at **HKU’s** [Miro Dynamics–HKU CGVU Joint Lab](https://hku-cg.github.io/mirod-lab/) and **Shanghai Jiao Tong University’s** [MINT Lab](https://mint-sjtu.github.io/).",
   "researchHighlight": {
     "label": "Evo-Depth · NeurIPS 2026 · <authorship>Co-first author</authorship>",
     "href": "https://arxiv.org/abs/2605.14950"
@@ -52,7 +52,7 @@
     "role": "Undergraduate in Mathematics",
     "affiliation": "Expected graduation: 2028",
     "researchBio": "My current research focuses on **multimodal foundation models and embodied AI**, exploring how models understand, reason about, and generalize to the real world, and how these capabilities support agent decision-making and action. My long-term goal is to advance general-purpose embodied intelligence.",
-    "appointments": "I previously served as a Research Assistant at **HKU’s** [CGVU Joint Lab](https://hku-cg.github.io/mirod-lab/) and **Shanghai Jiao Tong University’s** [MINT Lab](https://mint-sjtu.github.io/).",
+    "appointments": "I previously served as a Research Assistant at **HKU’s** [Miro Dynamics–HKU CGVU Joint Lab](https://hku-cg.github.io/mirod-lab/) and **Shanghai Jiao Tong University’s** [MINT Lab](https://mint-sjtu.github.io/).",
     "topics": [
       "Multimodal understanding & reasoning",
       "Generalization & adaptation",

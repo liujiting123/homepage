@@ -9,7 +9,7 @@
   "headline": "多模态大模型与具身智能\n数学专业本科生",
   "welcome": "欢迎访问我的个人主页！",
   "ogImageUrl": "jitingliu.com",
-  "bioMarkdown": "我是**数学专业本科生**，预计于 **2028 年毕业**。\n\n我目前主要关注**多模态大模型与具身智能**，探索模型对真实世界的理解、推理与泛化能力，以及这些能力如何支持智能体的决策与行动。我的长期目标是推动通用具身智能的发展。\n\n我曾在**香港大学**的 [CGVU 联合实验室](https://hku-cg.github.io/mirod-lab/)和**上海交通大学**的 [MINT 实验室](https://mint-sjtu.github.io/)担任科研助理。",
+  "bioMarkdown": "我是**数学专业本科生**，预计于 **2028 年毕业**。\n\n我目前主要关注**多模态大模型与具身智能**，探索模型对真实世界的理解、推理与泛化能力，以及这些能力如何支持智能体的决策与行动。我的长期目标是推动通用具身智能的发展。\n\n我曾在**香港大学**的 [Miro Dynamics–HKU CGVU 联合实验室](https://hku-cg.github.io/mirod-lab/)和**上海交通大学**的 [MINT 实验室](https://mint-sjtu.github.io/)担任科研助理。",
   "researchHighlight": {
     "label": "Evo-Depth · NeurIPS 2026 录用 · <authorship>共同第一作者</authorship>",
     "href": "https://arxiv.org/abs/2605.14950"
@@ -49,7 +49,7 @@
     "role": "数学专业本科生",
     "affiliation": "预计 2028 年毕业",
     "researchBio": "我目前主要关注**多模态大模型与具身智能**，探索模型对真实世界的理解、推理与泛化能力，以及这些能力如何支持智能体的决策与行动。我的长期目标是推动通用具身智能的发展。",
-    "appointments": "我曾在**香港大学**的 [CGVU 联合实验室](https://hku-cg.github.io/mirod-lab/)和**上海交通大学**的 [MINT 实验室](https://mint-sjtu.github.io/)担任科研助理。",
+    "appointments": "我曾在**香港大学**的 [Miro Dynamics–HKU CGVU 联合实验室](https://hku-cg.github.io/mirod-lab/)和**上海交通大学**的 [MINT 实验室](https://mint-sjtu.github.io/)担任科研助理。",
     "topics": ["多模态理解与推理", "泛化与适应", "决策与行动"],
     "opportunities": "博士申请",
     "phdFocus": "多模态大模型与具身智能方向 · 欢迎联系交流。",
