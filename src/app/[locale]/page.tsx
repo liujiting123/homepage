@@ -236,10 +236,16 @@ export default async function Page({
               href={researchImpact.citations.source}
               target="_blank"
               rel="noreferrer"
+              title="Google Scholar"
             >
               <strong>{researchImpact.citations.count}</strong>
               <span>{t("homepage.citations")}</span>
-              <small>Google Scholar</small>
+              <small>
+                {t("homepage.citationIndices", {
+                  hIndex: researchImpact.citations.hIndex,
+                  i10Index: researchImpact.citations.i10Index,
+                })}
+              </small>
             </a>
           </div>
           <p className={styles.metricsDate}>

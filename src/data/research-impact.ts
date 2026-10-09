@@ -1,13 +1,15 @@
-/** Verified from the linked GitHub repositories and Google Scholar profile. */
+/** Dated Google Scholar metrics and verified GitHub repository star counts. */
 export const researchImpact = {
-  verifiedAt: "2026-09-29",
+  verifiedAt: "2026-10-09",
   citations: {
-    count: 125,
+    count: 141,
+    hIndex: 4,
+    i10Index: 3,
     source: "https://scholar.google.com/citations?user=GVENiysAAAAJ&hl=en",
   },
   repositories: [
-    { href: "https://github.com/MINT-SJTU/Evo-Depth", stars: 68 },
-    { href: "https://github.com/MINT-SJTU/Evo-1", stars: 365 },
+    { href: "https://github.com/MINT-SJTU/Evo-Depth", stars: 70 },
+    { href: "https://github.com/MINT-SJTU/Evo-1", stars: 369 },
   ],
 } as const;
 

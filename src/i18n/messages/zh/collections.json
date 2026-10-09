@@ -172,15 +172,15 @@
   "work": {
     "items": [
       {
-        "company": "Miro Dynamics · HKU CGVU 联合实验室",
+        "company": "香港大学 · CGVU 联合实验室",
         "href": "https://hku-cg.github.io/mirod-lab/",
         "badges": [],
         "location": "",
-        "title": "研究员（Miro Dynamics） · 科研助理（联合实验室）",
+        "title": "科研助理（Research Assistant）",
         "logoUrl": "",
         "start": "",
-        "end": "",
-        "description": "**课题组：** 香港大学计算与数据科学学院 [Taku Komura 教授](https://www.cs.hku.hk/index.php/people/academic-staff/taku)。**研究指导：** [廖周应成](https://zycliao.com/)、[王文佳博士](https://wenjiawang0312.github.io/)。\n\n参与 **MiroCap** 项目，开展面向灵巧操作的跨本体动作重定向研究，将标准化交互表征转化为可执行的机器人动作，并保留任务意图、物体运动与接触结构。"
+        "end": "2026 年 10 月结束",
+        "description": "**课题组：** 香港大学计算与数据科学学院 [Taku Komura 教授](https://www.cs.hku.hk/index.php/people/academic-staff/taku)。**研究指导：** [廖周应成](https://zycliao.com/)、[王文佳博士](https://wenjiawang0312.github.io/)。\n\n曾参与 **MiroCap** 项目，开展面向灵巧操作的跨本体动作重定向研究，将标准化交互表征转化为可执行的机器人动作，并保留任务意图、物体运动与接触结构。"
       },
       {
         "company": "上海交通大学 · MINT 实验室",

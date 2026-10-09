@@ -172,15 +172,15 @@
   "work": {
     "items": [
       {
-        "company": "Miro Dynamics · HKU CGVU Joint Lab",
+        "company": "The University of Hong Kong · CGVU Joint Lab",
         "href": "https://hku-cg.github.io/mirod-lab/",
         "badges": [],
         "location": "",
-        "title": "Researcher (Miro Dynamics) · Research Assistant (Joint Lab)",
+        "title": "Research Assistant",
         "logoUrl": "",
         "start": "",
-        "end": "",
-        "description": "**Group:** [Prof. Taku Komura](https://www.cs.hku.hk/index.php/people/academic-staff/taku), School of Computing and Data Science, The University of Hong Kong. **Mentors:** [Zhouyingcheng Liao](https://zycliao.com/) and [Dr. Wenjia Wang](https://wenjiawang0312.github.io/).\n\nWork on **MiroCap** and cross-embodiment action retargeting for dexterous manipulation, translating standardized interaction representations into executable robot behavior while preserving task intent, object motion, and contact structure."
+        "end": "Through Oct 2026",
+        "description": "**Group:** [Prof. Taku Komura](https://www.cs.hku.hk/index.php/people/academic-staff/taku), School of Computing and Data Science, The University of Hong Kong. **Mentors:** [Zhouyingcheng Liao](https://zycliao.com/) and [Dr. Wenjia Wang](https://wenjiawang0312.github.io/).\n\nWorked on **MiroCap** and cross-embodiment action retargeting for dexterous manipulation, translating standardized interaction representations into executable robot behavior while preserving task intent, object motion, and contact structure."
       },
       {
         "company": "Shanghai Jiao Tong University · MINT Lab",
