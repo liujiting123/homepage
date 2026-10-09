@@ -6,27 +6,21 @@
   overflow: hidden;
   margin-bottom: 21px;
   border: 1px solid var(--ref-border);
-  border-radius: 18px;
+  border-radius: 12px;
   background: var(--ref-surface);
-  box-shadow: var(--ref-shadow-sm);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    border-color 0.2s ease;
+  transition: border-color 0.2s ease;
 }
 
 .featuredCard:hover {
-  transform: translateY(-4px);
   border-color: var(--ref-border-strong);
-  box-shadow: var(--ref-shadow-lg);
 }
 
 .featuredGrid {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
   align-items: center;
-  gap: 24px;
-  padding: 16.5px;
+  gap: 32px;
+  padding: 24px;
 }
 
 .featuredCard:nth-child(even) .figure {
@@ -34,7 +28,7 @@
 }
 
 .featuredGridNoImage {
-  padding: 16.5px;
+  padding: 24px;
 }
 
 .figure,
@@ -50,9 +44,8 @@
 .figureLink {
   display: block;
   overflow: hidden;
-  border-radius: 12px;
-  background: #000;
-  box-shadow: var(--ref-shadow-sm);
+  border-radius: 6px;
+  background: #fff;
   line-height: 0;
 }
 
@@ -91,15 +84,15 @@
 .roleBadge {
   display: inline-flex;
   align-items: center;
-  border-radius: 999px;
+  border-radius: 5px;
   text-transform: uppercase;
   white-space: nowrap;
 }
 
 .venueBadge {
   padding: 3px 10px;
-  background: linear-gradient(90deg, var(--ref-accent), var(--ref-accent-2));
-  color: #fff;
+  background: var(--ref-accent-soft);
+  color: var(--ref-accent);
   font-size: 10.5px;
   font-weight: 800;
   letter-spacing: 0.04em;
@@ -124,8 +117,8 @@
 
 .featuredTitle {
   margin: 0 0 7px;
-  font-size: 17.7px;
-  font-weight: 780;
+  font-size: 28px;
+  font-weight: 650;
   letter-spacing: -0.01em;
   line-height: 1.3;
   overflow-wrap: anywhere;
@@ -161,15 +154,15 @@
 .featuredDescription {
   margin: 0 0 9.7px;
   color: var(--ref-text-soft);
-  font-size: 13.8px;
-  line-height: 1.55;
+  font-size: 14px;
+  line-height: 1.75;
 }
 
 .contribution {
   margin: 0 0 9.7px;
   color: var(--ref-text-soft);
   font-size: 12px;
-  line-height: 1.55;
+  line-height: 1.75;
 }
 
 .contributionLabel {
@@ -192,7 +185,7 @@
   gap: 6px;
   padding: 4px 11px;
   border: 1px solid var(--ref-border);
-  border-radius: 999px;
+  border-radius: 5px;
   background: var(--ref-surface-2);
   color: var(--ref-text-soft);
   font-size: 12px;
@@ -219,13 +212,13 @@
 }
 
 .paperLink svg {
-  color: #b31b1b;
+  color: var(--ref-accent);
 }
 
 .paperLink:hover {
-  border-color: rgba(179, 27, 27, 0.35);
-  background: rgba(179, 27, 27, 0.07);
-  color: #b31b1b;
+  border-color: var(--ref-accent-ring);
+  background: var(--ref-accent-soft);
+  color: var(--ref-accent);
 }
 
 .codeLink svg {
@@ -247,7 +240,7 @@
 }
 
 .publication {
-  padding: 13.5px 0;
+  padding: 20px 0;
   border-bottom: 1px solid var(--ref-border);
   color: var(--ref-text-soft);
   font-size: 14.25px;
@@ -311,7 +304,7 @@
   outline-offset: 3px;
 }
 
-@media (max-width: 860px) {
+@media (max-width: 720px) {
   .featuredGrid {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -330,5 +323,19 @@
   .featuredCard:hover,
   .resourceLink:hover {
     transform: none;
+  }
+}
+
+@media (max-width: 620px) {
+  .featuredGrid,
+  .featuredGridNoImage {
+    padding: 16px;
+    gap: 20px;
+  }
+  .featuredTitle {
+    font-size: 24px;
+  }
+  .featuredDescription {
+    font-size: 13px;
   }
 }

@@ -9,7 +9,7 @@
   "headline": "多模态大模型与具身智能\n数学专业本科生",
   "welcome": "欢迎访问我的个人主页！",
   "ogImageUrl": "jitingliu.com",
-  "bioMarkdown": "我是**数学专业本科生**，预计于 **2028 年毕业**。\n\n我目前主要关注**多模态大模型与具身智能**，探索模型对真实世界的理解、推理与泛化能力，以及这些能力如何支持智能体的决策与行动。我的长期目标是推动通用具身智能的发展。\n\n我曾在**香港大学**的 [Miro Dynamics–HKU CGVU 联合实验室](https://hku-cg.github.io/mirod-lab/)和**上海交通大学**的 [MINT 实验室](https://mint-sjtu.github.io/)担任科研助理。",
+  "bioMarkdown": "我是**数学专业本科生**，预计于 **2028 年毕业**。\n\n我的研究兴趣主要在**多模态大模型与具身智能**。近期，我正在探索**动态参数生成**，关注如何根据任务与上下文生成或调整模型参数。\n\n我曾在**香港大学**的 [Miro Dynamics–HKU CGVU 联合实验室](https://hku-cg.github.io/mirod-lab/)和**上海交通大学**的 [MINT 实验室](https://mint-sjtu.github.io/)担任科研助理。",
   "researchHighlight": {
     "label": "Evo-Depth · NeurIPS 2026 录用 · <authorship>共同第一作者</authorship>",
     "href": "https://arxiv.org/abs/2605.14950"
@@ -37,10 +37,10 @@
     ]
   },
   "acknowledgementsMarkdown": "感谢[赵波老师](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo)、[李根教授](https://www.genli.top/)、[林涛](https://dorayakilin.github.io/)和[杜雨新](https://yuxin-du-lab.github.io/)在交大期间的指导与支持，也感谢[廖周应成](https://zycliao.com/)和[王文佳博士](https://wenjiawang0312.github.io/)在港大的指导。我从这些交流与讨论中受益良多，也逐渐明确了自己的研究兴趣和思考问题的方式。",
-  "researchInterestsMarkdown": "我目前主要关注**多模态大模型与具身智能**，探索模型对真实世界的理解、推理与泛化能力，以及这些能力如何支持智能体的决策与行动。我的长期目标是推动通用具身智能的发展。",
+  "researchInterestsMarkdown": "我的研究兴趣主要在**多模态大模型与具身智能**。近期，我正在探索**动态参数生成**，关注如何根据任务与上下文生成或调整模型参数。",
   "phdSearch": {
-    "title": "寻找 2028 年秋季入学的博士机会",
-    "description": "申请方向为多模态大模型与具身智能。欢迎相关方向的导师与研究团队联系交流。",
+    "title": "寻找 2028 年研究型硕士与博士机会",
+    "description": "我正在寻找 2028 年入学的研究型硕士与博士机会，欢迎相关方向的导师与研究团队联系交流。",
     "contactLabel": "联系我",
     "cvLabel": "查看简历",
     "cvHref": "/resume.pdf"
@@ -48,11 +48,11 @@
   "homepage": {
     "role": "数学专业本科生",
     "affiliation": "预计 2028 年毕业",
-    "researchBio": "我目前主要关注**多模态大模型与具身智能**，探索模型对真实世界的理解、推理与泛化能力，以及这些能力如何支持智能体的决策与行动。我的长期目标是推动通用具身智能的发展。",
+    "researchBio": "我的研究兴趣主要在**多模态大模型与具身智能**。近期，我正在探索**动态参数生成**，关注如何根据任务与上下文生成或调整模型参数。",
     "appointments": "我曾在**香港大学**的 [Miro Dynamics–HKU CGVU 联合实验室](https://hku-cg.github.io/mirod-lab/)和**上海交通大学**的 [MINT 实验室](https://mint-sjtu.github.io/)担任科研助理。",
-    "topics": ["多模态理解与推理", "泛化与适应", "决策与行动"],
-    "opportunities": "博士申请",
-    "phdFocus": "多模态大模型与具身智能方向 · 欢迎联系交流。",
+    "topics": ["动态参数生成", "多模态大模型", "具身智能"],
+    "opportunities": "2028 研究型硕士与博士申请",
+    "phdFocus": "欢迎相关方向的导师与研究团队联系交流。",
     "achievementDetail": "共同第一作者 · 负责模型设计、代码实现、训练与评测。",
     "highlightsLabel": "研究亮点",
     "neuripsDetail": "其中 1 篇为共同第一作者",

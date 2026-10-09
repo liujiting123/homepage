@@ -9,7 +9,7 @@
   "headline": "Multimodal Foundation Models & Embodied AI\nUndergraduate in Mathematics",
   "welcome": "Welcome to my homepage!",
   "ogImageUrl": "jitingliu.com",
-  "bioMarkdown": "I am an undergraduate in **Mathematics**, with expected graduation in **2028**.\n\nMy current research focuses on **multimodal foundation models and embodied AI**, exploring how models understand, reason about, and generalize to the real world, and how these capabilities support agent decision-making and action. My long-term goal is to advance general-purpose embodied intelligence.\n\nI previously served as a Research Assistant at **HKU’s** [Miro Dynamics–HKU CGVU Joint Lab](https://hku-cg.github.io/mirod-lab/) and **Shanghai Jiao Tong University’s** [MINT Lab](https://mint-sjtu.github.io/).",
+  "bioMarkdown": "I am an undergraduate in **Mathematics**, with expected graduation in **2028**.\n\nMy research interests are primarily in **multimodal foundation models and embodied AI**. Recently, I have been exploring **dynamic parameter generation**, focusing on generating or adjusting model parameters based on tasks and context.\n\nI previously served as a Research Assistant at **HKU’s** [Miro Dynamics–HKU CGVU Joint Lab](https://hku-cg.github.io/mirod-lab/) and **Shanghai Jiao Tong University’s** [MINT Lab](https://mint-sjtu.github.io/).",
   "researchHighlight": {
     "label": "Evo-Depth · NeurIPS 2026 · <authorship>Co-first author</authorship>",
     "href": "https://arxiv.org/abs/2605.14950"
@@ -40,10 +40,10 @@
     ]
   },
   "acknowledgementsMarkdown": "I am grateful to [Prof. Bo Zhao](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo), [Prof. Gen Li](https://www.genli.top/), [Tao Lin](https://dorayakilin.github.io/), and [Yuxin Du](https://yuxin-du-lab.github.io/) for their mentorship and support during my research at SJTU, and to [Zhouyingcheng Liao](https://zycliao.com/) and [Dr. Wenjia Wang](https://wenjiawang0312.github.io/) for their guidance at HKU. Their advice and our discussions have helped shape my research interests and how I approach research problems.",
-  "researchInterestsMarkdown": "My current research focuses on **multimodal foundation models and embodied AI**, exploring how models understand, reason about, and generalize to the real world, and how these capabilities support agent decision-making and action. My long-term goal is to advance general-purpose embodied intelligence.",
+  "researchInterestsMarkdown": "My research interests are primarily in **multimodal foundation models and embodied AI**. Recently, I have been exploring **dynamic parameter generation**, focusing on generating or adjusting model parameters based on tasks and context.",
   "phdSearch": {
-    "title": "Seeking a PhD position · Fall 2028",
-    "description": "I am looking for PhD opportunities starting in Fall 2028, with a focus on multimodal foundation models and embodied AI. I would be glad to hear from potential advisors working in these areas.",
+    "title": "Research master's & PhD opportunities · 2028",
+    "description": "I am seeking research master's and PhD opportunities starting in 2028. I welcome conversations with prospective advisors and research teams.",
     "contactLabel": "Get in touch",
     "cvLabel": "View CV",
     "cvHref": "/resume-en.pdf"
@@ -51,15 +51,15 @@
   "homepage": {
     "role": "Undergraduate in Mathematics",
     "affiliation": "Expected graduation: 2028",
-    "researchBio": "My current research focuses on **multimodal foundation models and embodied AI**, exploring how models understand, reason about, and generalize to the real world, and how these capabilities support agent decision-making and action. My long-term goal is to advance general-purpose embodied intelligence.",
+    "researchBio": "My research interests are primarily in **multimodal foundation models and embodied AI**. Recently, I have been exploring **dynamic parameter generation**, focusing on generating or adjusting model parameters based on tasks and context.",
     "appointments": "I previously served as a Research Assistant at **HKU’s** [Miro Dynamics–HKU CGVU Joint Lab](https://hku-cg.github.io/mirod-lab/) and **Shanghai Jiao Tong University’s** [MINT Lab](https://mint-sjtu.github.io/).",
     "topics": [
-      "Multimodal understanding & reasoning",
-      "Generalization & adaptation",
-      "Decision-making & action"
+      "Dynamic Parameter Generation",
+      "Multimodal Foundation Models",
+      "Embodied AI"
     ],
-    "opportunities": "PhD opportunities",
-    "phdFocus": "Multimodal foundation models & embodied AI · Happy to connect.",
+    "opportunities": "2028 Research Master's & PhD Opportunities",
+    "phdFocus": "Happy to connect with prospective advisors and research teams.",
     "achievementDetail": "Co-first author · Model design, implementation, training, and evaluation.",
     "highlightsLabel": "Research highlights",
     "neuripsDetail": "Including 1 co-first-author paper",
