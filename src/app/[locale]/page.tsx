@@ -59,7 +59,6 @@ export default async function Page({
   const work = t.raw("work.items") as ComponentProps<typeof Work>["work"];
   const education = t.raw("education.items") as EducationItem[];
   const news = t.raw("news.items") as NewsItem[];
-  const topics = t.raw("homepage.topics") as string[];
   const awards = t.raw("awards.items") as ComponentProps<
     typeof AwardsSection
   >["awards"];
@@ -87,10 +86,6 @@ export default async function Page({
         aria-labelledby="profile-name"
       >
         <div className={styles.heroMain}>
-          <p className={styles.identity}>
-            <span>{t("homepage.role")}</span>
-            <span>{t("homepage.affiliation")}</span>
-          </p>
           <h1 id="profile-name" className={styles.name}>
             {t("name.full")}
             <span>{t("subtitle")}</span>
@@ -101,11 +96,6 @@ export default async function Page({
           <CustomReactMarkdown className={styles.appointments}>
             {t("homepage.appointments")}
           </CustomReactMarkdown>
-          <ul className={styles.topics}>
-            {topics.map((topic) => (
-              <li key={topic}>{topic}</li>
-            ))}
-          </ul>
           <div className={styles.profileLinks}>
             <a href={social.email.url}>
               <Mail size={15} aria-hidden="true" />
