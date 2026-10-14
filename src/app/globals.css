@@ -8,8 +8,8 @@
 
 @theme {
   --font-sans:
-    var(--font-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    var(--font-display), ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
@@ -158,8 +158,8 @@
     outline-offset: 4px;
   }
   ::selection {
-    background: #dbe5ff;
-    color: #1c305f;
+    background: var(--ref-accent-soft);
+    color: var(--ref-ink);
   }
   * {
     @apply border-border;

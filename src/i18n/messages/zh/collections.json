@@ -25,7 +25,7 @@
         "href": "https://mint-sjtu.github.io/MorphAct.io/",
         "dates": "2026",
         "active": true,
-        "description": "通过上下文驱动的参数生成，动态调整机器人策略的感知与动作模块，使策略随交互情境变化而适应。",
+        "description": "机器人学习面向更丰富的环境与交互扩展时，不同操作可能要求相互冲突的参数更新。MorphAct 通过操作级诊断研究这一适应权衡，并以表征耦合的参数生成，使共享策略按情境协同调整感知与动作模块。",
         "technologies": ["Preprint", "共同第一作者"],
         "authors": "",
         "links": [
@@ -44,10 +44,12 @@
             "icon": "globe"
           }
         ],
-        "image": "/research/morphact-teaser.png",
+        "image": "/research/morphact-method.png",
         "video": "",
-        "imageAlt": "MorphAct 概览：随交互情境生成参数更新，使共享机器人策略动态适应。",
-        "imageCaption": "上下文参数生成 · MorphAct 概览"
+        "imageAlt": "MorphAct 方法流程图：感知侧与动作侧的参数生成通过适应后的表征耦合，随交互情境协同调整策略。",
+        "imageCaption": "表征耦合的参数生成 · 原论文方法图",
+        "imageWidth": 2662,
+        "imageHeight": 1331
       },
       {
         "title": "Evo-Depth",
@@ -209,7 +211,7 @@
         "logoUrl": "",
         "start": "",
         "end": "2026 年 10 月结束",
-        "description": "**课题组：** 香港大学计算与数据科学学院 [Taku Komura 教授](https://www.cs.hku.hk/index.php/people/academic-staff/taku)。**研究指导：** [廖周应成](https://zycliao.com/)、[王文佳博士](https://wenjiawang0312.github.io/)。\n\n曾参与 **MiroCap** 项目，开展面向灵巧操作的跨本体动作重定向研究，将标准化交互表征转化为可执行的机器人动作，并保留任务意图、物体运动与接触结构。"
+        "description": "参与 **MiroCap** 项目，开展面向灵巧操作的跨本体动作重定向研究，将标准化交互表征转化为可执行的机器人动作，并保留任务意图、物体运动与接触结构。\n\n在香港大学计算与数据科学学院 [Taku Komura 教授](https://www.cs.hku.hk/index.php/people/academic-staff/taku)的团队开展研究，期间得到[廖周应成](https://zycliao.com/)和[王文佳博士](https://wenjiawang0312.github.io/)的指导。"
       },
       {
         "company": "上海交通大学 · MINT 实验室",
@@ -220,7 +222,7 @@
         "logoUrl": "",
         "start": "2025",
         "end": "2026",
-        "description": "**课题组：** [赵波老师](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo)。**Mentors：** [李根教授](https://www.genli.top/)、[林涛](https://dorayakilin.github.io/)、[杜雨新](https://yuxin-du-lab.github.io/)。\n\n开展具身智能与视觉—语言—动作模型研究。作为 **Evo-Depth**（NeurIPS 2026）共同第一作者，负责模型设计、代码实现、训练与评测；参与 **Focusable Monocular Depth Estimation**（NeurIPS 2026）和 **Evo-1**（CVPR 2026）工作。"
+        "description": "研究参数化机器人策略与空间感知增强。共同第一作者工作包括 **MorphAct** 与 **Evo-Depth**（NeurIPS 2026）；参与 **Focusable Monocular Depth Estimation**（NeurIPS 2026）和 **Evo-1**（CVPR 2026）工作。\n\n在[赵波老师](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo)的指导下开展具身智能与视觉—语言—动作模型研究，期间也得到[李根教授](https://www.genli.top/)、[林涛](https://dorayakilin.github.io/)和[杜雨新](https://yuxin-du-lab.github.io/)的指导。"
       }
     ]
   },

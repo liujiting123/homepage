@@ -9,7 +9,7 @@
   "headline": "Multimodal Foundation Models & Embodied AI",
   "welcome": "Welcome to my homepage!",
   "ogImageUrl": "jitingliu.com",
-  "bioMarkdown": "My research interests are broad, with a primary focus on **multimodal foundation models and embodied AI**. Recently, I have been exploring **parameter generation**, **recursive self-improvement (RSI)**, and **embodied agents**.\n\nMy recent work includes [MorphAct](https://mint-sjtu.github.io/MorphAct.io/), which uses context-dependent parameter generation to adapt robot policies as interaction contexts change. I am a **co-first author** of MorphAct and [Evo-Depth](https://arxiv.org/abs/2605.14950) (accepted to NeurIPS 2026), and a co-author of [Evo-1](https://arxiv.org/abs/2511.04555) (CVPR 2026).\n\nPreviously, I served as a Research Assistant at the [MINT Lab](https://mint-sjtu.github.io/) at **Shanghai Jiao Tong University** and the [Miro Dynamics–HKU CGVU Joint Lab](https://hku-cg.github.io/mirod-lab/) at the **University of Hong Kong**. My work involved spatial perception for robots and cross-embodiment action retargeting for dexterous manipulation.",
+  "bioMarkdown": "My research interests are broad, with a primary focus on **multimodal foundation models and embodied AI**. Recently, I have been exploring **parameter generation**, **recursive self-improvement (RSI)**, and **embodied agents**.\n\nMy recent work, [MorphAct](https://mint-sjtu.github.io/MorphAct.io/), addresses a challenge in scaling robot learning: diverse interactions can impose competing demands on shared parameters. We explore policies whose parameters adapt to the interaction context to accommodate this diversity. I am a **co-first author** of MorphAct and [Evo-Depth](https://arxiv.org/abs/2605.14950) (accepted to NeurIPS 2026), and a co-author of [Evo-1](https://arxiv.org/abs/2511.04555) (CVPR 2026).\n\nPreviously, I served as a Research Assistant at the [MINT Lab](https://mint-sjtu.github.io/) at **Shanghai Jiao Tong University** and the [Miro Dynamics–HKU CGVU Joint Lab](https://hku-cg.github.io/mirod-lab/) at the **University of Hong Kong**. My work involved spatial perception for robots and cross-embodiment action retargeting for dexterous manipulation.",
   "researchHighlight": {
     "label": "Evo-Depth · NeurIPS 2026 · <authorship>Co-first author</authorship>",
     "href": "https://arxiv.org/abs/2605.14950"
@@ -50,7 +50,7 @@
   },
   "homepage": {
     "researchBio": "My research interests are broad, with a primary focus on **multimodal foundation models and embodied AI**. Recently, I have been exploring **parameter generation**, **recursive self-improvement (RSI)**, and **embodied agents**.",
-    "appointments": "My recent work includes [MorphAct](https://mint-sjtu.github.io/MorphAct.io/), which uses context-dependent parameter generation to adapt robot policies as interaction contexts change. I am a **co-first author** of MorphAct and [Evo-Depth](https://arxiv.org/abs/2605.14950) (accepted to NeurIPS 2026), and a co-author of [Evo-1](https://arxiv.org/abs/2511.04555) (CVPR 2026).\n\nPreviously, I served as a Research Assistant at the [MINT Lab](https://mint-sjtu.github.io/) at **Shanghai Jiao Tong University** and the [Miro Dynamics–HKU CGVU Joint Lab](https://hku-cg.github.io/mirod-lab/) at the **University of Hong Kong**. My work involved spatial perception for robots and cross-embodiment action retargeting for dexterous manipulation.",
+    "appointments": "My recent work, [MorphAct](https://mint-sjtu.github.io/MorphAct.io/), addresses a challenge in scaling robot learning: diverse interactions can impose competing demands on shared parameters. We explore policies whose parameters adapt to the interaction context to accommodate this diversity. I am a **co-first author** of MorphAct and [Evo-Depth](https://arxiv.org/abs/2605.14950) (accepted to NeurIPS 2026), and a co-author of [Evo-1](https://arxiv.org/abs/2511.04555) (CVPR 2026).\n\nPreviously, I served as a Research Assistant at the [MINT Lab](https://mint-sjtu.github.io/) at **Shanghai Jiao Tong University** and the [Miro Dynamics–HKU CGVU Joint Lab](https://hku-cg.github.io/mirod-lab/) at the **University of Hong Kong**. My work involved spatial perception for robots and cross-embodiment action retargeting for dexterous manipulation.",
     "opportunities": "2028 Research Master's & PhD Opportunities",
     "phdFocus": "Happy to connect with prospective advisors and research teams.",
     "achievementDetail": "Co-first author · Model design, implementation, training, and evaluation.",
@@ -74,7 +74,6 @@
     },
     "projectStars": "Project GitHub Stars",
     "citations": "Citations",
-    "citationIndices": "h-index {hIndex} · i10-index {i10Index}",
-    "metricsAsOf": "Stars & citations as of {date}"
+    "citationIndices": "h-index {hIndex} · i10-index {i10Index}"
   }
 }

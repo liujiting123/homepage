@@ -1,47 +1,87 @@
-/* Theme adapted from https://linb203.github.io/assets/css/custom.css.
+/* Palette adapted from https://linb203.github.io/assets/css/custom.css.
    MIT license and original attribution: LICENSES/linb203-homepage.txt. */
 :root {
   --ref-bg: #fcfcfb;
   --ref-surface: #fff;
   --ref-surface-2: #f3f4f7;
-  --ref-text: #202735;
+  --ref-field: #e5e7ec;
+  --ref-ink: #202735;
+  --ref-on-ink: #fff;
+  --ref-text: var(--ref-ink);
   --ref-text-soft: #4e5868;
-  --ref-muted: #6c7685;
-  --ref-border: #e5e7ec;
-  --ref-border-strong: #cbd0db;
+  --ref-muted: #626d7d;
   --ref-accent: #4656ab;
   --ref-accent-2: #33458e;
   --ref-accent-rgb: 70, 86, 171;
   --ref-accent-soft: rgba(var(--ref-accent-rgb), 0.07);
   --ref-accent-ring: rgba(var(--ref-accent-rgb), 0.2);
   --ref-gold: var(--ref-accent);
-  --ref-gold-soft: var(--ref-accent-soft);
-  --ref-gold-ring: var(--ref-accent-ring);
-  --ref-shadow-sm: 0 2px 6px rgba(19, 23, 34, 0.03);
-  --ref-shadow-md: 0 8px 24px -8px rgba(19, 23, 34, 0.1);
-  --ref-shadow-lg: 0 22px 48px -16px rgba(19, 23, 34, 0.16);
-  --ref-nav-bg: rgba(252, 252, 251, 0.94);
+  --ref-border: transparent;
+  --ref-border-strong: transparent;
+  --ref-nav-bg: var(--ref-bg);
+  --ref-shadow-sm: none;
+  --ref-shadow-md: none;
+  --ref-shadow-lg: none;
+  --type-display: var(--font-display), "PingFang SC", sans-serif;
+  --type-reading: var(--font-reading), "Songti SC", "Noto Serif CJK SC", serif;
+  --size-small: 14px;
+  --size-body: 18px;
+  --size-lead: 26px;
+  --size-heading: 48px;
+  --size-display: clamp(64px, 5.2vw, 80px);
+  --page-gutter: clamp(16px, 2.2vw, 32px);
+  --page-width: 1440px;
+  --section-gap: 128px;
 }
 .dark {
   --ref-bg: #11141a;
   --ref-surface: #181d26;
   --ref-surface-2: #1c222e;
-  --ref-text: #e7eaf1;
+  --ref-field: #2b3341;
+  --ref-ink: #e7eaf1;
+  --ref-on-ink: #11141a;
   --ref-text-soft: #b8c0cd;
   --ref-muted: #939eaf;
-  --ref-border: #2b3341;
-  --ref-border-strong: #465164;
   --ref-accent: #a3b2ff;
   --ref-accent-2: #c6d0ff;
   --ref-accent-rgb: 163, 178, 255;
   --ref-accent-soft: rgba(var(--ref-accent-rgb), 0.1);
   --ref-accent-ring: rgba(var(--ref-accent-rgb), 0.25);
-  --ref-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
-  --ref-shadow-md: 0 8px 26px -10px rgba(0, 0, 0, 0.4);
-  --ref-shadow-lg: 0 24px 50px -18px rgba(0, 0, 0, 0.5);
-  --ref-nav-bg: rgba(17, 20, 26, 0.94);
 }
 body {
+  --type-display: var(--font-display), "PingFang SC", sans-serif;
+  --type-reading: var(--font-reading), "Songti SC", "Noto Serif CJK SC", serif;
   background-color: var(--ref-bg);
-  color: var(--ref-text);
+  color: var(--ref-ink);
+  font-family: var(--type-display);
+}
+@media (max-width: 900px) {
+  :root {
+    --size-heading: 40px;
+    --section-gap: 88px;
+  }
+}
+@media (max-width: 600px) {
+  :root {
+    --size-body: 16px;
+    --size-lead: 22px;
+    --size-heading: 32px;
+    --size-display: 56px;
+    --section-gap: 72px;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .research-enter {
+    animation: research-enter 800ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  @keyframes research-enter {
+    from {
+      opacity: 0.15;
+      transform: translateY(22px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }

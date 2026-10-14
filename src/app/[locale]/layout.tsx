@@ -1,7 +1,7 @@
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
+import { Libre_Franklin, Source_Serif_4 } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, Locale, NextIntlClientProvider } from "next-intl";
 import {
@@ -25,9 +25,15 @@ import { constructMetadata } from "@/lib/metadata";
 import { cn } from "@/lib/utils";
 
 /* Fonts */
-const fontSans = FontSans({
+const displayFont = Libre_Franklin({
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-display",
+  weight: ["400", "600", "700"],
+});
+const readingFont = Source_Serif_4({
+  subsets: ["latin"],
+  variable: "--font-reading",
+  weight: ["400", "600"],
 });
 
 /* Metadata */
@@ -75,7 +81,8 @@ export default async function LocaleLayout({
       <body
         className={cn(
           "bg-background min-h-screen font-sans antialiased",
-          fontSans.variable,
+          displayFont.variable,
+          readingFont.variable,
         )}
       >
         {/* Main Layout */}

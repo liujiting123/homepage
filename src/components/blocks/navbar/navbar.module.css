@@ -1,24 +1,21 @@
-/* Adapted from LinB203.github.io (MIT). */
 .header {
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 50;
-  background: var(--ref-nav-bg);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--ref-border);
+  background: var(--ref-bg);
+  font-family: var(--type-display);
+  font-size: var(--size-small);
 }
 .inner {
-  max-width: 1104px;
-  min-height: 62px;
+  max-width: var(--page-width);
+  min-height: 88px;
   margin: 0 auto;
-  padding: 0 28px;
+  padding: 0 var(--page-gutter);
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 52px;
 }
 .brand {
-  color: var(--ref-text);
-  font-size: 15px;
+  font-size: var(--size-body);
   font-weight: 700;
   flex-shrink: 0;
 }
@@ -26,14 +23,13 @@
   display: flex;
   align-items: center;
   flex: 1;
-  gap: 21px;
+  gap: 28px;
 }
 .navigation a {
-  color: var(--ref-text-soft);
-  font-size: 13px;
+  font-size: var(--size-small);
   font-weight: 600;
   white-space: nowrap;
-  padding: 17px 0;
+  padding: 16px 0;
 }
 .navigation a:hover,
 .brand:hover {
@@ -47,77 +43,78 @@
   flex-shrink: 0;
 }
 .controls > button {
-  height: 34px;
-  width: auto;
-  min-width: 34px;
+  height: 44px;
+  min-width: 44px;
   padding: 0 12px;
-  border-radius: 6px;
-  background: var(--ref-surface);
-  border: 1px solid var(--ref-border);
-  color: var(--ref-text-soft);
+  border: 0;
+  border-radius: 0;
+  background: var(--ref-surface-2);
+  color: var(--ref-ink);
+  box-shadow: none;
+  font-family: var(--type-display);
+  font-size: var(--size-small);
+  transition: transform 180ms ease;
+}
+.controls > button:hover {
+  background: var(--ref-field);
+  transform: translateY(-2px);
 }
 .controls > button span {
-  font-size: 12px;
-  font-weight: 700;
-}
-.controls > button:last-child {
-  padding: 0 9px;
+  font-size: inherit;
 }
 .menuButton {
   display: none;
 }
 .skipLink {
   position: absolute;
-  top: -60px;
-  left: 15px;
-  padding: 8px 15px;
-  border-radius: 8px;
+  top: -80px;
+  left: 16px;
+  padding: 12px 20px;
   background: var(--ref-accent);
-  color: white;
+  color: var(--ref-bg);
 }
 .skipLink:focus {
   top: 8px;
   z-index: 1;
 }
-@media (max-width: 860px) {
+@media (max-width: 900px) {
   .inner {
-    min-height: 62px;
+    min-height: 76px;
+    gap: 12px;
   }
   .menuButton {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 34px;
-    height: 34px;
-    color: var(--ref-text-soft);
+    width: 44px;
+    height: 44px;
+    background: var(--ref-ink);
+    color: var(--ref-on-ink);
   }
   .navigation {
     display: none;
     position: absolute;
-    top: 62px;
-    left: 0;
-    right: 0;
-    padding: 12px 20px;
+    top: 76px;
+    left: var(--page-gutter);
+    right: var(--page-gutter);
+    padding: 20px 24px;
     background: var(--ref-surface);
-    border-bottom: 1px solid var(--ref-border);
-    box-shadow: var(--ref-shadow-md);
     flex-wrap: wrap;
-    gap: 8px 22px;
+    gap: 8px 24px;
   }
   .navigation.open {
     display: flex;
   }
   .navigation a {
-    font-size: 14px;
-    padding: 7px 0;
+    font-size: var(--size-body);
+    padding: 10px 0;
   }
 }
-@media (max-width: 620px) {
-  .header {
-    backdrop-filter: none;
-    background: var(--ref-bg);
+@media (prefers-reduced-motion: reduce) {
+  .controls > button {
+    transition: none;
   }
-  .inner {
-    padding-inline: 20px;
+  .controls > button:hover {
+    transform: none;
   }
 }

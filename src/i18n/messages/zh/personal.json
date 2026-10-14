@@ -9,7 +9,7 @@
   "headline": "多模态大模型与具身智能",
   "welcome": "欢迎访问我的个人主页！",
   "ogImageUrl": "jitingliu.com",
-  "bioMarkdown": "我的研究兴趣较为广泛，主要集中于**多模态大模型与具身智能**。近期，我正在探索**参数生成**、**递归自进化（RSI）**与**具身智能体**等方向。\n\n我的近期工作包括 [MorphAct](https://mint-sjtu.github.io/MorphAct.io/)，通过上下文驱动的参数生成，使机器人策略能够随交互情境动态调整。我是 MorphAct 与 [Evo-Depth](https://arxiv.org/abs/2605.14950)（NeurIPS 2026，已录用）的**共同第一作者**，也参与了 [Evo-1](https://arxiv.org/abs/2511.04555)（CVPR 2026）等工作。\n\n我曾在**上海交通大学**的 [MINT 实验室](https://mint-sjtu.github.io/)和**香港大学**的 [Miro Dynamics–HKU CGVU 联合实验室](https://hku-cg.github.io/mirod-lab/)担任科研助理，研究涉及机器人空间感知与面向灵巧操作的跨本体动作重定向。",
+  "bioMarkdown": "我的研究兴趣较为广泛，主要集中于**多模态大模型与具身智能**。近期，我正在探索**参数生成**、**递归自进化（RSI）**与**具身智能体**等方向。\n\n我近期的工作 [MorphAct](https://mint-sjtu.github.io/MorphAct.io/) 聚焦机器人学习的可扩展性：不同操作对共享参数的更新需求可能相互冲突，我们探索让策略随交互情境调整参数，以容纳更丰富的环境与交互。我是 MorphAct 与 [Evo-Depth](https://arxiv.org/abs/2605.14950)（NeurIPS 2026，已录用）的**共同第一作者**，也参与了 [Evo-1](https://arxiv.org/abs/2511.04555)（CVPR 2026）等工作。\n\n我曾在**上海交通大学**的 [MINT 实验室](https://mint-sjtu.github.io/)和**香港大学**的 [Miro Dynamics–HKU CGVU 联合实验室](https://hku-cg.github.io/mirod-lab/)担任科研助理，研究涉及机器人空间感知与面向灵巧操作的跨本体动作重定向。",
   "researchHighlight": {
     "label": "Evo-Depth · NeurIPS 2026 录用 · <authorship>共同第一作者</authorship>",
     "href": "https://arxiv.org/abs/2605.14950"
@@ -47,7 +47,7 @@
   },
   "homepage": {
     "researchBio": "我的研究兴趣较为广泛，主要集中于**多模态大模型与具身智能**。近期，我正在探索**参数生成**、**递归自进化（RSI）**与**具身智能体**等方向。",
-    "appointments": "我的近期工作包括 [MorphAct](https://mint-sjtu.github.io/MorphAct.io/)，通过上下文驱动的参数生成，使机器人策略能够随交互情境动态调整。我是 MorphAct 与 [Evo-Depth](https://arxiv.org/abs/2605.14950)（NeurIPS 2026，已录用）的**共同第一作者**，也参与了 [Evo-1](https://arxiv.org/abs/2511.04555)（CVPR 2026）等工作。\n\n我曾在**上海交通大学**的 [MINT 实验室](https://mint-sjtu.github.io/)和**香港大学**的 [Miro Dynamics–HKU CGVU 联合实验室](https://hku-cg.github.io/mirod-lab/)担任科研助理，研究涉及机器人空间感知与面向灵巧操作的跨本体动作重定向。",
+    "appointments": "我近期的工作 [MorphAct](https://mint-sjtu.github.io/MorphAct.io/) 聚焦机器人学习的可扩展性：不同操作对共享参数的更新需求可能相互冲突，我们探索让策略随交互情境调整参数，以容纳更丰富的环境与交互。我是 MorphAct 与 [Evo-Depth](https://arxiv.org/abs/2605.14950)（NeurIPS 2026，已录用）的**共同第一作者**，也参与了 [Evo-1](https://arxiv.org/abs/2511.04555)（CVPR 2026）等工作。\n\n我曾在**上海交通大学**的 [MINT 实验室](https://mint-sjtu.github.io/)和**香港大学**的 [Miro Dynamics–HKU CGVU 联合实验室](https://hku-cg.github.io/mirod-lab/)担任科研助理，研究涉及机器人空间感知与面向灵巧操作的跨本体动作重定向。",
     "opportunities": "2028 研究型硕士与博士申请",
     "phdFocus": "欢迎相关方向的导师与研究团队联系交流。",
     "achievementDetail": "共同第一作者 · 负责模型设计、代码实现、训练与评测。",
@@ -71,7 +71,6 @@
     },
     "projectStars": "项目累计 Stars",
     "citations": "学术引用",
-    "citationIndices": "h 指数 {hIndex} · i10 指数 {i10Index}",
-    "metricsAsOf": "Stars 与引用量截至 {date}"
+    "citationIndices": "h 指数 {hIndex} · i10 指数 {i10Index}"
   }
 }

@@ -25,7 +25,7 @@
         "href": "https://mint-sjtu.github.io/MorphAct.io/",
         "dates": "2026",
         "active": true,
-        "description": "A contextual parameterization framework that dynamically adapts the perception and action modules of robot policies as interaction contexts change.",
+        "description": "Scaling robot learning across diverse interactions can create conflicting update demands in shared parameters. MorphAct examines these trade-offs through operation-level diagnostics and adapts perception and action through representation-coupled parameter generation.",
         "technologies": ["Preprint", "Co-first author"],
         "authors": "",
         "links": [
@@ -44,10 +44,12 @@
             "icon": "globe"
           }
         ],
-        "image": "/research/morphact-teaser.png",
+        "image": "/research/morphact-method.png",
         "video": "",
-        "imageAlt": "MorphAct overview: context-dependent parameter updates allow a shared robot policy to adapt as interactions change.",
-        "imageCaption": "Context-dependent parameter generation · MorphAct overview"
+        "imageAlt": "MorphAct method: vision-language and action parameter generators are coupled through adapted representations to adjust the policy to each interaction context.",
+        "imageCaption": "Representation-coupled parameter generation · Method figure from the paper",
+        "imageWidth": 2662,
+        "imageHeight": 1331
       },
       {
         "title": "Evo-Depth",
@@ -209,7 +211,7 @@
         "logoUrl": "",
         "start": "",
         "end": "Through Oct 2026",
-        "description": "**Group:** [Prof. Taku Komura](https://www.cs.hku.hk/index.php/people/academic-staff/taku), School of Computing and Data Science, The University of Hong Kong. **Mentors:** [Zhouyingcheng Liao](https://zycliao.com/) and [Dr. Wenjia Wang](https://wenjiawang0312.github.io/).\n\nWorked on **MiroCap** and cross-embodiment action retargeting for dexterous manipulation, translating standardized interaction representations into executable robot behavior while preserving task intent, object motion, and contact structure."
+        "description": "Worked on **MiroCap** and cross-embodiment action retargeting for dexterous manipulation, translating standardized interaction representations into executable robot behavior while preserving task intent, object motion, and contact structure.\n\nConducted research with [Prof. Taku Komura](https://www.cs.hku.hk/index.php/people/academic-staff/taku)’s team at the School of Computing and Data Science, The University of Hong Kong, with guidance from [Zhouyingcheng Liao](https://zycliao.com/) and [Dr. Wenjia Wang](https://wenjiawang0312.github.io/)."
       },
       {
         "company": "Shanghai Jiao Tong University · MINT Lab",
@@ -220,7 +222,7 @@
         "logoUrl": "",
         "start": "2025",
         "end": "2026",
-        "description": "**Group:** [Prof. Bo Zhao](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo). **Mentors:** [Prof. Gen Li](https://www.genli.top/), [Tao Lin](https://dorayakilin.github.io/), and [Yuxin Du](https://yuxin-du-lab.github.io/).\n\nResearch on embodied AI and vision-language-action models. Co-first author of **Evo-Depth** (NeurIPS 2026), responsible for model design, code implementation, training, and evaluation; co-author of **Focusable Monocular Depth Estimation** (NeurIPS 2026) and **Evo-1** (CVPR 2026)."
+        "description": "Studied contextual robot policy parameterization and spatial perception. Co-first author of **MorphAct** and **Evo-Depth** (NeurIPS 2026); co-author of **Focusable Monocular Depth Estimation** (NeurIPS 2026) and **Evo-1** (CVPR 2026).\n\nConducted research on embodied AI and vision-language-action models at MINT Lab under the guidance of [Prof. Bo Zhao](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo), with guidance from [Prof. Gen Li](https://www.genli.top/), [Tao Lin](https://dorayakilin.github.io/), and [Yuxin Du](https://yuxin-du-lab.github.io/)."
       }
     ]
   },

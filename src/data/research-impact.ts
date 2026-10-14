@@ -2,7 +2,8 @@
 export const researchImpact = {
   verifiedAt: "2026-10-09",
   citations: {
-    count: 141,
+    count: 147,
+    asOf: "2026-10-15",
     hIndex: 4,
     i10Index: 3,
     source: "https://scholar.google.com/citations?user=GVENiysAAAAJ&hl=en",

@@ -15,12 +15,11 @@ export default function Navbar() {
   const home = locale === "zh" ? "/zh" : "/";
   const [menuOpen, setMenuOpen] = useState(false);
   const sections = [
-    ["projects", "research"],
-    ["news", "news"],
-    ["publications", "publications"],
     ["work", "experience"],
-    ["education", "education"],
-    ["academic-services", "service"],
+    ["projects", "research"],
+    ["publications", "publications"],
+    ["news", "news"],
+    ["contact", "contact"],
   ];
   return (
     <header className={styles.header}>
@@ -42,7 +41,11 @@ export default function Navbar() {
               href={home + "#" + id}
               onClick={() => setMenuOpen(false)}
             >
-              {t("homepage.navigation." + label)}
+              {label === "contact"
+                ? locale === "zh"
+                  ? "联系"
+                  : "Contact"
+                : t("homepage.navigation." + label)}
             </a>
           ))}
         </nav>
