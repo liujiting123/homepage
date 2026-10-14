@@ -199,11 +199,17 @@
     background 0.15s ease;
 }
 
-.resourceLink:hover {
+.resourceLink:hover:not(:disabled) {
   transform: translateY(-2px);
   border-color: var(--ref-accent-ring);
   background: var(--ref-accent-soft);
   color: var(--ref-accent);
+}
+
+.resourceLink:disabled {
+  cursor: default;
+  color: var(--ref-muted);
+  opacity: 0.65;
 }
 
 .resourceLink svg {
@@ -215,7 +221,7 @@
   color: var(--ref-accent);
 }
 
-.paperLink:hover {
+.paperLink:hover:not(:disabled) {
   border-color: var(--ref-accent-ring);
   background: var(--ref-accent-soft);
   color: var(--ref-accent);

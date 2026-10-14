@@ -44,25 +44,20 @@
   font-weight: 450;
   letter-spacing: -0.02em;
 }
-.bio {
+.bio,
+.appointments {
   max-width: 740px;
   color: var(--ref-text-soft);
   font-size: 16px;
   line-height: 1.85;
 }
-.bio strong {
+.bio strong,
+.appointments strong {
   color: var(--ref-text);
   font-weight: 650;
 }
 .appointments {
   margin-top: 13px;
-  color: var(--ref-muted);
-  font-size: 13px;
-  line-height: 1.8;
-}
-.appointments strong {
-  color: var(--ref-text-soft);
-  font-weight: 550;
 }
 .bio :global(p),
 .appointments :global(p) {
@@ -325,11 +320,9 @@
     margin-top: 5px;
     font-size: 17px;
   }
-  .bio {
-    font-size: 15px;
-  }
+  .bio,
   .appointments {
-    font-size: 12px;
+    font-size: 15px;
   }
   .profileLinks {
     gap: 5px 18px;

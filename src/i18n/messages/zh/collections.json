@@ -21,6 +21,35 @@
   "projects": {
     "items": [
       {
+        "title": "MorphAct",
+        "href": "https://mint-sjtu.github.io/MorphAct.io/",
+        "dates": "2026",
+        "active": true,
+        "description": "通过上下文驱动的参数生成，动态调整机器人策略的感知与动作模块，使策略随交互情境变化而适应。",
+        "technologies": ["Preprint", "共同第一作者"],
+        "authors": "",
+        "links": [
+          {
+            "type": "arXiv · Coming soon",
+            "icon": "paper"
+          },
+          {
+            "type": "代码",
+            "href": "https://github.com/MINT-SJTU/MorphAct",
+            "icon": "github"
+          },
+          {
+            "type": "项目页",
+            "href": "https://mint-sjtu.github.io/MorphAct.io/",
+            "icon": "globe"
+          }
+        ],
+        "image": "/research/morphact-teaser.png",
+        "video": "",
+        "imageAlt": "MorphAct 概览：随交互情境生成参数更新，使共享机器人策略动态适应。",
+        "imageCaption": "上下文参数生成 · MorphAct 概览"
+      },
+      {
         "title": "Evo-Depth",
         "href": "https://arxiv.org/abs/2605.14950",
         "dates": "2026",

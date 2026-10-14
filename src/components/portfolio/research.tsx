@@ -13,7 +13,7 @@ export interface ResearchItem {
   description: string;
   authors: string;
   technologies: string[];
-  links: { type: string; href: string; icon?: string }[];
+  links: { type: string; href?: string; icon?: string }[];
   contribution?: string;
   image?: string;
   imageAlt?: string;
@@ -37,6 +37,19 @@ function ResearchLinks({ links }: { links: ResearchItem["links"] }) {
   return (
     <div className={styles.resourceLinks}>
       {links.map((link) => {
+        if (!link.href) {
+          return (
+            <button
+              key={link.type}
+              type="button"
+              disabled
+              className={`${styles.resourceLink} ${styles.paperLink}`}
+            >
+              <ResourceIcon icon={link.icon} />
+              <span>{link.type}</span>
+            </button>
+          );
+        }
         const stars = getRepositoryStars(link.href);
         return (
           <a
