@@ -1,6 +1,6 @@
 /** Dated Google Scholar metrics and verified GitHub repository star counts. */
 export const researchImpact = {
-  verifiedAt: "2026-10-09",
+  verifiedAt: "2026-10-15",
   citations: {
     count: 147,
     asOf: "2026-10-15",
@@ -9,7 +9,8 @@ export const researchImpact = {
     source: "https://scholar.google.com/citations?user=GVENiysAAAAJ&hl=en",
   },
   repositories: [
-    { href: "https://github.com/MINT-SJTU/Evo-Depth", stars: 70 },
+    { href: "https://github.com/MINT-SJTU/MorphAct", stars: 5 },
+    { href: "https://github.com/MINT-SJTU/Evo-Depth", stars: 71 },
     { href: "https://github.com/MINT-SJTU/Evo-1", stars: 369 },
   ],
 } as const;
