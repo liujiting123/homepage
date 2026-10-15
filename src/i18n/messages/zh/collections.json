@@ -30,7 +30,8 @@
         "authors": "",
         "links": [
           {
-            "type": "arXiv · Coming soon",
+            "type": "arXiv",
+            "href": "https://arxiv.org/abs/2610.20019",
             "icon": "paper"
           },
           {
