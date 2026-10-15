@@ -26,7 +26,7 @@
         "dates": "2026",
         "active": true,
         "description": "Scaling robot learning across diverse interactions can create conflicting update demands in shared parameters. MorphAct examines these trade-offs through operation-level diagnostics and adapts perception and action through representation-coupled parameter generation.",
-        "technologies": ["Preprint", "Co-first author"],
+        "technologies": ["arXiv 2026", "Co-first author"],
         "authors": "",
         "links": [
           {
@@ -82,6 +82,34 @@
   },
   "publications": {
     "items": [
+      {
+        "title": "MorphAct: Robot Policies Morphing with the Worlds They Act In",
+        "href": "https://arxiv.org/abs/2610.20019",
+        "dates": "arXiv 2026",
+        "active": true,
+        "description": "arXiv:2610.20019.",
+        "technologies": ["arXiv 2026", "Co-first author"],
+        "authors": "**Authors:** Ziyan Liu, **Jiting Liu**, Weihong Zhong, et al.",
+        "links": [
+          {
+            "type": "arXiv",
+            "href": "https://arxiv.org/abs/2610.20019",
+            "icon": "paper"
+          },
+          {
+            "type": "Code",
+            "href": "https://github.com/MINT-SJTU/MorphAct",
+            "icon": "github"
+          },
+          {
+            "type": "Project",
+            "href": "https://mint-sjtu.github.io/MorphAct.io/",
+            "icon": "globe"
+          }
+        ],
+        "image": "",
+        "video": ""
+      },
       {
         "title": "Evo-Depth: A Lightweight Depth-Enhanced Vision-Language-Action Model",
         "href": "https://arxiv.org/abs/2605.14950",
@@ -146,42 +174,6 @@
             "type": "Project",
             "href": "https://mint-sjtu.github.io/Evo-1.io/",
             "icon": "globe"
-          }
-        ],
-        "image": "",
-        "video": ""
-      },
-      {
-        "title": "LA4VLA: Learning to Act without Seeing via Language-Action Pretraining",
-        "href": "https://arxiv.org/abs/2606.27295",
-        "dates": "2026",
-        "active": true,
-        "description": "Preprint, arXiv:2606.27295.",
-        "technologies": ["Preprint"],
-        "authors": "**Authors:** Tao Lin, Yuxin Du, Yiran Mao, Zewei Ye, Yilei Zhong, Bing Cheng, Yiming Wang, **Jiting Liu**, et al.",
-        "links": [
-          {
-            "type": "Paper",
-            "href": "https://arxiv.org/abs/2606.27295",
-            "icon": "paper"
-          }
-        ],
-        "image": "",
-        "video": ""
-      },
-      {
-        "title": "Evo-0: Vision-Language-Action Model with Implicit Spatial Understanding",
-        "href": "https://arxiv.org/abs/2507.00416",
-        "dates": "2025",
-        "active": true,
-        "description": "Preprint, arXiv:2507.00416.",
-        "technologies": ["Preprint"],
-        "authors": "**Authors:** Tao Lin, Gen Li, Yilei Zhong, Yanwen Zou, Yuxin Du, **Jiting Liu**, et al.",
-        "links": [
-          {
-            "type": "Paper",
-            "href": "https://arxiv.org/abs/2507.00416",
-            "icon": "paper"
           }
         ],
         "image": "",

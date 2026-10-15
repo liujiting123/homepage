@@ -70,7 +70,7 @@
       "colors": "强调色"
     },
     "projectStars": "项目累计 Stars",
-    "citations": "学术引用",
+    "citations": "被引次数",
     "citationIndices": "h 指数 {hIndex} · i10 指数 {i10Index}"
   }
 }
