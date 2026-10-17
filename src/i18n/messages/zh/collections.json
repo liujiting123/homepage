@@ -204,7 +204,7 @@
         "logoUrl": "",
         "start": "",
         "end": "2026 年 10 月结束",
-        "description": "参与 **MiroCap** 项目，开展面向灵巧操作的跨本体动作重定向研究，将标准化交互表征转化为可执行的机器人动作，并保留任务意图、物体运动与接触结构。\n\n在香港大学计算与数据科学学院 [Taku Komura 教授](https://www.cs.hku.hk/index.php/people/academic-staff/taku)的团队开展研究，期间得到[廖周应成](https://zycliao.com/)和[王文佳博士](https://wenjiawang0312.github.io/)的指导。"
+        "description": "参与 **MiroCap** 项目，开展面向灵巧操作的跨本体动作重定向研究，将标准化交互表征转化为可执行的机器人动作，并保留任务意图、物体运动与接触结构。\n\n在香港大学计算与数据科学学院 [Taku Komura 教授](https://i.cs.hku.hk/~taku/)的团队开展研究，期间得到[廖周应成](https://zycliao.com/)和[王文佳博士](https://wenjiawang0312.github.io/)的指导。"
       },
       {
         "company": "上海交通大学 · MINT 实验室",
@@ -274,11 +274,11 @@
     },
     "semanticScholar": {
       "name": "Semantic Scholar",
-      "url": "",
+      "url": "https://www.semanticscholar.org/author/Ji-Ting-Liu/2391006315",
       "icon": "semanticScholar",
       "navbar": false,
-      "content": false,
-      "footer": false
+      "content": true,
+      "footer": true
     },
     "LinkedIn": {
       "name": "LinkedIn",

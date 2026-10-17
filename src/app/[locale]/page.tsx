@@ -125,6 +125,13 @@ export default async function Page({
             <a href={social.GoogleScholar.url} target="_blank" rel="noreferrer">
               Google Scholar
             </a>
+            <a
+              href={social.semanticScholar.url}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Semantic Scholar
+            </a>
             <a href={social.GitHub.url} target="_blank" rel="noreferrer">
               GitHub
             </a>

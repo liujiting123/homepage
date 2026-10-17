@@ -204,7 +204,7 @@
         "logoUrl": "",
         "start": "",
         "end": "Through Oct 2026",
-        "description": "Worked on **MiroCap** and cross-embodiment action retargeting for dexterous manipulation, translating standardized interaction representations into executable robot behavior while preserving task intent, object motion, and contact structure.\n\nConducted research with [Prof. Taku Komura](https://www.cs.hku.hk/index.php/people/academic-staff/taku)’s team at the School of Computing and Data Science, The University of Hong Kong, with guidance from [Zhouyingcheng Liao](https://zycliao.com/) and [Dr. Wenjia Wang](https://wenjiawang0312.github.io/)."
+        "description": "Worked on **MiroCap** and cross-embodiment action retargeting for dexterous manipulation, translating standardized interaction representations into executable robot behavior while preserving task intent, object motion, and contact structure.\n\nConducted research with [Prof. Taku Komura](https://i.cs.hku.hk/~taku/)’s team at the School of Computing and Data Science, The University of Hong Kong, with guidance from [Zhouyingcheng Liao](https://zycliao.com/) and [Dr. Wenjia Wang](https://wenjiawang0312.github.io/)."
       },
       {
         "company": "Shanghai Jiao Tong University · MINT Lab",
@@ -274,11 +274,11 @@
     },
     "semanticScholar": {
       "name": "Semantic Scholar",
-      "url": "",
+      "url": "https://www.semanticscholar.org/author/Ji-Ting-Liu/2391006315",
       "icon": "semanticScholar",
       "navbar": false,
-      "content": false,
-      "footer": false
+      "content": true,
+      "footer": true
     },
     "LinkedIn": {
       "name": "LinkedIn",
