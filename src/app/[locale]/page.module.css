@@ -115,6 +115,17 @@
 .appointments p {
   margin: 0;
 }
+.bio p + p {
+  margin-top: 16px;
+}
+.bio ul {
+  list-style: disc;
+  margin: 20px 0 0;
+  padding-left: 1.25em;
+}
+.bio li + li {
+  margin-top: 12px;
+}
 .bio strong,
 .appointments strong {
   font-weight: 600;
