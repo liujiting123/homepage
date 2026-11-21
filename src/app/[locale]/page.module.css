@@ -39,13 +39,12 @@
 }
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(320px, 0.85fr);
-  grid-template-areas: "identity opportunity" "copy opportunity";
-  column-gap: 64px;
-  row-gap: 32px;
-  padding: 48px 44px;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  grid-template-areas: "identity opportunity" "copy interests";
+  column-gap: 72px;
+  row-gap: 56px;
+  padding: 48px 44px 56px;
   background: var(--ref-surface);
-  align-items: start;
 }
 .profileIdentity {
   grid-area: identity;
@@ -54,56 +53,89 @@
   gap: 32px;
   min-width: 0;
 }
-.profileIdentity > div {
+.identityText {
   min-width: 0;
 }
 .avatar {
   flex-shrink: 0;
-  width: 192px;
-  height: 192px;
-  object-fit: contain;
+  width: 176px;
+  height: 176px;
+  object-fit: cover;
 }
 .name {
   font-size: var(--size-display);
-  line-height: 1.05;
+  line-height: 1;
   margin: 0;
 }
 .otherName {
+  margin: 14px 0 0;
   font-family: var(--type-display);
-  font-size: var(--size-lead);
-  margin: 16px 0 0;
+  font-size: 20px;
+  color: var(--ref-text-soft);
+}
+.profileLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 20px;
+  font-family: var(--type-display);
+  font-size: var(--size-small);
+}
+.profileLinks a {
+  overflow-wrap: anywhere;
+}
+.opportunity {
+  grid-area: opportunity;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 28px 32px;
+  background: var(--ref-surface-2);
+}
+.main .opportunity h2 {
+  font-size: 32px;
+  line-height: 1.1;
+}
+.opportunity > p {
+  margin: 12px 0 0;
+  font-size: var(--size-body);
+  line-height: 1.55;
+}
+.opportunityActions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-top: 20px;
+  font-family: var(--type-display);
+  font-size: var(--size-body);
 }
 .heroCopy {
   grid-area: copy;
   min-width: 0;
 }
-.opportunity {
-  grid-area: opportunity;
-  align-self: start;
-  padding: 32px;
-  background: var(--ref-surface-2);
-}
-.opportunity > p {
-  margin: 24px 0 0;
-  font-size: var(--size-body);
-  line-height: 1.6;
-}
-.opportunityActions {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  gap: 24px;
-  margin-top: 32px;
+.lead {
+  margin: 0;
   font-family: var(--type-display);
-  font-size: var(--size-body);
+  font-size: var(--size-lead);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--ref-ink);
+  max-width: 30ch;
 }
-.opportunityActions .primaryAction {
-  width: 100%;
-  padding: 12px;
+.interests {
+  grid-area: interests;
+  min-width: 0;
+}
+.main .interests h2 {
+  font-size: var(--size-lead);
+  line-height: 1.3;
+  margin: 0 0 16px;
 }
 .bio,
 .appointments {
-  max-width: 58ch;
+  max-width: 62ch;
   font-size: var(--size-body);
   color: var(--ref-ink);
   line-height: 1.6;
@@ -115,16 +147,21 @@
 .appointments p {
   margin: 0;
 }
-.bio p + p {
+.bio p + p,
+.appointments p + p {
   margin-top: 16px;
 }
 .bio ul {
-  list-style: disc;
+  list-style: none;
   margin: 20px 0 0;
-  padding-left: 1.25em;
+  padding: 0;
+}
+.bio li {
+  padding-left: 18px;
+  border-left: 3px solid var(--ref-accent);
 }
 .bio li + li {
-  margin-top: 12px;
+  margin-top: 16px;
 }
 .bio strong,
 .appointments strong {
@@ -153,17 +190,6 @@
 }
 .main .primaryAction:active {
   transform: scale(0.98);
-}
-.profileLinks {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px 24px;
-  margin-top: 28px;
-  font-family: var(--type-display);
-  font-size: var(--size-small);
-}
-.profileLinks a {
-  overflow-wrap: anywhere;
 }
 .projectSection {
   margin-top: var(--section-gap);
@@ -248,45 +274,103 @@
   padding: 56px 44px;
   background: var(--ref-surface-2);
 }
-.backgroundIntro {
+.experienceLayout {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2.6fr);
   gap: 56px;
-  margin-bottom: 48px;
+  align-items: start;
 }
-.backgroundText p {
-  max-width: 58ch;
+.experienceHeading {
+  position: sticky;
+  top: 96px;
+}
+.timeline {
+  list-style: none;
   margin: 0;
+  padding: 0;
 }
-.experience {
+.timeline > li {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 52px;
+  grid-template-columns: 148px minmax(0, 1fr);
+  gap: 32px;
 }
-.experience article {
-  min-width: 0;
+.timeline > li + li {
+  margin-top: 56px;
 }
-.experienceHeader {
+.timelineMeta {
   display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding-top: 4px;
 }
-.experienceHeader h3 {
-  margin-bottom: 8px;
-}
-.experienceHeader p {
+.timelineMeta time {
   font-family: var(--type-display);
   font-size: var(--size-small);
-  margin: 0;
   color: var(--ref-muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
-.institution {
+.nowBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 10px 2px 8px;
+  border-radius: 999px;
+  background: var(--ref-accent-soft);
+  color: var(--ref-accent);
+  font-family: var(--type-display);
+  font-size: var(--size-small);
   font-weight: 600;
+  line-height: 1.6;
+}
+.nowBadge::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.timelineBody {
+  min-width: 0;
+}
+.main .timelineBody h3 {
+  margin: 0 0 6px;
+}
+.timelineRole {
+  margin: 0;
+  color: var(--ref-text-soft);
+  font-family: var(--type-display);
+  font-size: var(--size-small);
+}
+.affiliations {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+}
+.affiliations li {
+  padding: 16px 18px;
+  background: var(--ref-surface);
+  border-left: 2px solid var(--ref-accent);
+}
+.affiliations li > a {
+  font-weight: 600;
+  text-decoration: none;
+}
+.affiliations li > a:hover {
+  text-decoration: underline;
+}
+.affiliationDetail p {
+  margin: 4px 0 0;
+  font-size: var(--size-small);
+  color: var(--ref-text-soft);
 }
 .experienceText p {
-  margin-top: 16px;
+  margin: 14px 0 0;
+  max-width: 68ch;
 }
 .experienceText strong {
   font-weight: 600;
@@ -321,34 +405,22 @@
 @media (max-width: 1100px) {
   .hero {
     padding: 36px;
-    column-gap: 40px;
-    grid-template-columns: minmax(0, 1fr) minmax(300px, 0.9fr);
+    column-gap: 48px;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
   }
   .profileIdentity {
     gap: 24px;
   }
   .avatar {
-    width: 144px;
-    height: 144px;
+    width: 128px;
+    height: 128px;
   }
 }
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
-    grid-template-areas: "identity" "opportunity" "copy";
-    row-gap: 32px;
-  }
-  .opportunity {
-    width: 100%;
-  }
-  .opportunityActions {
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  .opportunityActions .primaryAction {
-    width: auto;
-    min-width: 240px;
+    grid-template-areas: "identity" "opportunity" "copy" "interests";
+    row-gap: 40px;
   }
   .sectionHeading,
   .publicationHeading {
@@ -361,19 +433,18 @@
     grid-template-columns: 1fr;
     gap: 32px;
   }
-  .backgroundIntro {
+  .experienceLayout {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 32px;
   }
-  .experience {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .experienceHeading {
+    position: static;
   }
 }
 @media (max-width: 600px) {
   .hero {
     padding: 24px;
-    row-gap: 28px;
+    row-gap: 52px;
   }
   .profileIdentity {
     gap: 20px;
@@ -391,19 +462,22 @@
   .opportunity {
     padding: 24px;
   }
-  .opportunity > p {
-    margin-top: 20px;
-  }
-  .opportunityActions {
-    margin-top: 24px;
-    gap: 20px;
-  }
   .opportunityActions .primaryAction {
     min-width: 0;
     width: 100%;
   }
-  .profileLinks {
-    gap: 16px 20px;
+  .otherName {
+    font-size: 17px;
+  }
+  .nameSep {
+    display: none;
+  }
+  .headlineText {
+    display: block;
+    margin-top: 2px;
+  }
+  .profileIdentity {
+    align-items: flex-start;
   }
   .projectSection .sectionHeading {
     padding: 0 8px;
@@ -428,6 +502,24 @@
     grid-template-columns: 1fr;
     gap: 32px;
   }
+  .timeline > li {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .timeline > li + li {
+    margin-top: 40px;
+  }
+  .lead {
+    font-size: 20px;
+  }
+  .timelineMeta {
+    flex-direction: row;
+    align-items: center;
+    padding-top: 0;
+  }
+  .affiliations {
+    grid-template-columns: 1fr;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   .main a,
@@ -444,8 +536,4 @@
 
 .acknowledgements:not([open]) > div {
   display: none;
-}
-
-.opportunity h2 span {
-  white-space: nowrap;
 }

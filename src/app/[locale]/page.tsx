@@ -18,12 +18,17 @@ import { jsonldScript } from "@/lib/utils";
 import styles from "./page.module.css";
 
 type NewsItem = { date: string; title: string; content: string };
+type Affiliation = { name: string; href: string; detail: string };
 type WorkItem = {
   company: string;
+  short: string;
+  unit?: string;
   title: string;
   href: string;
   start: string;
   end: string;
+  current?: boolean;
+  affiliations?: Affiliation[];
   description: string;
 };
 type EducationItem = {
@@ -51,11 +56,6 @@ export default async function Page({
   const conferences = t.raw("reviewerConferences") as string[];
   const journals = t.raw("reviewerJournals") as string[];
   const materials = t.raw("materials.items") as Material[];
-  const appointments = t("homepage.appointments").split("\n\n");
-  const neuripsCount = publications.filter(
-    (p) => p.dates === "NeurIPS 2026",
-  ).length;
-  const cvprCount = publications.filter((p) => p.dates === "CVPR 2026").length;
 
   return (
     <main id="main-content" className={styles.main}>
@@ -70,20 +70,43 @@ export default async function Page({
           <Image
             src={siteConfig.avatarUrl}
             alt={t("name.full")}
-            width={192}
-            height={192}
-            sizes="(max-width: 600px) 88px, (max-width: 900px) 144px, 192px"
+            width={176}
+            height={176}
+            sizes="(max-width: 600px) 88px, (max-width: 900px) 128px, 176px"
             className={styles.avatar}
             priority
             data-reveal
           />
-          <div>
+          <div className={styles.identityText}>
             <h1 id="profile-name" className={styles.name} data-reveal>
               {t("name.full")}
             </h1>
             <p className={styles.otherName} data-reveal>
               {t("subtitle")}
+              <span className={styles.nameSep} aria-hidden="true">
+                {" · "}
+              </span>
+              <span className={styles.headlineText}>{t("headline")}</span>
             </p>
+            <div className={styles.profileLinks} data-reveal>
+              <a
+                href={social.GoogleScholar.url}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Google Scholar
+              </a>
+              <a
+                href={social.semanticScholar.url}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Semantic Scholar
+              </a>
+              <a href={social.GitHub.url} target="_blank" rel="noreferrer">
+                GitHub
+              </a>
+            </div>
           </div>
         </div>
         <aside
@@ -92,13 +115,7 @@ export default async function Page({
           aria-labelledby="opportunity-title"
         >
           <h2 id="opportunity-title" data-reveal>
-            {zh ? (
-              <>
-                2028 <span>硕博机会</span>
-              </>
-            ) : (
-              "2028 PhD & Master’s"
-            )}
+            {t("phdSearch.shortTitle")}
           </h2>
           <p data-reveal>{t("phdSearch.description")}</p>
           <div className={styles.opportunityActions} data-reveal>
@@ -111,65 +128,83 @@ export default async function Page({
           </div>
         </aside>
         <div className={styles.heroCopy}>
-          <div data-reveal>
-            <CustomReactMarkdown className={styles.bio}>
-              {t("homepage.researchBio")}
-            </CustomReactMarkdown>
-          </div>
+          <p className={styles.lead} data-reveal>
+            {t("homepage.researchBio")}
+          </p>
           <div data-reveal>
             <CustomReactMarkdown className={styles.appointments}>
-              {appointments[0]}
+              {t("homepage.appointments")}
             </CustomReactMarkdown>
           </div>
-          <div className={styles.profileLinks} data-reveal>
-            <a href={social.GoogleScholar.url} target="_blank" rel="noreferrer">
-              Google Scholar
-            </a>
-            <a
-              href={social.semanticScholar.url}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Semantic Scholar
-            </a>
-            <a href={social.GitHub.url} target="_blank" rel="noreferrer">
-              GitHub
-            </a>
+        </div>
+        <div className={styles.interests}>
+          <h2 data-reveal>{t("homepage.interestsTitle")}</h2>
+          <div data-reveal>
+            <CustomReactMarkdown className={styles.bio}>
+              {t("researchInterestsMarkdown")}
+            </CustomReactMarkdown>
           </div>
         </div>
       </section>
 
       <section id="work" className={styles.backgroundSection}>
-        <div className={styles.backgroundIntro}>
-          <h2 data-reveal>{zh ? "科研经历" : "Research experience"}</h2>
-          <CustomReactMarkdown className={styles.backgroundText}>
-            {appointments[1] || ""}
-          </CustomReactMarkdown>
-        </div>
-        <div className={styles.experience}>
-          {work.map((item, index) => (
-            <article key={item.company} data-reveal>
-              <div className={styles.experienceHeader}>
-                <h3>
-                  <a href={item.href} target="_blank" rel="noreferrer">
-                    {index === 0
-                      ? zh
-                        ? "香港大学"
-                        : "HKU"
-                      : zh
-                        ? "上海交通大学"
-                        : "SJTU"}
-                  </a>
-                </h3>
-                <p>{[item.start, item.end].filter(Boolean).join("–")}</p>
-              </div>
-              <p className={styles.institution}>{item.company}</p>
-              <p>{item.title}</p>
-              <CustomReactMarkdown className={styles.experienceText}>
-                {item.description}
-              </CustomReactMarkdown>
-            </article>
-          ))}
+        <div className={styles.experienceLayout}>
+          <h2 data-reveal className={styles.experienceHeading}>
+            {zh ? "科研经历" : "Research experience"}
+          </h2>
+          <ol className={styles.timeline}>
+            {work.map((item) => (
+              <li
+                key={item.company}
+                className={item.current ? styles.timelineCurrent : undefined}
+                data-reveal
+              >
+                <div className={styles.timelineMeta}>
+                  <time>
+                    {[item.start, item.end].filter(Boolean).join(" – ")}
+                  </time>
+                  {item.current ? (
+                    <span className={styles.nowBadge}>
+                      {zh ? "进行中" : "Current"}
+                    </span>
+                  ) : null}
+                </div>
+                <div className={styles.timelineBody}>
+                  <h3>
+                    {item.affiliations?.length ? (
+                      item.short
+                    ) : (
+                      <a href={item.href} target="_blank" rel="noreferrer">
+                        {item.short}
+                      </a>
+                    )}
+                  </h3>
+                  <p className={styles.timelineRole}>
+                    {[item.title, item.unit].filter(Boolean).join(" · ")}
+                  </p>
+                  {item.affiliations?.length ? (
+                    <ul className={styles.affiliations}>
+                      {item.affiliations.map((aff) => (
+                        <li key={aff.name}>
+                          <a href={aff.href} target="_blank" rel="noreferrer">
+                            {aff.name}
+                          </a>
+                          <CustomReactMarkdown
+                            className={styles.affiliationDetail}
+                          >
+                            {aff.detail}
+                          </CustomReactMarkdown>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                  <CustomReactMarkdown className={styles.experienceText}>
+                    {item.description}
+                  </CustomReactMarkdown>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
@@ -195,14 +230,6 @@ export default async function Page({
         </div>
         <div className={styles.metrics} data-reveal>
           <p>
-            <strong>{neuripsCount}</strong>
-            <span>NeurIPS 2026</span>
-          </p>
-          <p>
-            <strong>{cvprCount}</strong>
-            <span>CVPR 2026</span>
-          </p>
-          <p>
             <strong>{totalProjectStars}</strong>
             <span>{t("homepage.projectStars")}</span>
           </p>
@@ -217,7 +244,10 @@ export default async function Page({
             </a>
           </p>
         </div>
-        <PublicationList items={publications} />
+        <PublicationList
+          heading={zh ? "共一论文" : "Co-first-author papers"}
+          items={publications}
+        />
       </section>
 
       <section id="news" className={styles.newsSection}>

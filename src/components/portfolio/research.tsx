@@ -20,6 +20,7 @@ export interface ResearchItem {
   imageCaption?: string;
   imageWidth?: number;
   imageHeight?: number;
+  group?: string;
 }
 
 function ResourceIcon({ icon }: { icon?: string }) {
@@ -153,9 +154,20 @@ export function FeaturedResearch({
   );
 }
 
-export function PublicationList({ items }: { items: ResearchItem[] }) {
+export function PublicationList({
+  items,
+  heading,
+}: {
+  items: ResearchItem[];
+  heading?: string;
+}) {
   return (
     <div className={`${styles.researchRoot} ${styles.publicationList}`}>
+      {heading ? (
+        <h3 className={styles.publicationGroupTitle} data-reveal>
+          {heading}
+        </h3>
+      ) : null}
       {items.map((item) => {
         const shortTitle = item.title.split(":")[0];
         const venue =
@@ -166,9 +178,13 @@ export function PublicationList({ items }: { items: ResearchItem[] }) {
           <article key={item.title} className={styles.publication}>
             <div className={styles.publicationName} data-reveal>
               <h3>
-                <a href={item.href} target="_blank" rel="noreferrer">
-                  {shortTitle}
-                </a>
+                {item.href ? (
+                  <a href={item.href} target="_blank" rel="noreferrer">
+                    {shortTitle}
+                  </a>
+                ) : (
+                  shortTitle
+                )}
               </h3>
               <p className={styles.metadata}>
                 {[venue, ...item.technologies.slice(1)].join(" · ")}
@@ -177,9 +193,13 @@ export function PublicationList({ items }: { items: ResearchItem[] }) {
             <div className={styles.publicationBody}>
               {shortTitle !== item.title && (
                 <p className={styles.fullTitle} data-reveal>
-                  <a href={item.href} target="_blank" rel="noreferrer">
-                    {item.title}
-                  </a>
+                  {item.href ? (
+                    <a href={item.href} target="_blank" rel="noreferrer">
+                      {item.title}
+                    </a>
+                  ) : (
+                    item.title
+                  )}
                 </p>
               )}
               {item.authors && (
@@ -192,7 +212,7 @@ export function PublicationList({ items }: { items: ResearchItem[] }) {
               <p className={styles.publicationDescription}>
                 {item.description}
               </p>
-              <ResearchLinks links={item.links} />
+              {item.links.length ? <ResearchLinks links={item.links} /> : null}
             </div>
           </article>
         );
