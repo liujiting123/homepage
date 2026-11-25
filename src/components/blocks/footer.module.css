@@ -1,17 +1,16 @@
 .footer {
   max-width: var(--page-width);
   margin: var(--section-gap) auto 0;
-  padding: 56px var(--page-gutter) 32px;
+  padding: 0 var(--page-gutter) 40px;
   color: var(--ref-ink);
   font-family: var(--type-display);
 }
 .signature {
   display: block;
-  font-size: var(--size-display);
+  font-size: 20px;
   font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: -0.045em;
-  margin-bottom: 40px;
+  line-height: 1.2;
+  margin-bottom: 12px;
 }
 .bottom {
   display: flex;
@@ -39,8 +38,7 @@
 }
 @media (max-width: 600px) {
   .footer {
-    margin-top: 104px;
-    padding-top: 0;
+    margin-top: 72px;
   }
   .bottom {
     flex-direction: column;

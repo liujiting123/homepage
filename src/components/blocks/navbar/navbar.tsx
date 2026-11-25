@@ -15,11 +15,9 @@ export default function Navbar() {
   const home = locale === "zh" ? "/zh" : "/";
   const [menuOpen, setMenuOpen] = useState(false);
   const sections = [
-    ["work", "experience"],
-    ["projects", "research"],
-    ["publications", "publications"],
-    ["news", "news"],
-    ["contact", "contact"],
+    ["news", t("home.titles.news")],
+    ["publications", t("home.titles.publications")],
+    ["experience", t("home.titles.experience")],
   ];
   return (
     <header className={styles.header}>
@@ -41,13 +39,12 @@ export default function Navbar() {
               href={home + "#" + id}
               onClick={() => setMenuOpen(false)}
             >
-              {label === "contact"
-                ? locale === "zh"
-                  ? "联系"
-                  : "Contact"
-                : t("homepage.navigation." + label)}
+              {label}
             </a>
           ))}
+          <a href={t("home.cvHref")} target="_blank" rel="noreferrer">
+            {t("home.cvLabel")}
+          </a>
         </nav>
         <div className={styles.controls}>
           <LanguageToggle />

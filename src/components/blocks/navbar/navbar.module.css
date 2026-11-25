@@ -7,12 +7,12 @@
 }
 .inner {
   max-width: var(--page-width);
-  min-height: 88px;
+  min-height: 68px;
   margin: 0 auto;
   padding: 0 var(--page-gutter);
   display: flex;
   align-items: center;
-  gap: 52px;
+  gap: 40px;
 }
 .brand {
   font-size: var(--size-body);
@@ -26,8 +26,9 @@
   gap: 28px;
 }
 .navigation a {
-  font-size: var(--size-small);
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ref-text-soft);
   white-space: nowrap;
   padding: 16px 0;
 }
@@ -48,7 +49,7 @@
   padding: 0 12px;
   border: 0;
   border-radius: 0;
-  background: var(--ref-surface-2);
+  background: transparent;
   color: var(--ref-ink);
   box-shadow: none;
   font-family: var(--type-display);
@@ -79,7 +80,7 @@
 }
 @media (max-width: 900px) {
   .inner {
-    min-height: 76px;
+    min-height: 64px;
     gap: 12px;
   }
   .menuButton {
@@ -88,13 +89,13 @@
     align-items: center;
     width: 44px;
     height: 44px;
-    background: var(--ref-ink);
-    color: var(--ref-on-ink);
+    background: transparent;
+    color: var(--ref-ink);
   }
   .navigation {
     display: none;
     position: absolute;
-    top: 76px;
+    top: 64px;
     left: var(--page-gutter);
     right: var(--page-gutter);
     padding: 20px 24px;

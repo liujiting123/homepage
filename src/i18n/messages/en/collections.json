@@ -1,155 +1,4 @@
 {
-  "news": {
-    "items": [
-      {
-        "date": "2026.09",
-        "title": "Evo-Depth accepted to NeurIPS 2026 · Co-first author",
-        "content": "[Evo-Depth](https://arxiv.org/abs/2605.14950). Our paper [Focusable Monocular Depth Estimation](https://arxiv.org/abs/2605.11756) was also accepted."
-      },
-      {
-        "date": "2026.09",
-        "title": "Completed the HKU CDS Summer Research Internship Programme",
-        "content": "[Certificate of completion](/certificates/hku-summer-research-2026.pdf). Project: Data-Driven Cross-Embodiment Action Retargeting for Dexterous Robot Manipulation."
-      },
-      {
-        "date": "2026.06",
-        "title": "Evo-1 accepted to CVPR 2026",
-        "content": "[Evo-1: Lightweight Vision-Language-Action Model with Preserved Semantic Alignment](https://arxiv.org/abs/2511.04555)."
-      }
-    ]
-  },
-  "projects": {
-    "items": [
-      {
-        "title": "MorphAct",
-        "href": "https://mint-sjtu.github.io/MorphAct.io/",
-        "dates": "2026",
-        "active": true,
-        "description": "Scaling robot learning across diverse interactions can create conflicting update demands in shared parameters. MorphAct examines these trade-offs through operation-level diagnostics and adapts perception and action through representation-coupled parameter generation.",
-        "technologies": ["ICLR 2027 (under review)", "Co-first author"],
-        "authors": "",
-        "links": [
-          {
-            "type": "arXiv",
-            "href": "https://arxiv.org/abs/2610.20019",
-            "icon": "paper"
-          },
-          {
-            "type": "Code",
-            "href": "https://github.com/MINT-SJTU/MorphAct",
-            "icon": "github"
-          },
-          {
-            "type": "Project",
-            "href": "https://mint-sjtu.github.io/MorphAct.io/",
-            "icon": "globe"
-          }
-        ],
-        "image": "/research/morphact-method.png",
-        "video": "",
-        "imageAlt": "MorphAct method: vision-language and action parameter generators are coupled through adapted representations to adjust the policy to each interaction context.",
-        "imageCaption": "Representation-coupled parameter generation · Method figure from the paper",
-        "imageWidth": 2662,
-        "imageHeight": 1331
-      },
-      {
-        "title": "Evo-Depth",
-        "href": "https://arxiv.org/abs/2605.14950",
-        "dates": "2026",
-        "active": true,
-        "description": "A lightweight vision-language-action model that uses implicit depth cues from RGB observations to improve spatially grounded manipulation without additional depth sensors.",
-        "technologies": ["NeurIPS 2026", "Co-first author"],
-        "authors": "",
-        "links": [
-          {
-            "type": "Paper",
-            "href": "https://arxiv.org/abs/2605.14950",
-            "icon": "paper"
-          },
-          {
-            "type": "Code",
-            "href": "https://github.com/MINT-SJTU/Evo-Depth",
-            "icon": "github"
-          }
-        ],
-        "image": "/research/evo-depth-overview.webp",
-        "video": "",
-        "contribution": "Model design, code implementation, training, and evaluation.",
-        "imageAlt": "Evo-Depth architecture and progressive alignment training: implicit depth encoding, spatial enhancement, and action prediction.",
-        "imageCaption": "Architecture and training overview · Figure 2 from the paper"
-      }
-    ]
-  },
-  "publications": {
-    "items": [
-      {
-        "title": "Evo-Depth: A Lightweight Depth-Enhanced Vision-Language-Action Model",
-        "href": "https://arxiv.org/abs/2605.14950",
-        "dates": "NeurIPS 2026",
-        "active": true,
-        "description": "A lightweight VLA model that strengthens spatial perception with implicit depth cues from RGB observations, without extra depth sensors.",
-        "technologies": ["NeurIPS 2026"],
-        "authors": "",
-        "links": [
-          {
-            "type": "Paper",
-            "href": "https://arxiv.org/abs/2605.14950",
-            "icon": "paper"
-          },
-          {
-            "type": "Code",
-            "href": "https://github.com/MINT-SJTU/Evo-Depth",
-            "icon": "github"
-          }
-        ],
-        "image": "",
-        "video": "",
-        "group": "first"
-      },
-      {
-        "title": "MorphAct: Robot Policies Morphing with the Worlds They Act In",
-        "href": "https://arxiv.org/abs/2610.20019",
-        "dates": "ICLR 2027 (under review)",
-        "active": true,
-        "description": "Shows that different manipulation skills impose conflicting updates on shared policy parameters, and lets the policy generate context-dependent parameters for its perception and action modules.",
-        "technologies": ["ICLR 2027 (under review)"],
-        "authors": "",
-        "links": [
-          {
-            "type": "arXiv",
-            "href": "https://arxiv.org/abs/2610.20019",
-            "icon": "paper"
-          },
-          {
-            "type": "Code",
-            "href": "https://github.com/MINT-SJTU/MorphAct",
-            "icon": "github"
-          },
-          {
-            "type": "Project",
-            "href": "https://mint-sjtu.github.io/MorphAct.io/",
-            "icon": "globe"
-          }
-        ],
-        "image": "",
-        "video": "",
-        "group": "first"
-      },
-      {
-        "title": "MiroCap: Multi-view Human Interaction Reconstruction for Robot Loco-Manipulation Learning",
-        "href": "",
-        "dates": "ICRA 2027 (under review)",
-        "active": true,
-        "description": "Reconstructs human interactions from multi-view capture and retargets them across robot embodiments to produce training data for loco-manipulation policies.",
-        "technologies": ["ICRA 2027 (under review)"],
-        "authors": "",
-        "links": [],
-        "image": "",
-        "video": "",
-        "group": "first"
-      }
-    ]
-  },
   "education": {
     "items": [
       {
@@ -165,30 +14,48 @@
   "work": {
     "items": [
       {
-        "company": "HKU · Miro Dynamics–HKU CGVU Joint Lab",
-        "short": "HKU",
-        "href": "https://hku-cg.github.io/mirod-lab/",
-        "badges": [],
-        "location": "",
-        "title": "Research Assistant",
-        "logoUrl": "",
-        "start": "Summer 2026",
-        "end": "Oct 2026",
-        "description": "Worked on **MiroCap** and cross-embodiment action retargeting for dexterous manipulation, translating standardized interaction representations into executable robot behavior while preserving task intent, object motion, and contact structure.\n\nConducted research with [Prof. Taku Komura](https://i.cs.hku.hk/~taku/)’s team at HKU's School of Computing and Data Science, with guidance from [Zhouyingcheng Liao](https://zycliao.com/) and [Dr. Wenjia Wang](https://wenjiawang0312.github.io/).",
-        "unit": "Miro Dynamics–HKU CGVU Joint Lab"
+        "company": "Peking University Shenzhen Graduate School",
+        "href": "https://yuanli2333.github.io/",
+        "title": "Research Intern",
+        "description": "Research intern in Prof. Li Yuan's group.",
+        "dates": "Nov 2026 – Present",
+        "current": true,
+        "lab": "[Prof. Li Yuan](https://yuanli2333.github.io/)'s group",
+        "people": "",
+        "text": ""
       },
       {
-        "company": "SJTU · MINT Lab",
-        "short": "SJTU",
-        "href": "https://mint-sjtu.github.io/",
-        "badges": [],
-        "location": "",
+        "company": "Tencent",
+        "href": "https://kaiwang960112.github.io/",
+        "title": "Remote research",
+        "description": "Research on parameter generation for robot policies, mentored by Dr. Kai Wang.",
+        "dates": "2026 – Present",
+        "current": true,
+        "lab": "",
+        "people": "Mentor: [Dr. Kai Wang](https://kaiwang960112.github.io/)",
+        "text": "Parameter generation for robot policies (**MorphAct**, co-first author)."
+      },
+      {
+        "company": "The University of Hong Kong",
+        "href": "https://hku-cg.github.io/mirod-lab/",
         "title": "Research Assistant",
-        "logoUrl": "",
-        "start": "2025",
-        "end": "2026",
-        "description": "Studied contextual robot policy parameterization and spatial perception. Co-first author of **MorphAct** and **Evo-Depth** (NeurIPS 2026); co-author of **Focusable Monocular Depth Estimation** (NeurIPS 2026) and **Evo-1** (CVPR 2026).\n\nConducted research on embodied AI and vision-language-action models at MINT Lab under the guidance of [Prof. Bo Zhao](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo), with guidance from [Prof. Gen Li](https://www.genli.top/), [Tao Lin](https://dorayakilin.github.io/), and [Yuxin Du](https://yuxin-du-lab.github.io/).",
-        "unit": "MINT Lab"
+        "description": "Cross-embodiment action retargeting.",
+        "dates": "Summer 2026 – Oct 2026",
+        "current": false,
+        "lab": "[Miro Dynamics–HKU CGVU Joint Lab](https://hku-cg.github.io/mirod-lab/) · [Prof. Taku Komura](https://i.cs.hku.hk/~taku/)'s group",
+        "people": "Mentors: [Zhouyingcheng Liao](https://zycliao.com/), [Dr. Wenjia Wang](https://wenjiawang0312.github.io/)",
+        "text": "Cross-embodiment action retargeting: turning human–object interactions into executable motions and training data for dexterous hands and robot arms."
+      },
+      {
+        "company": "Shanghai Jiao Tong University",
+        "href": "https://mint-sjtu.github.io/",
+        "title": "Research Assistant",
+        "description": "Vision-language-action models and spatial perception.",
+        "dates": "2025 – 2026",
+        "current": false,
+        "lab": "[MINT Lab](https://mint-sjtu.github.io/) · [Prof. Bo Zhao](https://soai.sjtu.edu.cn/cn/facultydetails/zzjs/zhaobo)'s group",
+        "people": "Mentors: [Prof. Gen Li](https://www.genli.top/), [Tao Lin](https://dorayakilin.github.io/), [Yuxin Du](https://yuxin-du-lab.github.io/)",
+        "text": "**Evo-Depth** (co-first, NeurIPS 2026) and **MorphAct** (co-first); contributed to Evo-0, Evo-1 (CVPR 2026), Focusable Monocular Depth Estimation (NeurIPS 2026) and LA4VLA."
       }
     ]
   },
@@ -202,7 +69,9 @@
     "items": []
   },
   "skills": [],
-  "reviewerConferences": ["NeurIPS 2026 · Invited reviewer"],
+  "reviewerConferences": [
+    "NeurIPS 2026 · Invited reviewer"
+  ],
   "reviewerJournals": [],
   "social": {
     "GitHub": {
@@ -398,15 +267,137 @@
       "footer": false
     }
   },
-  "materials": {
-    "items": [
+  "home": {
+    "role": "Third-year undergraduate in Mathematics · Embodied AI",
+    "about": "I am currently a research intern in [Prof. Li Yuan](https://yuanli2333.github.io/)'s group at Peking University Shenzhen Graduate School, and am mentored by [Dr. Kai Wang](https://kaiwang960112.github.io/) at Tencent. Previously, I was a research assistant at the [MINT Lab](https://mint-sjtu.github.io/) at SJTU and in [Prof. Taku Komura](https://i.cs.hku.hk/~taku/)'s group at HKU.\n\nMy research interests lie in **embodied AI**, particularly how a single robot policy can keep extending to new tasks and embodiments. In [MorphAct](https://mint-sjtu.github.io/MorphAct.io/), we found that different manipulation skills pull shared parameters in conflicting directions, so we let the policy generate parameters for its perception and action modules from the current context. In [Evo-Depth](https://arxiv.org/abs/2605.14950) (NeurIPS 2026), we extract implicit depth from RGB to give a VLA better spatial perception. At HKU, I worked on cross-embodiment action retargeting, turning human–object interactions into executable motions for dexterous hands and robot arms.",
+    "seeking": "I am applying for research master's and PhD programs starting in 2028. Feel free to get in touch.",
+    "email": "liujiting616@gmail.com",
+    "cvLabel": "CV",
+    "cvHref": "/resume-en.pdf",
+    "titles": {
+      "news": "News",
+      "publications": "Publications",
+      "experience": "Experience",
+      "education": "Education",
+      "service": "Service"
+    },
+    "pubNote": "* Equal contribution",
+    "scholarLabel": "Full list on Google Scholar",
+    "otherPubsTitle": "Other contributions",
+    "contributionLabel": "My part: ",
+    "currentLabel": "Current",
+    "news": [
       {
-        "title": "HKU Summer Research Internship Programme 2026",
-        "date": "September 2026",
-        "description": "Certificate of completion issued by the School of Computing and Data Science, The University of Hong Kong, for Data-Driven Cross-Embodiment Action Retargeting for Dexterous Robot Manipulation.",
-        "href": "/certificates/hku-summer-research-2026.pdf",
-        "image": "/certificates/hku-summer-research-2026.webp",
-        "imageAlt": "HKU certificate of completion issued to Jiting Liu on September 1, 2026."
+        "date": "2026.11",
+        "text": "Joined [Prof. Li Yuan](https://yuanli2333.github.io/)'s group at Peking University Shenzhen Graduate School as a research intern."
+      },
+      {
+        "date": "2026.10",
+        "text": "[MorphAct](https://arxiv.org/abs/2610.20019) is on arXiv and under review at ICLR 2027."
+      },
+      {
+        "date": "2026.09",
+        "text": "[Evo-Depth](https://arxiv.org/abs/2605.14950) (co-first author) and [Focusable Monocular Depth Estimation](https://arxiv.org/abs/2605.11756) accepted to NeurIPS 2026."
+      },
+      {
+        "date": "2026.09",
+        "text": "Completed the HKU CDS Summer Research Internship Programme ([certificate](/certificates/hku-summer-research-2026.pdf))."
+      },
+      {
+        "date": "2026.06",
+        "text": "[Evo-1](https://arxiv.org/abs/2511.04555) accepted to CVPR 2026."
+      }
+    ],
+    "publications": [
+      {
+        "title": "MorphAct: Robot Policies Morphing with the Worlds They Act In",
+        "href": "https://arxiv.org/abs/2610.20019",
+        "authors": "Ziyan Liu\\*, **Jiting Liu**\\*, Weihong Zhong\\*, Wenda Yu, Yeqiu Chen, Jason Li, Xiaojiang Peng, Shuyuan Hu, Kai Wang, Bo Zhao",
+        "venue": "ICLR 2027 (under review)",
+        "image": "/research/morphact-teaser.png",
+        "imageAlt": "MorphAct teaser: the policy generates parameters for its perception and action modules from the interaction context.",
+        "summary": "On 65 RoboCasa365 atomic tasks, each parameter update raises the loss of 22–46 other tasks. MorphAct uses two coupled generators that produce low-rank updates for the VLM and the action module from the current observation, instruction and robot state.",
+        "contribution": "Built the parameter-generation module and ported it to X-VLA, π0 and π0.5: Meta-World success rises by 7.57, 16.30 and 15.72 points.",
+        "links": [
+          {
+            "label": "arXiv",
+            "href": "https://arxiv.org/abs/2610.20019"
+          },
+          {
+            "label": "Code",
+            "href": "https://github.com/MINT-SJTU/MorphAct"
+          },
+          {
+            "label": "Project page",
+            "href": "https://mint-sjtu.github.io/MorphAct.io/"
+          }
+        ]
+      },
+      {
+        "title": "Evo-Depth: A Lightweight Depth-Enhanced Vision-Language-Action Model",
+        "href": "https://arxiv.org/abs/2605.14950",
+        "authors": "Tao Lin\\*, Yuxin Du\\*, **Jiting Liu**\\*, Nuobei Zhu, Yunhe Li, Yuqian Fu, Yinxinyu Chen, Hongyi Cai, Zewei Ye, Bing Cheng, Kai Ye, Yiran Mao, Yilei Zhong, MingKang Dong, Junchi Yan, Gen Li, Bo Zhao",
+        "venue": "NeurIPS 2026",
+        "image": "/research/evo-depth-overview.webp",
+        "imageAlt": "Evo-Depth architecture: implicit depth encoding, spatial enhancement and action prediction.",
+        "summary": "No depth camera needed: implicit depth features from RGB are injected into the vision-language representation with FiLM. Meta-World 84.4% (Evo-1: 80.6%), LIBERO 95.4%, LIBERO-Plus 69.6% (π0-FAST: 53.6%).",
+        "contribution": "Proposed the FiLM-style depth injection; led the model design, implementation and main experiments.",
+        "links": [
+          {
+            "label": "arXiv",
+            "href": "https://arxiv.org/abs/2605.14950"
+          },
+          {
+            "label": "Code",
+            "href": "https://github.com/MINT-SJTU/Evo-Depth"
+          }
+        ]
+      }
+    ],
+    "otherPubs": [
+      {
+        "title": "Evo-1: Lightweight Vision-Language-Action Model with Preserved Semantic Alignment",
+        "href": "https://arxiv.org/abs/2511.04555",
+        "authors": "Tao Lin, Yilei Zhong, Yuxin Du, Jingjing Zhang, **Jiting Liu**, Yinxinyu Chen, Encheng Gu, Ziyan Liu, Hongyi Cai, Yanwen Zou, Lixing Zou, Zhaoye Zhou, Gen Li, Bo Zhao",
+        "venue": "CVPR 2026",
+        "links": [
+          {
+            "label": "arXiv",
+            "href": "https://arxiv.org/abs/2511.04555"
+          },
+          {
+            "label": "Code",
+            "href": "https://github.com/MINT-SJTU/Evo-1"
+          }
+        ]
+      },
+      {
+        "title": "Focusable Monocular Depth Estimation",
+        "href": "https://arxiv.org/abs/2605.11756",
+        "authors": "Yuxin Du, Tao Lin, Zile Zhong, Runting Li, Xiyao Chen, **Jiting Liu**, Chenglin Liu, Ying-Cong Chen, Yuqian Fu, Bo Zhao",
+        "venue": "NeurIPS 2026",
+        "links": [
+          {
+            "label": "arXiv",
+            "href": "https://arxiv.org/abs/2605.11756"
+          }
+        ]
+      }
+    ],
+    "education": [
+      {
+        "school": "Sichuan Agricultural University",
+        "detail": "B.S. in Mathematics · Rank 7 / 183",
+        "dates": "2024 – 2028 (expected)"
+      }
+    ],
+    "service": [
+      {
+        "text": "Reviewer, NeurIPS 2026"
+      },
+      {
+        "text": "HKU CDS Summer Research Internship 2026 (certificate)",
+        "href": "/certificates/hku-summer-research-2026.pdf"
       }
     ]
   }
